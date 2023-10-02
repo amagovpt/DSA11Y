@@ -1,4 +1,4 @@
-# DSA11Y
+# a11yMonitor
 
 Biblioteca de componentes para servir as seguintes aplicações:
 
@@ -13,4 +13,4 @@ Nota: poderá igualmente vir a ser utilizado no:
 - [selo.usabilidade.gov.pt](https://selo.usabilidade.gov.pt)
 
 ---
-<p><small>2023‰copyright; DSA11Y - a nossa 1ª construção de um Design System <em lang="en">WCAG Compliance</em> - EUC - um repositório da Equipa de Usabilidade e Conteúdos da AMA, I.P.</small></p>
+<p><small>2023 &copyright; a11yMonitor - a nossa 1ª construção de um Design System <em lang="en">WCAG Compliance</em> - EUC - um repositório da Equipa de Usabilidade e Conteúdos da AMA, I.P.</small></p>
