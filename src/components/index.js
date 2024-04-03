@@ -16,8 +16,8 @@ export * from "./Atoms/CheckGroup";
 
 // MOLECULES
 export * from "./Molecules/Tabs";
-// export * from "./Molecules/Table";
-// export * from "./Molecules/Table/components/TableAlternative";
+export * from "./Molecules/Table";
+export * from "./Molecules/Table/components/TableAlternative";
 
 // ORGANISMS
 export * from "./Organisms/Header";
