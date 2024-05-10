@@ -1,118 +1,168 @@
-import { Icon } from "../../Atoms/Icon";
-
 import "./styles.css";
 
 export function Footer() {
   return (
-    <>
-      <footer className="footer">
-        <div id="back-to-top" className="back-to-top">
-          <button id="#back-to-topo-button">
-            <span class="visually-hidden">Voltar ao Topo</span>
-            <span>
-              <Icon name="AMA-SetadoisoficialCima-Line" />
-            </span>
-          </button>
-        </div>
+    <footer>
+      <div className="container">
+        <nav aria-label="Menu de rodapé do selo.usabilidade.gov.pt">
+          <div className="menu-menu-de-rodape-container">
+            <ul id="menu-menu-de-rodape" className="footer-menu">
+              <li
+                id="menu-item-193"
+                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"
+              >
+                <a
+                  href="https://www.acessibilidade.gov.pt/acessibilidade/"
+                  rel="noreferrer"
+                >
+                  Acessibilidade
+                </a>
+              </li>
 
-        <div className="col-sm-12 col-8">
-          <nav aria-label="Menu de conformidade do acessibilidade.gov.pt">
-            <ul className="d-sm-flex d-block justify-content-center p-3">
-              <li className="d-flex links">
-                <a href="/acessibilidade">Acessibilidade</a>
-              </li>
-              <li className="d-flex links">
-                <a href="/termos-e-condicoes/">Termos e Condições</a>
-              </li>
-              <li className="d-flex links">
+              <li
+                id="menu-item-194"
+                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-193"
+              >
                 <a
-                  target="_blank"
+                  href="https://www.acessibilidade.gov.pt/termos-e-condicoes/"
+                  rel="noreferrer"
+                >
+                  Termos e Condições
+                </a>
+              </li>
+
+              <li
+                id="menu-item-190"
+                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-190"
+              >
+                <a
                   href="https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/politica-de-privacidade"
-                  rel="noopener noreferrer"
+                  rel="noreferrer"
                 >
-                  Política de Privacidade
+                  Política de privacidade
                 </a>
               </li>
-              <li className="d-flex links">
+
+              <li
+                id="menu-item-191"
+                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-191"
+              >
+                <a href="https://amagovpt.github.io/kit-selo/" rel="noreferrer">
+                  Github
+                </a>
+              </li>
+
+              <li
+                id="menu-item-192"
+                className="menu-item menu-item-type-custom menu-item-object-custom menu-item-192"
+              >
                 <a
-                  target="_blank"
-                  href="https://amagovpt.github.io/kit-selo/"
-                  rel="noopener noreferrer"
+                  href="https://www.acessibilidade.gov.pt/glossario/"
+                  rel="noreferrer"
                 >
-                  GitHub
-                </a>
-              </li>
-              <li className="d-flex links">
-                <a target="_blank" href="/glossario/" rel="noopener noreferrer">
                   Glossário
                 </a>
               </li>
-              <li className="d-flex links">
-                <a href="/opcoes-de-visualizacao/">Opções de Visualização</a>
+              <li
+                id="menu-item-68"
+                className="menu-item menu-item-type-post_type menu-item-object-page menu-item-68"
+              >
+                <a
+                  href="https://www.acessibilidade.gov.pt/opcoes-de-visualizacao/"
+                  rel="noreferrer"
+                >
+                  Opções de visualização
+                </a>
               </li>
             </ul>
-          </nav>
-        </div>
-
-        <div className="col-sm-12 d-flex justify-content-center">
-          <nav
-            className="d-inline-flex"
-            aria-label="Proprietário e co-financiadores do acessibilidade.gov.pt"
-          >
-            <ul className="d-sm-flex justify-content-center d-block">
-              <li className="d-inline-flex justify-content-center">
-                <img
-                  id="republica_portuguesa"
-                  src="/img/republica_portuguesa.png"
-                  alt="República Portuguesa"
-                />
-              </li>
-              <li className="d-inline-flex justify-content-center">
-                <img
-                  id="ama_img"
-                  src="/img/ama-modernizacao_administrativa.png"
-                  alt="AMA – Agência para a Modernização Administrativa I.P."
-                />
-              </li>
-              <li className="d-inline-flex justify-content-center">
-                <img
-                  id="compete_2020"
-                  src="/img/compete_2020.png"
-                  alt="COMPETE 2020 – Programa Operacional Competitividade e Internacionalização"
-                />
-              </li>
-              <li className="d-inline-flex justify-content-center">
-                <img
-                  id="uniao_europeia"
-                  src="/img/UE-uniao_europeia.png"
-                  alt="União Europeia – Fundo Europeu de Desenvolvimento Regional"
-                />
-              </li>
-              <li className="d-inline-flex justify-content-center">
-                <img
-                  id="portugal_2020"
-                  src="/img/portugal_2020.png"
-                  alt="Portugal 2020"
-                />
-              </li>
-            </ul>
-          </nav>
-          <div className="d-sm-flex d-none selo_large">
-            <a
-              className="position-relative"
-              href="https://selo.acessibilidade.gov.pt/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <span className="sr-only">hiperligação externa</span>
-              <img
-                src="/img/selo.png"
-                alt="Selo Ouro de Usabilidade e Acessibilidade"
-              />
-            </a>
           </div>
+        </nav>
+
+        <ul className="footer-logos">
+          <li>
+            <img
+              decoding="async"
+              alt="República Portuguesa"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_republica_portuguesa.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="AMA – Agência para a Modernização Administrativa I.P."
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_ama.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="eportugal"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_eportugal.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="usabilidade.gov.pt"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_usabilidade.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="COMPETE 2020 – Programa Operacional Competitividade e Internacionalização"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_compete.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="Portugal 2020"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_2020.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+
+          <li>
+            <img
+              decoding="async"
+              alt="União Europeia – Fundo Europeu de Desenvolvimento Regional"
+              src="https://selo.leadershipbt.com/wp-content/uploads/2023/02/logo_uniao_europeia.svg"
+              className="img-fluid"
+              width="150"
+            />
+          </li>
+        </ul>
+
+        <div className="logo-selo">
+          <img
+            src="https://selo.leadershipbt.com/wp-content/themes/www-a11y-theme/img/selo-ouro.svg"
+            alt="Selo Ouro de Usabilidade e Acessibilidade"
+          />
         </div>
-      </footer>
-    </>
+        <div className="copyright">
+          <p>
+            © 2024 AMA - Agência para a Modernização Administrativa, I.P. Todos
+            os Direitos Reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
   );
 }

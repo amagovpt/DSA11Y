@@ -1,11 +1,11 @@
 import React from "react";
 import { Header } from "./index";
-import Documentation from './Documentation.md'
+import Documentation from "./Documentation.md";
 
 export default {
   title: "components/Organisms/Header",
   component: Header,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
