@@ -1,10 +1,10 @@
 import React from "react";
-import { TextArea } from "./index";
+import { LoadingComponent } from "./index";
 import Documentation from './Documentation.md'
 
 export default {
-  title: "components/Atoms/TextArea",
-  component: TextArea,
+  title: "components/Atoms/Loading",
+  component: LoadingComponent,
   argTypes: {},
   tags: ['autodocs'],
   parameters: {
@@ -16,14 +16,9 @@ export default {
   },
 };
 
-const Template = (args) => {
-  return <TextArea {...args} />;
-};
+const Template = (args) => <LoadingComponent {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  label: "Custom TextArea",
-  type: "text",
-  placeholder: "Enter value",
-  error: "",
+  percentage: 9.5,
 };

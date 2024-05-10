@@ -2,10 +2,19 @@ import React from "react";
 import { Icon } from "./index";
 
 import { icons } from "./selection.json";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Icon",
   component: Icon,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 export function AllIcons() {

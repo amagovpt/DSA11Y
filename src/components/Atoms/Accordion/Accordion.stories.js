@@ -1,9 +1,18 @@
 import React from "react";
 import { Accordion } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "Components/Atoms/Accordion",
   component: Accordion,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const options = [

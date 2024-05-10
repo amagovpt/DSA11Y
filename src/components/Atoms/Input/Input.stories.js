@@ -1,10 +1,19 @@
 import React from "react";
 import { Input } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Input",
   component: Input,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const Template = (args) => {

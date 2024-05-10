@@ -1,11 +1,20 @@
 import React from "react";
 import { Link as LinkComponent } from "./index";
 import { Icon } from "../../index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Link",
   component: LinkComponent,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const Template = (args) => {
