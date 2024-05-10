@@ -1,10 +1,19 @@
 import React from "react";
 import { CheckGroup } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Checkgroup",
   component: CheckGroup,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const data = [

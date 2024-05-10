@@ -1,0 +1,12 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentations/Accessibility" />
+
+# Regras de Acessibilidade
+Estas regras, são gerais pelo projeto e não estão presentes apenas em um local específico.
+
+- Qualquer texto presente numa linguagem diferente à do site, necessita do atributo `lang="..."` com a linguagem em que se encontra descrito
+- Não é permitido parágrafos (`<p>`) dentro de parágrafos
+- Utilizar a tag `<br>` para listas ou parágrafos é causa de despedimento (com excessão em Moradas e Endereços)
+- Qualquer tipo de input (`<input>`), que requer interação do usuário, necessita de estar dentro de um form (`<form>`)
+- O primeiro tab da página deve saltar na ordem a começar por "Saltar para o conteúdo principal" -> "Modo escuro" -> "See in english" -> Logo e conteúdo

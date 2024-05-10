@@ -1,10 +1,19 @@
 import React from "react";
 import { RadioGroup } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Radiogroup",
   component: RadioGroup,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const data = [

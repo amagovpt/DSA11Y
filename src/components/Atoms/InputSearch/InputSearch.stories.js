@@ -1,10 +1,19 @@
 import React from "react";
 import { InputSearch } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Atoms/Inputsearch",
   component: InputSearch,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const Template = (args) => {

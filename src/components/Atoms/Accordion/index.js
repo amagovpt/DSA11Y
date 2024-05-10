@@ -17,7 +17,7 @@ const Accordion = ({ options, backgroundColor, textColor, ...props }) => {
     <BAccordion {...props} style={accordionStyle}>
       {options.map((item) => (
         <Item key={item.id} eventKey={item.id}>
-          <Header style={headerStyle}>{item.title}</Header>
+          <Header id={item.id} style={headerStyle}>{item.title}</Header>
           <Body>{item.component}</Body>
         </Item>
       ))}

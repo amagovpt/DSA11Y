@@ -18,40 +18,72 @@ const TableComponent = () => {
           about the SC 1.1.1
         </div>
       ),
+      lvl: "AA",
+      iconName: "AMA-Middle-Line",
+      ele: "test",
+      tdClassName: "warning-cell"
     },
   ];
 
   return (
     <>
       <table className="table table_primary">
-        <caption className="visually-hidden">practices found</caption>
+        <caption className="visually-hidden">
+          Práticas avaliadas
+        </caption>
         <thead>
           <tr>
-            <th>
-              <span class="visually-hidden">#</span>
+            <th colSpan="2">Prática encontrada</th>
+            <th className="hide-on-small-screen">Nível</th>
+            <th className="hide-on-small-screen">
+              Ver detalhe
             </th>
-            <th>Practice found</th>
-            <th>Level</th>
-            <th>See detail</th>
           </tr>
         </thead>
 
         <tbody>
-          <tr>
-            <td className="success-cell">
-              <Icon name="AMA-Check-Line" />
-            </td>
-            <td>
-              <Accordion options={options} iconAlignment="left" flush={true} />
-            </td>
-            <td className="middle_col">AA</td>
-            <td>
-              <button className="detail_link">
-                <Icon name="AMA-Detalhe-Line" />
-                <span class="visually-hidden">Detalhe</span>
-              </button>
-            </td>
-          </tr>
+          {options.map((option) => (
+            <tr id={option.id} key={option.id}>
+              <td className={option?.tdClassName}>
+                <span className="visually-hidden">
+                  Prática para ver manualmente
+                </span>
+                <Icon name={option.iconName} />
+              </td>
+              <td className="mobile-options">
+                <Accordion options={[option]} flush={true} id={option.id} />
+
+                <div className="hide_desktop-screen">
+                  <span>
+                    Nível: {option?.lvl}
+                  </span>
+
+                  {option.ele && (
+                    <button
+                      className="detail_link"
+                      aria-label={"Ver detalhe"}
+                      aria-describedby={option.id}
+                    >
+                      <Icon name="AMA-Detalhe-Line" />
+                    </button>
+                  )}
+                </div>
+              </td>
+              <td className="middle_col hide-on-small-screen">{option?.lvl}</td>
+
+              <td
+                className={`hide-on-small-screen ${option.ele ? "" : "visually-hidden"}`}
+              >
+                <button
+                  className="detail_link"
+                  aria-label={"Ver detalhe"}
+                  aria-describedby={option.id}
+                >
+                  <Icon name="AMA-Detalhe-Line" />
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </>
