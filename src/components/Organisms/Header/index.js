@@ -5,7 +5,7 @@ import { WidgetBar } from "./components/widgets-bar";
 
 import "./styles/styles.css";
 
-export function Header() {
+export function Header({description, title, title2}) {
   return (
     <header id="wrapper-navbar">
       <div className="skip-to-content">
@@ -20,7 +20,9 @@ export function Header() {
 
       <WidgetBar
         logo={<LogoAcessmonitor />}
-        description="The web accessibility practices evaluator (WCAG 2.1)"
+        title={title}
+        title2={title2}
+        description={description}
       />
     </header>
   );

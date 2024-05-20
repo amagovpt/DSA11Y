@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-const Gauge = ({ percentage }) => {
+const Gauge = ({ percentage, title }) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
 
   useEffect(() => {
@@ -84,7 +84,7 @@ const Gauge = ({ percentage }) => {
           fontSize="8"
           fontFamily="Lato"
         >
-          Pontuação
+          {title}
         </text>
       </svg>
     </div>
