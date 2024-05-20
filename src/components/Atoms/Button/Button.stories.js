@@ -1,13 +1,13 @@
 import React from "react";
 import { Button, buttonVariant } from "./index";
 import { Icon } from "../../index";
-import Documentation from './Documentation.md'
+import Documentation from "./Documentation.md";
 
 export default {
   title: "components/Atoms/Button",
   component: Button,
   argTypes: {},
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   parameters: {
     docs: {
       description: {
@@ -37,29 +37,36 @@ _Button.args = {
 };
 
 export const ButtonPrimary = () => (
-  <Button variant="primary" text="Primary button" />
+  <Button className="" variant="primary" text="Primary button" />
 );
 
 export const ButtonSecondary = () => (
-  <Button variant="secondary" text="Secondary button" />
+  <Button className="" variant="secondary" text="Secondary button" />
 );
 
-export const ButtonGhost = () => <Button variant="ghost" text="Ghost button" />;
+export const ButtonGhost = () => (
+  <Button className="" variant="ghost" text="Ghost button" />
+);
 
 export const ButtonCancel = () => (
-  <Button variant="cancel" text="Cancel button" />
+  <Button className="" variant="cancel" text="Cancel button" />
 );
 
 export const ButtonSuccess = () => (
-  <Button variant="success" text="Success button" />
+  <Button className="" variant="success" text="Success button" />
 );
 
 export const ButtonDanger = () => (
-  <Button variant="danger" text="Danger button" />
+  <Button className="" variant="danger" text="Danger button" />
 );
 
 export const ButtonBorderless = () => (
-  <Button variant="danger" radius="none" text="Borderless button" />
+  <Button
+    className=""
+    variant="danger"
+    radius="none"
+    text="Borderless button"
+  />
 );
 
 export const _LoadingButton = Template.bind({});
