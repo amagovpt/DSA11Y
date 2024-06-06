@@ -1,4 +1,4 @@
-import { Icon } from "../../index";
+import { Icon } from "../../Atoms/Icon";
 import { Accordion } from "../../Atoms/Accordion";
 
 import "./styles.css";
