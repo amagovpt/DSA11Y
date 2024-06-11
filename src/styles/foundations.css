@@ -1,0 +1,66 @@
+
+/* Spacing Classes */
+.spacing_container {
+    background-color: var(--AMA-Color-Text-Blue);
+    min-width: 100px !important;
+    min-height: 40px !important;
+    border-radius: 5px;
+    position: static;
+    box-sizing: border-box;
+    display: block;
+    margin-top: 0 !important;
+}
+
+.spacing_inner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--AMA-Color-Brand-Primary);
+    border-radius: 5px;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.spacing_inner_container p {
+    color: var(--AMA-Color-Background-White) !important;
+}
+
+.border-top {
+    border-top: 1px solid var(--AMA-Color-Text-Blue);
+}
+
+.border-bot {
+    border-bottom: 1px solid var(--AMA-Color-Text-Blue);
+}
+
+.border-right {
+    border-right: 1px solid var(--AMA-Color-Text-Blue);
+}
+
+.border-left {
+    border-left: 1px solid var(--AMA-Color-Text-Blue);
+}
+
+
+/* Color Classes */
+.box {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+}
+
+
+
+/* Typography Classes */
+.overflow {
+    width: 400px;
+    height: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    color: var(--AMA-Color-Text-Gray) !important;
+}

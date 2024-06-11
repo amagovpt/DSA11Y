@@ -2,15 +2,15 @@ import { Icon } from "../../../index";
 
 export function WidgetBar({ description, logo, title, title2 }) {
   return (
-    <div className="widgets-bar">
+    <div className="widgets-bar py-4">
       <div className="container">
         <div className="row ml-0 mr-0">
           <div className="col-12 col-lg-6 align-self-center">
             <div className="d-flex justify-content-between">
               {title && title2 ? 
                 <h1 className="d-flex flex-column logo">
-                  <span className="title">{title}</span>
-                  <span className="title2">{title2}</span>
+                  <span className="title ms-0">{title}</span>
+                  <span className="title2 Medium">{title2}</span>
                 </h1>
               :
                 <h1 className="logo">{logo}</h1>
@@ -37,7 +37,7 @@ export function WidgetBar({ description, logo, title, title2 }) {
 
           <div className="d-flex flex-row gap-4 button-mobile">
             <button className="btn btn-link dark-mode p-1 d-flex align-items-center">
-              <span id="darkModeLabel-mobile">Modo Escuro</span>
+              <span id="darkModeLabel-mobile" className="AMA-Typography-Body">Modo Escuro</span>
               <Icon
                 name="AMA-EscuroClaro-Line icon-dark"
                 aria-hidden="true"
@@ -45,14 +45,14 @@ export function WidgetBar({ description, logo, title, title2 }) {
             </button>
 
             <button className="btn btn-link language-mode p-1  d-flex align-items-center">
-              <span id="langModeLabel-mobile">See in english</span>
+              <span id="langModeLabel-mobile" className="AMA-Typography-Body">See in english</span>
               <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" />
             </button>
           </div>
 
           <div className="col-12 col-lg-6 align-self-center ">
             <div className="site-description">
-              <p>{description}</p>
+              <p className="AMA-Typography-Body">{description}</p>
             </div>
           </div>
         </div>

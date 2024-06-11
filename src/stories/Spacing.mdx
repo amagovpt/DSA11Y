@@ -1,6 +1,320 @@
 import { Meta } from "@storybook/blocks";
+import "../styles/foundations.css"
 
 <Meta title="Foundations/Spacing" />
 
 # AMA Spacing Rules
-Estas são as cores usadas nos projetos da AMA
+A AMA utiliza os spacings definidos pelo Bootstrap
+
+## Margin
+Ex: m[Type]-[Variant]
+
+<table className="mb-5">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Definition</th>
+      <th>Variant</th>
+      <th>Example</th>
+      <th style={{ width: 170 }}>Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>t</td>
+      <td>top</td>
+      <td>[0 a 5]</td>
+      <td>mt-4</td>
+      <td>
+        <div className="spacing_container border-top">
+          <div className="spacing_inner_container mt-4">
+            mt-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>b</td>
+      <td>bottom</td>
+      <td>[0 a 5]</td>
+      <td>mb-4</td>
+      <td>
+        <div className="spacing_container border-bot">
+          <div className="spacing_inner_container mb-4">
+            mb-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>top e bottom</td>
+      <td>[0 a 5]</td>
+      <td>my-4</td>
+      <td>
+        <div className="spacing_container border-top border-bot">
+          <div className="spacing_inner_container my-4">
+            my-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>s</td>
+      <td>start</td>
+      <td>[0 a 5]</td>
+      <td>ms-4</td>
+      <td>
+        <div className="spacing_container border-left">
+          <div className="spacing_inner_container ms-4">
+            ms-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>e</td>
+      <td>end</td>
+      <td>[0 a 5]</td>
+      <td>me-4</td>
+      <td>
+        <div className="spacing_container border-right">
+          <div className="spacing_inner_container me-4 width-dyn">
+            me-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>start e end</td>
+      <td>[0 a 5]</td>
+      <td>mx-4</td>
+      <td>
+        <div className="spacing_container border-left border-right">
+          <div className="spacing_inner_container mx-4 width-dyn">
+            mx-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>todos</td>
+      <td>[0 a 5]</td>
+      <td>m-4</td>
+      <td>
+        <div className="spacing_container border-top border-bot border-left border-right">
+          <div className="spacing_inner_container m-4">
+            m-4
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Padding
+Ex: p[Type]-[Variant]
+
+<table className="mb-5">
+  <thead>
+    <tr>
+      <th>Type</th>
+      <th>Definition</th>
+      <th>Variant</th>
+      <th>Example</th>
+      <th style={{ width: 170 }}>Result</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr>
+      <td>t</td>
+      <td>top</td>
+      <td>[0 a 5]</td>
+      <td>pt-4</td>
+      <td>
+        <div className="spacing_container pt-4">
+          <div className="spacing_inner_container">
+            pt-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>b</td>
+      <td>bottom</td>
+      <td>[0 a 5]</td>
+      <td>pb-4</td>
+      <td>
+        <div className="spacing_container pb-4">
+          <div className="spacing_inner_container">
+            pb-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>y</td>
+      <td>top e bottom</td>
+      <td>[0 a 5]</td>
+      <td>py-4</td>
+      <td>
+        <div className="spacing_container py-4">
+          <div className="spacing_inner_container">
+            py-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>s</td>
+      <td>start</td>
+      <td>[0 a 5]</td>
+      <td>ps-4</td>
+      <td>
+        <div className="spacing_container ps-4">
+          <div className="spacing_inner_container">
+            ps-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>e</td>
+      <td>end</td>
+      <td>[0 a 5]</td>
+      <td>pe-4</td>
+      <td>
+        <div className="spacing_container pe-4">
+          <div className="spacing_inner_container width-dyn">
+            pe-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>x</td>
+      <td>start e end</td>
+      <td>[0 a 5]</td>
+      <td>px-4</td>
+      <td>
+        <div className="spacing_container px-4">
+          <div className="spacing_inner_container width-dyn">
+            px-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>todos</td>
+      <td>[0 a 5]</td>
+      <td>p-4</td>
+      <td>
+        <div className="spacing_container p-4">
+          <div className="spacing_inner_container">
+            p-4
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+## Sizes
+Where size is one of:
+
+<table className="mb-5">
+  <thead>
+    <tr>
+      <th>Size</th>
+      <th>Value</th>
+      <th>Value in px</th>
+      <th>Example</th>
+      <th style={{ width: 170 }}>Result</th>
+    </tr>
+  </thead>
+  <tbody> 
+    <tr>
+      <td>0</td>
+      <td>0 rem</td>
+      <td>0 px</td>
+      <td>p-0</td>
+      <td>
+        <div className="spacing_container p-0">
+          <div className="spacing_inner_container">
+            p-0
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>0.25 rem</td>
+      <td>4 px</td>
+      <td>p-1</td>
+      <td>
+        <div className="spacing_container p-1">
+          <div className="spacing_inner_container">
+            p-1
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>0.50 rem</td>
+      <td>8 px</td>
+      <td>p-2</td>
+      <td>
+        <div className="spacing_container p-2">
+          <div className="spacing_inner_container">
+            p-2
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>1 rem</td>
+      <td>16 px</td>
+      <td>p-3</td>
+      <td>
+        <div className="spacing_container p-3">
+          <div className="spacing_inner_container">
+            p-3
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>1.5 rem</td>
+      <td>24 px</td>
+      <td>p-4</td>
+      <td>
+        <div className="spacing_container p-4">
+          <div className="spacing_inner_container">
+            p-4
+          </div>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>3 rem</td>
+      <td>48 px</td>
+      <td>p-5</td>
+      <td>
+        <div className="spacing_container p-5">
+          <div className="spacing_inner_container">
+            p-5
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
