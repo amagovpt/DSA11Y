@@ -1,7 +1,7 @@
 
 /* Spacing Classes */
 .spacing_container {
-    background-color: var(--AMA-Color-Text-Blue);
+    background-color: var(--ama-color-text-blue);
     min-width: 100px !important;
     min-height: 40px !important;
     border-radius: 5px;
@@ -15,30 +15,30 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--AMA-Color-Brand-Primary);
+    background-color: var(--ama-color-brand-primary);
     border-radius: 5px;
     height: 40px;
     box-sizing: border-box;
 }
 
 .spacing_inner_container p {
-    color: var(--AMA-Color-Background-White) !important;
+    color: var(--ama-color-background-white) !important;
 }
 
 .border-top {
-    border-top: 1px solid var(--AMA-Color-Text-Blue);
+    border-top: 1px solid var(--ama-color-text-blue);
 }
 
 .border-bot {
-    border-bottom: 1px solid var(--AMA-Color-Text-Blue);
+    border-bottom: 1px solid var(--ama-color-text-blue);
 }
 
 .border-right {
-    border-right: 1px solid var(--AMA-Color-Text-Blue);
+    border-right: 1px solid var(--ama-color-text-blue);
 }
 
 .border-left {
-    border-left: 1px solid var(--AMA-Color-Text-Blue);
+    border-left: 1px solid var(--ama-color-text-blue);
 }
 
 
@@ -62,5 +62,5 @@
     border: 0px !important;
     padding: 0px !important;
     margin: 0px !important;
-    color: var(--AMA-Color-Text-Gray) !important;
+    color: var(--ama-color-text-gray) !important;
 }

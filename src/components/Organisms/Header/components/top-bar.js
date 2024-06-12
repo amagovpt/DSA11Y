@@ -25,7 +25,7 @@ export function TopBar() {
                   className="btn btn-link dark-mode d-flex align-items-center"
                   id="darkModeBtn"
                 >
-                  <span id="darkModeLabel" className="AMA-Typography-Body">Modo Escuro</span>
+                  <span id="darkModeLabel" className="ama-typography-body">Modo Escuro</span>
                   <Icon
                     name="AMA-EscuroClaro-Line icon-dark"
                     aria-hidden="true"
@@ -36,7 +36,7 @@ export function TopBar() {
                   className="btn btn-link language-mode p-1  d-flex align-items-center"
                   id="langModeBtn"
                 >
-                  <span id="langModeLabel" className="AMA-Typography-Body">See in english</span>
+                  <span id="langModeLabel" className="ama-typography-body">See in english</span>
                   <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" />
                 </button>
               </div>
@@ -56,9 +56,9 @@ export function TopBar() {
                   aria-hidden="true"
                 />
 
-                <span id="flushHeading" className="AMA-Typography-Body">
+                <span id="flushHeading" className="ama-typography-body">
                   Uma ferramenta do ecossistema{" "}
-                  <span className="text-primary fw-bold dark_mode_span AMA-Typography-Body">
+                  <span className="text-primary fw-bold dark_mode_span ama-typography-body">
                     acessibilidade.gov.pt
                   </span>
                 </span>
@@ -95,7 +95,7 @@ export function TopBar() {
                       </div>
                     </div>
                     <div className="col-12 col-lg-6 align-self-center">
-                      <div className="AMA-Typography-Body">
+                      <div className="ama-typography-body">
                         <p className="m-0">
                           Os sítios e as ferramentas de apoio à acessibilidade e
                           à usabilidade, para garantir a promoção das boas

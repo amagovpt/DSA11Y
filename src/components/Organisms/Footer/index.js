@@ -14,7 +14,7 @@ export function Footer() {
                 <a
                   href="https://www.acessibilidade.gov.pt/acessibilidade/"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Acessibilidade
                 </a>
@@ -27,7 +27,7 @@ export function Footer() {
                 <a
                   href="https://www.acessibilidade.gov.pt/termos-e-condicoes/"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Termos e Condições
                 </a>
@@ -40,7 +40,7 @@ export function Footer() {
                 <a
                   href="https://www.ama.gov.pt/web/agencia-para-a-modernizacao-administrativa/politica-de-privacidade"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Política de privacidade
                 </a>
@@ -53,7 +53,7 @@ export function Footer() {
                 <a
                   href="https://amagovpt.github.io/kit-selo/"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Github
                 </a>
@@ -66,7 +66,7 @@ export function Footer() {
                 <a
                   href="https://www.acessibilidade.gov.pt/glossario/"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Glossário
                 </a>
@@ -78,7 +78,7 @@ export function Footer() {
                 <a
                   href="https://www.acessibilidade.gov.pt/opcoes-de-visualizacao/"
                   rel="noreferrer"
-                  className="AMA-Typography-Action-Large p-3"
+                  className="ama-typography-action-large p-3"
                 >
                   Opções de visualização
                 </a>
@@ -166,7 +166,7 @@ export function Footer() {
           />
         </div>
         <div className="text-center">
-          <p className="AMA-Typography-Body">
+          <p className="ama-typography-body">
             © 2024 AMA - Agência para a Modernização Administrativa, I.P. Todos
             os Direitos Reservados.
           </p>
