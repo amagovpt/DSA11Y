@@ -1,0 +1,21 @@
+.intro-accessibility {
+  -webkit-font-smoothing: initial;
+
+  display: grid;
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: -0.24px;
+  line-height: 48px;
+
+  text-align: left;
+  width: 100%;
+}
+
+.container-accessibility {
+  background-image: url("/public/docs/foundation-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 4px;
+  padding: 40px 24px;
+  margin-bottom: 32px;
+}

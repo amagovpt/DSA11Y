@@ -1,5 +1,34 @@
 import { Meta } from "@storybook/blocks";
 
-<Meta title="Documentations/Welcome" />
+import { WelcomeIntro } from "../utils/welcome/intro";
+import { WelcomeHeader } from "../utils/welcome/header";
+import {AbilitiesDescription} from "../utils/welcome/ability"
+import {Principles} from "../utils/welcome/principles"
 
-# Welcome page
+import "../utils/welcome/index.css"
+
+
+<Meta title="Welcome" />
+
+<WelcomeHeader />
+
+<WelcomeIntro />
+
+## What’s inside
+
+<AbilitiesDescription />
+
+## Our principles
+
+Our design principles were developed based on best practices to ensure top-notch user experience, stickiness, and delight.
+
+<Principles />
+
+## Resources
+
+- [Figma](https://www.figma.com/file/pTpO3Wobs5cQwRsabt21Nd/monday.com-UI-kit?node-id=14811%3A20455)
+- [Github](https://github.com/mondaycom/vibe/)
+
+## Feedback
+
+Help us improve this pattern by providing feedback, asking questions, and leaving any other comments on [this form](https://github.com/mondaycom/vibe/)
