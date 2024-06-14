@@ -37,4 +37,5 @@ _Breadcrumb.args = {
       href: "#",
     },
   ],
+  darkTheme: false
 };
