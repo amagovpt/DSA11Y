@@ -22,7 +22,7 @@ export const AbilitiesDescription = () => (
     <AbilityDescription
       title="Components"
       imageSrc={components}
-      linkHref="/?path=/docs/buttons"
+      linkHref="/?path=/docs/components-atoms-button--docs"
     >
       All the information and guidelines you’ll ever need on each component
     </AbilityDescription>

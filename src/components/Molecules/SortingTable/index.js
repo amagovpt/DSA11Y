@@ -184,6 +184,10 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 case "Button":
                     // Render a button disguised as a text link
                     return (<td><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
+                case "Link":
+                    let href = `${columnsOptions[key].href}${row["id"]}`
+                    // Render a link
+                    return (<td><a href={href} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     return (<td className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
