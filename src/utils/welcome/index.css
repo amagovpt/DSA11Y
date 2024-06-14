@@ -1,0 +1,12 @@
+h2 {
+  -webkit-font-smoothing: initial;
+  color: #323338;
+  display: grid;
+  font-size: 26px !important;
+  font-weight: 600 !important;
+  letter-spacing: -1px;
+  line-height: 33px;
+  margin-bottom: 32px !important;
+  margin-top: 52px;
+  text-align: left;
+}

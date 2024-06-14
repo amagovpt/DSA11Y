@@ -28,6 +28,7 @@ const Button = ({
   SpinnerProps,
   iconLeft,
   iconRight,
+  className,
   ...props
 }) => {
   const isLoading = loading && loadingText;
@@ -35,15 +36,15 @@ const Button = ({
   return (
     <ButtonComponent
       {...props}
-      className={
+      className={`${className} ${
         radius === "full"
           ? "rounded-pill"
           : radius === "md"
             ? "rounded"
             : radius === "none"
               ? "rounded-0"
-              : "rounded-0"`${props.variant}`
-      }
+              : "rounded-0"
+      } ${props.variant}`}
     >
       {!isLoading && iconLeft && <>{iconLeft}</>}
 
@@ -78,6 +79,7 @@ Button.defaultProps = {
   radius: "full",
   iconLeft: null,
   iconRight: null,
+  className: "",
 };
 
 Button.propTypes = {
@@ -94,6 +96,7 @@ Button.propTypes = {
   radius: PropTypes.oneOf(["full", "md", "none"]),
   iconLeft: PropTypes.element,
   iconRight: PropTypes.element,
+  className: PropTypes.string,
 };
 
 export default Button;

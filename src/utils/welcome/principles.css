@@ -1,0 +1,10 @@
+.principles {
+  margin-top: 32px;
+  display: grid !important;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(clamp(calc(25% - 24px), 180px, 100%), 1fr)
+  );
+  column-gap: 24px;
+  row-gap: 64px;
+}
