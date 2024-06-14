@@ -14,6 +14,10 @@ export function TopBar() {
     }
   };
 
+  const getTitle = () => {
+    return openAccordion ? "pressione para comprimir a nossa lista de aplicações e sítios web" : "pressione para expandir a nossa lista de aplicações e sítios web";
+  }
+
   return (
     <>
       <div className="top-bar py-1">
@@ -50,6 +54,7 @@ export function TopBar() {
                 onClick={toggleAccordion}
                 aria-expanded={openAccordion ? "true" : "false"}
                 id="accordionBtn"
+                title={getTitle()}
               >
                 <span
                   className="icon-AMA-MenuCimaGrande-Line icon-ed-menu-dots"

@@ -27,6 +27,7 @@ const Breadcrumb = ({ data, onClick, darkTheme, ...props }) => {
             href={item.href === "" ? "" : item.href}
             active={index === size}
             onClick={handleOnClick(item)}
+            aria-label={index === size ? "você está aqui" : undefined}
           >
             {item.title}
           </Item>

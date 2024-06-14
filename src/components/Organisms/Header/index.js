@@ -7,7 +7,7 @@ import "./styles/styles.css";
 
 export function Header({description, title, title2}) {
   return (
-    <header id="wrapper-navbar">
+    <header id="wrapper-navbar" aria-label="Cabeçalho da página do AccessMonitor">
       <div className="skip-to-content">
         <div className="container">
           <a className="skip-to-content-link p-0 d-flex align-items-center" href="#content">
