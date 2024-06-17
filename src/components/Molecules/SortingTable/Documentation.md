@@ -1,6 +1,9 @@
 SortingTable é um componente de uma tabela dinâmica, a tabela permite ter um número infinito de colunas e uma variedade de renderizações de conteúdo na tabela. O componente também se encontra construído para facilitar a adição de novos tipos de renderizações das células.
 A tabela pode ter paginação, e pode ter ordernação.
 
+## Props
+<br>
+
 #### hasSort
 True ou False, se queremos que a tabela tenha ordenação ou não
 

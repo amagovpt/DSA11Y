@@ -200,6 +200,10 @@
     border-bottom: 1px solid var(--ama-color-grey-400) !important;
 }
 
+.table-responsive.dark tbody tr td a {
+    color: var(--ama-color-background-white) !important;
+}
+
 .pagination.dark .pagination_section .selection {
     background-color: var(--ama-color-background-dark-lighter);
     color: var(--table-pagination-select-text);
