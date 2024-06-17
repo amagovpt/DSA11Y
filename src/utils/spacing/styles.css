@@ -1,5 +1,3 @@
-
-/* Spacing Classes */
 .spacing_container {
     background-color: var(--ama-color-text-blue);
     min-width: 100px !important;
@@ -16,13 +14,10 @@
     justify-content: center;
     align-items: center;
     background-color: var(--ama-color-brand-primary);
+    color: var(--ama-color-background-white) !important;
     border-radius: 5px;
     height: 40px;
     box-sizing: border-box;
-}
-
-.spacing_inner_container p {
-    color: var(--ama-color-background-white) !important;
 }
 
 .border-top {
@@ -39,28 +34,4 @@
 
 .border-left {
     border-left: 1px solid var(--ama-color-text-blue);
-}
-
-
-/* Color Classes */
-.box {
-    width: 100px;
-    height: 30px;
-    border-radius: 5px;
-}
-
-
-
-/* Typography Classes */
-.overflow {
-    width: 400px;
-    height: 100px;
-    white-space: nowrap;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    border: 0px !important;
-    padding: 0px !important;
-    margin: 0px !important;
-    color: var(--ama-color-text-gray) !important;
 }

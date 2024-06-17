@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/blocks";
-import "../styles/foundations.css"
+import {TypographyTable} from "../utils/typography/table"
 
 <Meta title="Foundations/Typography" />
 
@@ -9,241 +9,68 @@ Estas são as cores usadas nos projetos da AMA
 ## Display
 Ex: ama-typography-display-[Variant]
 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Font Size</th>
-      <th>Font Weight</th>
-      <th style={{ width: 400 }}>Result</th>
-    </tr>
-  </thead>
-  <tbody> 
-    <tr>
-      <td>1</td>
-      <td>80 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-display-1">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>72 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-display-2">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>64 px</td>
-      <td>Bold</td>
-      <td>
-        <p className="overflow ama-typography-display-3">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>56 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-display-4">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>48 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-display-5">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>42 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-display-6">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<TypographyTable 
+  fonts={[
+    {variant: "1", size: "80 px", weight: "Regular", className: "ama-typography-display-1"},
+    {variant: "2", size: "72 px", weight: "Regular", className: "ama-typography-display-2"},
+    {variant: "3", size: "64 px", weight: "Bold", className: "ama-typography-display-3"},
+    {variant: "4", size: "56 px", weight: "Regular", className: "ama-typography-display-4"},
+    {variant: "5", size: "48 px", weight: "Regular", className: "ama-typography-display-5"},
+    {variant: "6", size: "42 px", weight: "Regular", className: "ama-typography-display-6"},
+  ]}
+  family={"display"}
+/>
 
 
 ## Headlines
 Ex: h[Variant]
 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Font Size</th>
-      <th>Font Weight</th>
-      <th>Result</th>
-    </tr>
-  </thead>
-  <tbody> 
-    <tr>
-      <td>1</td>
-      <td>40 px</td>
-      <td>Bold</td>
-      <td>
-        <h1 className="overflow">The quick brown fox jumps over the lazy dog.</h1>
-      </td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td>32 px</td>
-      <td>Regular</td>
-      <td>
-        <h2 className="overflow">The quick brown fox jumps over the lazy dog.</h2>
-      </td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>28 px</td>
-      <td>Regular</td>
-      <td>
-        <h3 className="overflow">The quick brown fox jumps over the lazy dog.</h3>
-      </td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td>24 px</td>
-      <td>Semi Bold</td>
-      <td>
-        <h4 className="overflow">The quick brown fox jumps over the lazy dog.</h4>
-      </td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td>20 px</td>
-      <td>Bold</td>
-      <td>
-        <h5 className="overflow">The quick brown fox jumps over the lazy dog.</h5>
-      </td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td>16 px</td>
-      <td>Semi Bold</td>
-      <td>
-        <h6 className="overflow">The quick brown fox jumps over the lazy dog.</h6>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<TypographyTable 
+  fonts={[
+    {variant: "1", size: "40 px", weight: "Bold", className: ""},
+    {variant: "2", size: "32 px", weight: "Regular", className: ""},
+    {variant: "3", size: "28 px", weight: "Regular", className: ""},
+    {variant: "4", size: "24 px", weight: "Semi Bold", className: ""},
+    {variant: "5", size: "20 px", weight: "Bold", className: ""},
+    {variant: "6", size: "16 px", weight: "Semi Bold", className: ""},
+  ]}
+  family={"headlines"}
+/>
 
 
 ## Action
 Ex: ama-typography-action-[Variant]
 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Font Size</th>
-      <th>Font Weight</th>
-      <th>Result</th>
-    </tr>
-  </thead>
-  <tbody> 
-    <tr>
-      <td>Large</td>
-      <td>20 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-action-large">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>16 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-action">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Small</td>
-      <td>14 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-action-small">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<TypographyTable 
+  fonts={[
+    {variant: "Large", size: "20 px", weight: "Regular", className: "ama-typography-action-large"},
+    {variant: "", size: "16 px", weight: "Regular", className: "ama-typography-action"},
+    {variant: "Small", size: "14 px", weight: "Regular", className: "ama-typography-action-small"},
+  ]}
+  family={"action"}
+/>
+
 
 ## Body
 Ex: ama-typography-body-[Variant]
 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Font Size</th>
-      <th>Font Weight</th>
-      <th>Result</th>
-    </tr>
-  </thead>
-  <tbody> 
-    <tr>
-      <td>Large</td>
-      <td>20 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-body-large">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td></td>
-      <td>16 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-body">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Small</td>
-      <td>14 px</td>
-      <td>Regular</td>
-      <td>
-        <p className="overflow ama-typography-body-small">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<TypographyTable 
+  fonts={[
+    {variant: "Large", size: "20 px", weight: "Regular", className: "ama-typography-body-large"},
+    {variant: "", size: "16 px", weight: "Regular", className: "ama-typography-body"},
+    {variant: "Small", size: "14 px", weight: "Regular", className: "ama-typography-body-small"},
+  ]}
+  family={"action"}
+/>
+
 
 ## Pesos Tipográficos
 Classes que permitem a alteração de certos atributos.
 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Nome da Classe</th>
-      <th>Atributo Alterado</th>
-      <th>Value</th>
-      <th>Result</th>
-    </tr>
-  </thead>
-  <tbody> 
-    <tr>
-      <td>Medium</td>
-      <td>font-weight</td>
-      <td>medium / 500</td>
-      <td>
-        <p className="overflow ama-typography-body-large medium">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-    <tr>
-      <td>Bold</td>
-      <td>font-weight</td>
-      <td>bold / 700</td>
-      <td>
-        <p className="overflow ama-typography-body-large bold">The quick brown fox jumps over the lazy dog.</p>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<TypographyTable 
+  fonts={[
+    {variant: "Medium", size: "font-weight", weight: "medium / 500", className: "ama-typography-body-large medium"},
+    {variant: "Bold", size: "font-weight", weight: "bold / 700", className: "ama-typography-body-large bold"},
+  ]}
+  family={"pesos"}
+/>

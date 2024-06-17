@@ -6,6 +6,7 @@ export * from "./Atoms/Breadcrumb";
 export * from "./Atoms/Icon";
 export * from "./Atoms/Link";
 export * from "./Atoms/Gauge";
+export * from "./Atoms/Loading";
 
 // FORM
 export * from "./Atoms/Input";

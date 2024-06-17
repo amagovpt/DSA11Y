@@ -1,0 +1,12 @@
+.overflow {
+    width: 400px;
+    height: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    border: 0px !important;
+    padding: 0px !important;
+    margin: 0px !important;
+    color: var(--ama-color-text-gray) !important;
+}

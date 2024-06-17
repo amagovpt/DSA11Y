@@ -1,499 +1,128 @@
 import { Meta } from "@storybook/blocks";
-import "../styles/foundations.css"
+import {ColorsTable} from "../utils/colors/table"
 
 <Meta title="Foundations/Colors" />
-
 
 # AMA Color palette
 Estas são as cores usadas nos projetos da AMA
 
-
 ## Brand-Colors
 Ex: $ama-color-brand-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Primary</td>
-      <td>#333399</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-brand-primary)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Secondary</td>
-      <td>#333333</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-brand-secondary)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Tertiary</td>
-      <td>#1ACC60</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-brand-tertiary)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+
+<ColorsTable colors={[
+  {variant: "Primary", hex: "#333399", color: "--ama-color-brand-primary"},
+  {variant: "Secondary", hex: "#333333", color: "--ama-color-brand-secondary"},
+  {variant: "Tertiary", hex: "#1ACC60", color: "--ama-color-brand-tertiary"},
+]} />
 
 ## Text-Colors
 Ex: $ama-color-text-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Text-Gray</td>
-      <td>#333333</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-text-gray)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Text-Blue</td>
-      <td>#B6DCF6</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-text-blue)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Gray", hex: "#333333", color: "--ama-color-text-gray"},
+  {variant: "Blue", hex: "#B6DCF6", color: "--ama-color-text-blue"},
+]} />
 
 ## System-Colors
 Ex: $ama-color-system-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Warning</td>
-      <td>#FFC107</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-system-warning)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Error</td>
-      <td>#DC3545</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-system-error)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Success</td>
-      <td>#38B458</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-system-success)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Warning", hex: "#FFC107", color: "--ama-color-system-warning"},
+  {variant: "Error", hex: "#DC3545", color: "--ama-color-system-error"},
+  {variant: "Success", hex: "#38B458", color: "--ama-color-system-success"},
+]} />
 
 ## Background-Colors
-Ex: $ama-color-background-[Variant] 
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>White</td>
-      <td>#FFFFFF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-background-white)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Light-Lighter</td>
-      <td>#EFEFEE</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-background-light-lighter)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Light-Darker</td>
-      <td>#E4E4E4</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-background-light-darker)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Dark-Lighter</td>
-      <td>#2D3241</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-background-dark-lighter)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Dark-Darker</td>
-      <td>#21242C</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-background-dark-darker)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+Ex: $ama-color-background-[Variant]
+<ColorsTable colors={[
+  {variant: "White", hex: "#FFFFFF", color: "--ama-color-background-white"},
+  {variant: "Light-Lighter", hex: "#EFEFEE", color: "--ama-color-background-light-lighter"},
+  {variant: "Light-Darker", hex: "#E4E4E4", color: "--ama-color-background-light-darker"},
+  {variant: "Dark-Lighter", hex: "#2D3241", color: "--ama-color-background-dark-lighter"},
+  {variant: "Dark-Darker", hex: "#21242C", color: "--ama-color-background-dark-darker"},
+]} />
 
 ## Headers-Colors
 Ex: $ama-color-headers-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Headers-Light</td>
-      <td>#EFEFEE</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-headers-light)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Headers-Pre-Header</td>
-      <td>#E4E4E4</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-headers-pre-header)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Light", hex: "#EFEFEE", color: "--ama-color-headers-light"},
+  {variant: "Pre-Header", hex: "#E4E4E4", color: "--ama-color-headers-pre-header"},
+]} />
 
 ## Blue-Colors
 Ex: $ama-color-blue-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Blue-0</td>
-      <td>#F0F0FA</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-0)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-50</td>
-      <td>#D2D1EF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-50)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-100</td>
-      <td>#B5B3E5</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-100)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-200</td>
-      <td>#9793D9</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-200)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-300</td>
-      <td>#7974CF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-300)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-400</td>
-      <td>#5D56C5</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-400)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-500</td>
-      <td>#3A3297</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-500)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-600</td>
-      <td>#2E2879</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-600)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-700</td>
-      <td>#231E5B</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-700)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-800</td>
-      <td>#16143C</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-800)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Blue-900</td>
-      <td>#0B0A1F</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-blue-900)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Blue-0", hex: "#F0F0FA", color: "--ama-color-blue-0"},
+  {variant: "Blue-50", hex: "#D2D1EF", color: "--ama-color-blue-50"},
+  {variant: "Blue-100", hex: "#B5B3E5", color: "--ama-color-blue-100"},
+  {variant: "Blue-200", hex: "#9793D9", color: "--ama-color-blue-200"},
+  {variant: "Blue-300", hex: "#7974CF", color: "--ama-color-blue-300"},
+  {variant: "Blue-400", hex: "#5D56C5", color: "--ama-color-blue-400"},
+  {variant: "Blue-500", hex: "#3A3297", color: "--ama-color-blue-500"},
+  {variant: "Blue-600", hex: "#2E2879", color: "--ama-color-blue-600"},
+  {variant: "Blue-700", hex: "#231E5B", color: "--ama-color-blue-700"},
+  {variant: "Blue-800", hex: "#16143C", color: "--ama-color-blue-800"},
+  {variant: "Blue-900", hex: "#0B0A1F", color: "--ama-color-blue-900"},
+]} />
 
 ## Grey-Colors
 Ex: $ama-color-grey-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Grey-0</td>
-      <td>#FFFFFF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-0)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-50</td>
-      <td>#D6D6D6</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-50)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-100</td>
-      <td>#C2C2C2</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-100)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-200</td>
-      <td>#ADADAD</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-200)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-300</td>
-      <td>#939393</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-300)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-400</td>
-      <td>#858585</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-400)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-500</td>
-      <td>#707070</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-500)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-600</td>
-      <td>#5C5C5C</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-600)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-700</td>
-      <td>#515151</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-700)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-800</td>
-      <td>#1F1F1F</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-800)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Grey-900</td>
-      <td>#0A0A0A</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-grey-900)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Grey-0", hex: "#FFFFFF", color: "--ama-color-grey-0"},
+  {variant: "Grey-50", hex: "#D6D6D6", color: "--ama-color-grey-50"},
+  {variant: "Grey-100", hex: "#C2C2C2", color: "--ama-color-grey-100"},
+  {variant: "Grey-200", hex: "#ADADAD", color: "--ama-color-grey-200"},
+  {variant: "Grey-300", hex: "#939393", color: "--ama-color-grey-300"},
+  {variant: "Grey-400", hex: "#858585", color: "--ama-color-grey-400"},
+  {variant: "Grey-500", hex: "#707070", color: "--ama-color-grey-500"},
+  {variant: "Grey-600", hex: "#5C5C5C", color: "--ama-color-grey-600"},
+  {variant: "Grey-700", hex: "#515151", color: "--ama-color-grey-700"},
+  {variant: "Grey-800", hex: "#1F1F1F", color: "--ama-color-grey-800"},
+  {variant: "Grey-900", hex: "#0A0A0A", color: "--ama-color-grey-900"},
+]} />
 
 ## Green-Colors
 Ex: $ama-color-green-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Green-0</td>
-      <td>#EEFDF3</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-0)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-50</td>
-      <td>#CDF7DC</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-50)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-100</td>
-      <td>#ACF2C5</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-100)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-200</td>
-      <td>#8DEEAE</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-200)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-300</td>
-      <td>#6DEB98</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-300)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-400</td>
-      <td>#55E380</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-400)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-500</td>
-      <td>#38B458</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-500)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-600</td>
-      <td>#2C8F47</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-600)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-700</td>
-      <td>#206B35</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-700)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-800</td>
-      <td>#144724</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-800)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Green-900</td>
-      <td>#092411</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-green-900)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Green-0", hex: "#EEFDF3", color: "--ama-color-green-0"},
+  {variant: "Green-50", hex: "#CDF7DC", color: "--ama-color-green-50"},
+  {variant: "Green-100", hex: "#ACF2C5", color: "--ama-color-green-100"},
+  {variant: "Green-200", hex: "#8DEEAE", color: "--ama-color-green-200"},
+  {variant: "Green-300", hex: "#6DEB98", color: "--ama-color-green-300"},
+  {variant: "Green-400", hex: "#55E380", color: "--ama-color-green-400"},
+  {variant: "Green-500", hex: "#38B458", color: "--ama-color-green-500"},
+  {variant: "Green-600", hex: "#2C8F47", color: "--ama-color-green-600"},
+  {variant: "Green-700", hex: "#206B35", color: "--ama-color-green-700"},
+  {variant: "Green-800", hex: "#144724", color: "--ama-color-green-800"},
+  {variant: "Green-900", hex: "#092411", color: "--ama-color-green-900"},
+]} />
 
 ## Yellow-Colors
 Ex: $ama-color-yellow-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Yellow-0</td>
-      <td>#FEFAEB</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-0)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-50</td>
-      <td>#FFF6D3</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-50)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-100</td>
-      <td>#FCECAF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-100)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-200</td>
-      <td>#FBE189</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-200)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-300</td>
-      <td>#FAD763</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-300)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-400</td>
-      <td>#F9CE41</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-400)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-500</td>
-      <td>#DAAA20</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-500)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-600</td>
-      <td>#B38B18</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-600)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-700</td>
-      <td>#8B6C10</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-700)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-800</td>
-      <td>#634E09</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-800)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Yellow-900</td>
-      <td>#3B2E03</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-yellow-900)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Yellow-0", hex: "#FEFAEB", color: "--ama-color-yellow-0"},
+  {variant: "Yellow-50", hex: "#FFF6D3", color: "--ama-color-yellow-50"},
+  {variant: "Yellow-100", hex: "#FCECAF", color: "--ama-color-yellow-100"},
+  {variant: "Yellow-200", hex: "#FBE189", color: "--ama-color-yellow-200"},
+  {variant: "Yellow-300", hex: "#FAD763", color: "--ama-color-yellow-300"},
+  {variant: "Yellow-400", hex: "#F9CE41", color: "--ama-color-yellow-400"},
+  {variant: "Yellow-500", hex: "#DAAA20", color: "--ama-color-yellow-500"},
+  {variant: "Yellow-600", hex: "#B38B18", color: "--ama-color-yellow-600"},
+  {variant: "Yellow-700", hex: "#8B6C10", color: "--ama-color-yellow-700"},
+  {variant: "Yellow-800", hex: "#634E09", color: "--ama-color-yellow-800"},
+  {variant: "Yellow-900", hex: "#3B2E03", color: "--ama-color-yellow-900"},
+]} />
 
 ## Red-Colors
 Ex: $ama-color-red-[Variant]
-<table className="mb-5">
-  <thead>
-    <tr>
-      <th>Variant</th>
-      <th>Hex</th>
-      <th>Color</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Red-0</td>
-      <td>#FBEEEF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-0)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-50</td>
-      <td>#F7DDDF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-50)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-100</td>
-      <td>#F3CCCF</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-100)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-200</td>
-      <td>#EBAAB0</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-200)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-300</td>
-      <td>#E38991</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-300)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-400</td>
-      <td>#DB6872</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-400)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-500</td>
-      <td>#C8313B</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-500)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-600</td>
-      <td>#A62831</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-600)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-700</td>
-      <td>#851F27</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-700)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-800</td>
-      <td>#64171D</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-800)" }}></div></td>
-    </tr>
-    <tr>
-      <td>Red-900</td>
-      <td>#420F13</td>
-      <td><div className="box" style={{ backgroundColor: "var(--ama-color-red-900)" }}></div></td>
-    </tr>
-  </tbody>
-</table>
+<ColorsTable colors={[
+  {variant: "Red-0", hex: "#FBEEEF", color: "--ama-color-red-0"},
+  {variant: "Red-50", hex: "#F7DDDF", color: "--ama-color-red-50"},
+  {variant: "Red-100", hex: "#F3CCCF", color: "--ama-color-red-100"},
+  {variant: "Red-200", hex: "#EBAAB0", color: "--ama-color-red-200"},
+  {variant: "Red-300", hex: "#E38991", color: "--ama-color-red-300"},
+  {variant: "Red-400", hex: "#DB6872", color: "--ama-color-red-400"},
+  {variant: "Red-500", hex: "#C8313B", color: "--ama-color-red-500"},
+  {variant: "Red-600", hex: "#A62831", color: "--ama-color-red-600"},
+  {variant: "Red-700", hex: "#851F27", color: "--ama-color-red-700"},
+  {variant: "Red-800", hex: "#64171D", color: "--ama-color-red-800"},
+  {variant: "Red-900", hex: "#420F13", color: "--ama-color-red-900"},
+]} />
