@@ -1,4 +1,5 @@
-import { Icon } from "../../../index";
+import { Icon } from "../../../Atoms/Icon";
+import React from "react";
 import "./styles.css";
 
 export function TableAlternative() {

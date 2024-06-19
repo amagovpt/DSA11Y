@@ -1,4 +1,5 @@
 import { Icon } from "../../Atoms/Icon";
+import React from "react";
 import { Accordion } from "../../Atoms/Accordion";
 
 import "./styles.css";

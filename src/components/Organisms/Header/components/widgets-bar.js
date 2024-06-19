@@ -1,5 +1,5 @@
-import { Icon } from "../../../index";
-
+import { Icon } from "../../../Atoms/Icon";
+import React from "react";
 export function WidgetBar({ description, logo, title, title2 }) {
   return (
     <div className="widgets-bar py-4">

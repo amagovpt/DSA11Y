@@ -1,6 +1,7 @@
 import "./top-bar.css";
-
-import { Icon, Link } from "../../../index";
+import React from "react";
+import { Icon } from "../../../Atoms/Icon";
+import { Link } from "../../../Atoms/Link";
 import { useRef, useState } from "react";
 
 export function TopBar() {

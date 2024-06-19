@@ -26,7 +26,6 @@ button,
   gap: 10px !important;
 
   font-family: var(--font-lato) !important;
-  border: 2px solid inherit var(--ama-color-background-white);
 }
 
 button,

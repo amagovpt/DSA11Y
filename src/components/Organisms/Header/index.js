@@ -1,5 +1,5 @@
 import LogoAcessmonitor from "./components/content-logo";
-
+import React from "react";
 import { TopBar } from "./components/top-bar";
 import { WidgetBar } from "./components/widgets-bar";
 
