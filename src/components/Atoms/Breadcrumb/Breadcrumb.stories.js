@@ -1,6 +1,7 @@
 import React from "react";
 import { Breadcrumb } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Breadcrumb",
@@ -17,7 +18,7 @@ export default {
 };
 
 const Template = ({ data, ...args }) => {
-  return <Breadcrumb data={data} {...args} />;
+  return <Breadcrumb data={data} {...args} darkTheme={useDarkMode()}  />;
 };
 
 export const _Breadcrumb = Template.bind({});
@@ -37,5 +38,4 @@ _Breadcrumb.args = {
       href: "#",
     },
   ],
-  darkTheme: false
 };

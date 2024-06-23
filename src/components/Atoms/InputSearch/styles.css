@@ -41,3 +41,17 @@
 .field-search button i {
   color: var(--ama-color-brand-primary);
 }
+
+
+/* Dark Theme */
+.field-search.dark input {
+  border-color: var(--ama-color-text-blue)
+}
+
+.field-search.dark button {
+  border-color: var(--ama-color-text-blue)
+}
+
+.field-search.dark button i {
+  color: var(--ama-color-text-blue);
+}

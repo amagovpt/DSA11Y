@@ -11,7 +11,7 @@ export const ColorsTable = ({colors}) => {
     )
   }
   return (
-    <table className="mb-5">
+    <table className="mb-5 colors_table">
         <thead>
             <tr>
                 <th>Variant</th>

@@ -90,12 +90,13 @@
   font-size: 20px;
 }
 
-#widget .dark_mode {
+/* Dark Theme */
+header.dark .widgets-bar {
   background-color: var(--ama-color-brand-primary);
   color: var(--ama-color-background-white) !important;
 }
 
-.dark_mode .logo .title,
-.dark_mode .logo .title2 {
+header.dark .logo .title,
+header.dark .logo .title2 {
   color: var(--ama-color-text-blue);
 }

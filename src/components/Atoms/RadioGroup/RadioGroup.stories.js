@@ -1,6 +1,7 @@
 import React from "react";
 import { RadioGroup } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Radiogroup",
@@ -45,8 +46,8 @@ const Template = (args) => {
 
   return (
     <React.Fragment>
-      <RadioGroup {...args} value={value} onChange={setValue} />
-      <div>value: {value}</div>
+      <RadioGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode()} />
+      <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </React.Fragment>
   );
 };

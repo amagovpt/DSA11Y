@@ -31,7 +31,7 @@ export const TypographyTable = ({fonts, family}) => {
     }
   }
   return (
-    <table className="mb-5">
+    <table className="mb-5 typography_table">
         <thead>
             <tr>
                 <th>{family === "pesos" ? "Nome da Classe" : "Variant"}</th>

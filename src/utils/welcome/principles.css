@@ -8,3 +8,10 @@
   column-gap: 24px;
   row-gap: 64px;
 }
+
+
+
+/* Dark Theme */
+.lights-out .principles {
+  color: var(--ama-color-background-white);
+}

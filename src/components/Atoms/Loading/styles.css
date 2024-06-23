@@ -39,3 +39,13 @@
     transform: scale(1, 1);
   }
 }
+
+
+/* Dark Theme */
+.loadingContainer.dark .dot {
+  background: var(--ama-color-text-blue);
+}
+
+.loadingContainer.dark span {
+  color: var(--ama-color-text-blue);
+}

@@ -34,3 +34,13 @@
   text-align: left;
   font-weight: 500;
 }
+
+
+/* Dark Theme */
+.lights-out .welcome-header_text {
+  color: var(--ama-color-text-gray);
+}
+
+.lights-out .intro {
+  color: var(--ama-color-background-white)
+}

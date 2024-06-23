@@ -35,3 +35,14 @@
 .border-left {
     border-left: 1px solid var(--ama-color-text-blue);
 }
+
+
+/* Dark theme */
+.lights-out .spacing_table tr th,
+.lights-out .spacing_table tr td {
+    color: var(--ama-color-background-white);
+}
+
+.lights-out .spacing_table tr {
+    background-color: transparent !important;
+}

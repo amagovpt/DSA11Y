@@ -13,7 +13,9 @@ export function WidgetBar({ description, logo, title, title2 }) {
                   <span className="title2 medium">{title2}</span>
                 </h1>
               :
-                <h1 className="logo">{logo}</h1>
+                <h1 className="logo">
+                  <img src={logo} alt="accessMonitor" lang="en" />
+                </h1>
               }
 
               <div className="d-flex d-lg-none flex-column align-items-center">

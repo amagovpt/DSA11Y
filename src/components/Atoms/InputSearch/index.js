@@ -12,6 +12,7 @@ import "./styles.css";
 // };
 
 const InputSearch = ({
+  darkTheme,
   placeholder,
   value,
   defaultValue,
@@ -37,8 +38,10 @@ const InputSearch = ({
     }
   };
 
+  const theme = darkTheme ? "dark" : ""
+
   return (
-    <InputGroup className="field field-search" {...props}>
+    <InputGroup className={`field field-search ${theme}`} {...props}>
       <Form.Control
         placeholder={placeholder}
         type="search"

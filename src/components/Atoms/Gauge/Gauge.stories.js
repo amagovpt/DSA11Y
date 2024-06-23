@@ -1,6 +1,7 @@
 import React from "react";
 import { Gauge } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Gauge",
@@ -16,7 +17,7 @@ export default {
   },
 };
 
-const Template = (args) => <Gauge {...args} />;
+const Template = (args) => <Gauge {...args} darkTheme={useDarkMode()} />;
 
 export const Default = Template.bind({});
 Default.args = {

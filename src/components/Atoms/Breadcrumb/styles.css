@@ -27,10 +27,6 @@
 
 
 /* Dark theme */
-.breadcrumbs.dark {
-  background-color: var(--ama-color-background-dark-darker);
-}
-
 .breadcrumbs.dark .breadcrumb .breadcrumb-item:not(:first-child) {
   background-image: url("../../../../public/img/chevron-right-light.svg");
 }
@@ -38,4 +34,5 @@
 .breadcrumbs.dark .breadcrumb-item,
 .breadcrumbs.dark .breadcrumb-item a {
     color: var(--ama-color-text-blue) !important;
+    text-decoration-color: var(--ama-color-text-blue) !important;
 }

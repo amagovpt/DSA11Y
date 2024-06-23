@@ -12,7 +12,7 @@
 
 .btn-primary:disabled {
   opacity: 1;
-  border-color: transparent;
+  border-color: transparent !important;
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-grey-500);
 }
@@ -30,4 +30,29 @@
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-brand-primary);
   outline: 0;
+}
+
+
+/* Dark Theme */
+.btn-primary.dark {
+  background-color: var(--ama-color-text-blue);
+  color: var(--ama-color-text-gray);
+  border-color: var(--ama-color-text-blue) !important;
+}
+
+.btn-primary.dark:hover {
+  color: var(--ama-color-text-blue);
+  background-color: transparent;
+}
+
+.btn-primary.dark:active {
+  color: var(--ama-color-text-blue) !important;
+  background-color: transparent !important;
+}
+
+.btn-primary.dark:disabled {
+  opacity: 1;
+  border-color: transparent !important;
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-grey-500);
 }

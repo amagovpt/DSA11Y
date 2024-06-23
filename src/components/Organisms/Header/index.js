@@ -1,13 +1,14 @@
-import LogoAcessmonitor from "./components/content-logo";
 import React from "react";
 import { TopBar } from "./components/top-bar";
 import { WidgetBar } from "./components/widgets-bar";
 
 import "./styles/styles.css";
 
-export function Header({description, title, title2}) {
+export function Header({description, title, title2, logo, darkTheme}) {
+  const theme = darkTheme ? "dark" : ""
+
   return (
-    <header id="wrapper-navbar" aria-label="Cabeçalho da página do AccessMonitor">
+    <header id="wrapper-navbar" aria-label="Cabeçalho da página do AccessMonitor" className={`${theme}`}>
       <div className="skip-to-content">
         <div className="container">
           <a className="skip-to-content-link p-0 d-flex align-items-center" href="#content">
@@ -19,7 +20,7 @@ export function Header({description, title, title2}) {
       <TopBar />
 
       <WidgetBar
-        logo={<LogoAcessmonitor />}
+        logo={logo}
         title={title}
         title2={title2}
         description={description}

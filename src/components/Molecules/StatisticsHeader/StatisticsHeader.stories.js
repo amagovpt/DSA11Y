@@ -1,6 +1,7 @@
 import React from "react";
 import { StatisticsHeader } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 const directoriesStats = {
   score: (8.486663447825674).toFixed(1),
@@ -34,10 +35,13 @@ export default {
   },
 };
 
-export const HeaderStatistics = (args) => <StatisticsHeader {...args} />;
+export const HeaderStatistics = (args) => {
+  return (
+    <StatisticsHeader {...args} darkTheme={useDarkMode()} />
+  )
+};
 
 HeaderStatistics.args = {
-  darkTheme: false,
   title: "Estatísticas",
   subtitle: "Metadados",
   oldestPage: "Avaliação mais antiga de uma página:",

@@ -3,3 +3,13 @@
     height: 30px;
     border-radius: 5px;
 }
+
+/* Dark theme */
+.lights-out .colors_table tr th,
+.lights-out .colors_table tr td {
+    color: var(--ama-color-background-white);
+}
+
+.lights-out .colors_table tr {
+    background-color: transparent !important;
+}

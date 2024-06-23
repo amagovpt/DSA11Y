@@ -1,11 +1,12 @@
 import React from "react";
 import "./styles.css";
 
-export function LoadingComponent() {
+export function LoadingComponent({ darkTheme, loadingText }) {
+  const theme = darkTheme ? "dark" : ""
   return (
-    <div className="loadingContainer">
+    <div className={` ${theme} loadingContainer`}>
       <div className="text_container">
-        <span className="ama-typography-body">A carregar...</span>
+        <span className="ama-typography-body">{loadingText}</span>
       </div>
       <div className="loader">
         {[...Array(9)].map((_, index) => (

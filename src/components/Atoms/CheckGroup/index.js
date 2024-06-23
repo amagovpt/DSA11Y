@@ -4,13 +4,15 @@ import { Form } from "react-bootstrap";
 
 import "./styles.css";
 
-let CheckGroup = ({ data, name, inline, value, onChange, ...props }) => {
+let CheckGroup = ({ darkTheme, data, name, inline, value, onChange, ...props }) => {
   const handleOnCLick = (id) => (e) => {
     onChange(id, e);
   };
 
+  const theme = darkTheme ? "dark" : ""
+
   return (
-    <div className="mb-3">
+    <div className={`${theme} check mb-3`}>
       {data.map((item) => (
         <Form.Check
           key={item.id}

@@ -1,6 +1,7 @@
 import React from "react";
 import { LoadingComponent } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Loading",
@@ -16,9 +17,9 @@ export default {
   },
 };
 
-const Template = (args) => <LoadingComponent {...args} />;
+const Template = (args) => <LoadingComponent {...args} darkTheme={useDarkMode()} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  percentage: 9.5,
+  loadingText: "A carregar...",
 };

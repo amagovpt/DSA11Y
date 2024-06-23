@@ -145,62 +145,62 @@ ul.ama-list > li {
 
 /* DARK MODE */
 
-.dark_mode {
+header.dark .top-bar {
   color: var(--ama-color-text-blue) !important;
   background-color: var(--ama-color-brand-primary);
 }
 
-.dark_mode .btn-ecossistema {
+header.dark .top-bar .btn-ecossistema {
   color: var(--ama-color-text-blue);
 }
 
-.dark_mode #flushHeading {
+header.dark .top-bar #flushHeading {
   color: var(--ama-color-background-white) !important;
 }
 
-.dark_mode .dark_mode_span {
+header.dark .top-bar .dark_mode_span {
   color: var(--ama-color-text-blue) !important;
 }
 
-.dark_mode .dark-mode,
-.dark_mode .language-mode {
+header.dark .top-bar .dark-mode,
+header.dark .top-bar .language-mode {
   color: var(--ama-color-text-blue);
   padding-right: 0px !important;
 }
 
-.dark_mode .dark-mode:hover,
-.dark_mode .language-mode:hover {
+header.dark .top-bar .dark-mode:hover,
+header.dark .top-bar .language-mode:hover {
   color: var(--ama-color-text-blue) !important;
 }
 
-.dark_mode .dark-mode:focus,
-.dark_mode .language-mode:focus {
+header.dark .top-bar .dark-mode:focus,
+header.dark .top-bar .language-mode:focus {
   box-shadow: none;
   color: var(--ama-color-text-blue);
   border-radius: 4px;
   border: 1px solid var(--ama-color-text-blue) !important;
 }
 
-.dark_mode #accordionBtn:hover {
+header.dark .top-bar #accordionBtn:hover {
   color: var(--ama-color-text-blue) !important;
 }
 
-.dark_mode #accordionBtn:focus {
+header.dark .top-bar #accordionBtn:focus {
   box-shadow: none;
   color: var(--ama-color-text-blue);
   border-radius: 4px;
   border: 1px solid var(--ama-color-text-blue) !important;
 }
 
-.dark_mode #accordionTopBar {
+header.dark .top-bar #accordionTopBar {
   color: var(--ama-color-background-white);
 }
 
-.dark_mode #accordionTopBar ul li a {
+header.dark .top-bar #accordionTopBar ul li a {
   color: var(--ama-color-text-blue) !important;
   text-decoration-color: var(--ama-color-text-blue) !important;
 }
 
-.dark_mode #accordionTopBar ul li i {
+header.dark .top-bar #accordionTopBar ul li i {
   color: var(--ama-color-text-blue) !important;
 }

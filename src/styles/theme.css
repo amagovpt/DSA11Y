@@ -110,8 +110,65 @@ ul {
   list-style: none;
 }
 
+.lights-on,
+.lights-on body {
+  background-color: white !important;
+  transition: none !important;
+}
 
+.lights-out,
+.lights-out body {
+  background-color: #1b1c1d !important;
+  transition: none !important;
+}
 
+.lights-out body h1,
+.lights-out body h2,
+.lights-out body h3,
+.lights-out body h4,
+.lights-out body h5,
+.lights-out body h6,
+.lights-out p,
+.lights-out ul li::marker,
+.lights-out ul li {
+  color: var(--ama-color-background-white);
+}
+
+.sbdocs.sbdocs-wrapper.css-k7lbue {
+  background: unset;
+}
+
+.lights-out .sbdocs.sbdocs-preview {
+  background: unset;
+  background-color: var(--ama-color-grey-700);
+}
+
+.lights-out .sb-bar.css-l1e2yg {
+  background: unset;
+  background-color: var(--ama-color-grey-700);
+}
+
+.lights-out .sb-bar button.css-18rvurk {
+  color: var(--ama-color-background-white)
+}
+
+.lights-out .docblock-argstable tr {
+  background-color: var(--ama-color-grey-700);
+}
+
+.lights-out .prismjs {
+  background-color: var(--ama-color-grey-700) !important;
+}
+
+.lights-out .docblock-source {
+  border-color: var(--ama-color-grey-700) !important;
+  color: var(--ama-color-background-white);
+}
+
+.lights-out .docblock-argstable tr th,
+.lights-out .docblock-argstable tr th button {
+  color: var(--ama-color-background-white) !important;
+}
 
 /* TYPOGRAPHY HIERARCHY */
 

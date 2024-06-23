@@ -32,3 +32,21 @@
   background-color: var(--ama-color-brand-primary);
   outline: 0;
 }
+
+
+/* Dark Theme */
+.btn-secondary.dark {
+  background-color: var(--ama-color-background-dark-lighter);
+  color: var(--ama-color-text-blue);
+  border-color: var(--ama-color-background-dark-lighter) !important;
+}
+
+.btn-secondary.dark:hover {
+  color: var(--ama-color-text-gray);
+  background-color: var(--ama-color-text-blue);
+}
+
+.btn-secondary.dark:active {
+  color: var(--ama-color-text-gray) !important;
+  background-color: var(--ama-color-text-blue) !important;
+}

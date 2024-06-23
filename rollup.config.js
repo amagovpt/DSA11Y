@@ -5,6 +5,7 @@ import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss'
 import {terser} from 'rollup-plugin-terser'
 import replace from 'rollup-plugin-replace';
+import copy from 'rollup-plugin-copy'
 
 export default [
   {
@@ -24,6 +25,12 @@ export default [
       replace({
         // Replace import paths in JavaScript and CSS files
         'url("../../../../public/fonts': 'url("fonts',
+      }),
+      copy({
+        targets: [
+          { src: 'public/fonts', dest: 'dist/public/fonts' },
+          { src: 'public/img', dest: 'dist/public/img' }
+        ]
       }),
       postcss({
         plugins: [],

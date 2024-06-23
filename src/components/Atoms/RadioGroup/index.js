@@ -4,13 +4,15 @@ import { Form } from "react-bootstrap";
 
 import "./styles.css";
 
-let RadioGroup = ({ data, name, inline, value, onChange, ...props }) => {
+let RadioGroup = ({ darkTheme, data, name, inline, value, onChange, ...props }) => {
   const handleOnCLick = (id) => (e) => {
     onChange(id, e);
   };
 
+  const theme = darkTheme ? "dark" : ""
+
   return (
-    <div className="mb-3">
+    <div className={`${theme} radio mb-3`}>
       {data.map((item) => (
         <Form.Check
           key={item.id}

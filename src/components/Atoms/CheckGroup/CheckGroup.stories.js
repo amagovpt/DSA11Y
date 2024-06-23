@@ -1,6 +1,7 @@
 import React from "react";
 import { CheckGroup } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Checkgroup",
@@ -45,8 +46,8 @@ const Template = (args) => {
 
   return (
     <>
-      <CheckGroup {...args} value={value} onChange={setValue} />
-      <div>value: {value}</div>
+      <CheckGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode()} />
+      <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </>
   );
 };

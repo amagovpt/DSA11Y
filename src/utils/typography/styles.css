@@ -10,3 +10,18 @@
     margin: 0px !important;
     color: var(--ama-color-text-gray) !important;
 }
+
+
+/* Dark theme */
+.lights-out .typography_table tr th,
+.lights-out .typography_table tr td {
+    color: var(--ama-color-background-white);
+}
+
+.lights-out .typography_table tr td .overflow {
+    color: var(--ama-color-background-white) !important;
+}
+
+.lights-out .typography_table tr {
+    background-color: transparent !important;
+}

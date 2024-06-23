@@ -2,6 +2,7 @@ import React from "react";
 import { Link as LinkComponent } from "./index";
 import { Icon } from "../../index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Link",
@@ -18,7 +19,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <LinkComponent {...args} text="Link" />;
+  return <LinkComponent {...args} text="Link" darkTheme={useDarkMode()} />;
 };
 
 export const _Link = Template.bind({});

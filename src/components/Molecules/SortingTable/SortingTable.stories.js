@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { SortingTable } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 const directoriesHeaders = [
   [
@@ -420,6 +421,7 @@ export const sortingTable = (args) => {
   return (
     <SortingTable
       {...args}
+      darkTheme={useDarkMode()}
       headers={directoriesHeaders}
       setDataList={setData}
       dataList={data}
@@ -435,7 +437,6 @@ export const sortingTable = (args) => {
 sortingTable.args = {
   hasSort: true,
   pagination: true,
-  darkTheme: false,
   itemsPaginationTexts: itemsPaginationText,
   nItemsPerPageTexts: nItemsPerPageText
 }

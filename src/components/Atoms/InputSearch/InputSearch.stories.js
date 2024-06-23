@@ -1,6 +1,7 @@
 import React from "react";
 import { InputSearch } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Inputsearch",
@@ -33,8 +34,9 @@ const Template = (args) => {
         value={value}
         onChange={onChange}
         onSearch={onSearch}
+        darkTheme={useDarkMode()}
       />
-      <div>value: {value}</div>
+      <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </>
   );
 };

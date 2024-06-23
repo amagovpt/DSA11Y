@@ -20,6 +20,7 @@ const buttonSize = {
 };
 
 const Button = ({
+  darkTheme,
   loading,
   loadingText,
   text,
@@ -32,11 +33,11 @@ const Button = ({
   ...props
 }) => {
   const isLoading = loading && loadingText;
-
+  const theme = darkTheme ? "dark" : ""
   return (
     <ButtonComponent
       {...props}
-      className={`${className} ${
+      className={`${theme} ${className} ${
         radius === "full"
           ? "rounded-pill"
           : radius === "md"

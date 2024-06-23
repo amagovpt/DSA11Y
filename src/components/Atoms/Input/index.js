@@ -5,12 +5,14 @@ import "./styles.css";
 
 import classNames from "classnames";
 
-const Input = ({ upload, label, type, placeholder, error, id, ...rest }) => {
+const Input = ({ darkTheme, upload, label, type, placeholder, error, id, ...rest }) => {
   const inputClass = classNames("form-control", {
     "is-invalid": error,
   });
+  const classUpload = upload ? "fieldUpload" : "field"
+  const theme = darkTheme ? "dark" : ""
   return (
-    <Form.Group className={upload ? "fieldUpload" : "field"}>
+    <Form.Group className={`${classUpload} ${theme}`}>
       <Form.Label htmlFor={id}>{label}</Form.Label>
       <Form.Control
         type={type}

@@ -15,3 +15,9 @@
   border-radius: 5px;
   height: 100px;
 }
+
+
+/* Dark theme */
+.dark {
+  color: var(--ama-color-background-white);
+}

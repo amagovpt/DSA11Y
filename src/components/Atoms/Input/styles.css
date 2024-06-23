@@ -55,3 +55,23 @@ input[type="file"].form-control::file-selector-button {
   margin-left: -16px;
   height: 50px;
 }
+
+
+/* Dark Theme */
+.field.dark label,
+.fieldUpload.dark label,
+.fieldUpload.dark input::placeholder {
+  color: var(--ama-color-text-blue);
+}
+
+.field.dark input,
+.fieldUpload.dark input {
+  border-color: var(--ama-color-text-blue) !important;
+  background-color: transparent;
+  color: var(--ama-color-text-blue) !important;
+}
+
+.field.dark input::placeholder,
+.fieldUpload.dark input::placeholder {
+  color: var(--ama-color-text-blue)
+}

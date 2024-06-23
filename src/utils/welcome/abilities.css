@@ -36,3 +36,15 @@
   line-height: 24px;
   margin-bottom: 24px;
 }
+
+
+/* Dark Theme */
+.lights-out .content {
+  color: var(--ama-color-background-white);
+}
+
+.ligths-out .image,
+.lights-out .link-container a {
+  color: var(--ama-color-text-blue) !important;
+  text-decoration-color:  var(--ama-color-text-blue) !important;
+}

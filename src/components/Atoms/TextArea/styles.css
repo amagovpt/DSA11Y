@@ -31,3 +31,20 @@
 .field .invalid-feedback {
   color: var(--ama-color-red-500);
 }
+
+
+/* Dark Theme */
+.field.dark label,
+.field.dark textarea::placeholder {
+  color: var(--ama-color-text-blue);
+}
+
+.field.dark textarea {
+  border-color: var(--ama-color-text-blue) !important;
+  background-color: transparent;
+  color: var(--ama-color-text-blue) !important;
+}
+
+.field.dark textarea::placeholder {
+  color: var(--ama-color-text-blue)
+}

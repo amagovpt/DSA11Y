@@ -16,3 +16,11 @@
   box-shadow: none;
   outline: 0;
 }
+
+
+/* Dark Theme */
+.link-container.dark a,
+.link-container.dark {
+  color: var(--ama-color-background-white) !important;
+  text-decoration-color: var(--ama-color-background-white) !important;
+}

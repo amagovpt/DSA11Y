@@ -2,3 +2,14 @@
   background-color: var(--ama-color-brand-primary);
   border-color: var(--ama-color-brand-primary);
 }
+
+
+/* Dark theme */
+.check.dark .form-check .form-check-input:checked {
+  background-color: var(--ama-color-text-blue) !important;
+  border-color: var(--ama-color-text-blue) !important;
+}
+
+.check.dark .form-check label {
+  color: var(--ama-color-text-blue);
+}

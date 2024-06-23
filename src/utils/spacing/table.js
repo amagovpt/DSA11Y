@@ -18,7 +18,7 @@ export const SpacingTable = ({spacings, family}) => {
     )
   }
   return (
-    <table className="mb-5">
+    <table className="mb-5 spacing_table">
         <thead>
             <tr>
                 <th>{family === "sizes" ? "Size" : "Type"}</th>

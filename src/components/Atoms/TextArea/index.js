@@ -4,13 +4,15 @@ import Form from "react-bootstrap/Form";
 import "./styles.css";
 import classNames from "classnames";
 
-const TextArea = ({ label, type, placeholder, error, id, ...rest }) => {
+const TextArea = ({ darkTheme, label, type, placeholder, error, id, ...rest }) => {
   const inputClass = classNames("form-control", {
     "is-invalid": error,
   });
 
+  const theme = darkTheme ? "dark" : ""
+
   return (
-    <Form.Group className="field">
+    <Form.Group className={`field ${theme}`}>
       <Form.Label htmlFor={id}>{label}</Form.Label>
       <Form.Control
         as="textarea"

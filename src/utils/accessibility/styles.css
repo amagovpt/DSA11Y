@@ -19,3 +19,8 @@
   padding: 40px 24px;
   margin-bottom: 32px;
 }
+
+/* Dark theme */
+.lights-out .intro-accessibility {
+  color: var(--ama-color-text-gray)
+}

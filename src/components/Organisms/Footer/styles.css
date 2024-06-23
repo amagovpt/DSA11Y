@@ -2,6 +2,10 @@ footer {
   background-color: var(--ama-color-background-light-lighter);
 }
 
+footer p {
+  color: var(--ama-color-text-gray) !important;
+}
+
 footer .footer-menu {
   list-style: none;
   display: flex;
@@ -68,11 +72,12 @@ footer .logo-selo img {
 
 /* Dark Mode */
 
-.dark_mode_footer {
+footer.dark {
   background-color: var(--ama-color-blue-600);
   color: var(--ama-color-text-blue);
 }
 
-.dark_mode_footer li a {
+footer.dark li a,
+footer.dark p {
   color: var(--ama-color-text-blue) !important;
 }

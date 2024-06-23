@@ -1,6 +1,7 @@
 import React from "react";
 import { Input } from "./index";
 import Documentation from './Documentation.md'
+import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Input",
@@ -17,7 +18,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <Input {...args} />;
+  return <Input {...args} darkTheme={useDarkMode()} />;
 };
 
 export const Default = Template.bind({});
