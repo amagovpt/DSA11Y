@@ -10,9 +10,9 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     const theme = darkTheme ? "dark" : ""
 
     // Normal stats with Value (Title) and description (Subtitle)
-    const normalExtraStats = (value, subtitle) => {
+    const normalExtraStats = (value, subtitle, index) => {
         return (
-            <div className="d-flex flex-column margin_mobile">
+            <div key={index} className="d-flex flex-column margin_mobile">
                 <h3 className="bold">{value}</h3>
                 <span className="ama-typography-body">{subtitle}</span>
             </div>
@@ -20,10 +20,10 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     }
 
     // Stats with percentage and multiple subtitles
-    const percentageStats = (value, object, total, first) => {
+    const percentageStats = (value, object, total, first, index) => {
         const percentage = (value*100/total).toFixed(1)
         return (
-            <div className="d-flex flex-column margin_mobile">
+            <div key={index} className="d-flex flex-column margin_mobile">
                 <h3 className="bold p-1">
                     {value}
                     {!first ? <span className="ama-typography-body-large ps-2">{percentage}%</span> : null}
@@ -63,18 +63,18 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                                 {stats.statsTable.map((stat, index) => {
                                     const total = stats.statsTable[0]
                                     const first = index === 0
-                                    return index < 3 ? percentageStats(stat, statsTitles[index], total, first) : null
+                                    return index < 3 ? percentageStats(stat, statsTitles[index], total, first, index) : null
                                 })}
                             </div>
                             <div className="d-flex justify-content-around w-100 align-items-center py-4">
                                 {stats.statsTable.map((stat, index) => {
                                     const total = stats.statsTable[0]
-                                    return index >= 3 ? percentageStats(stat, statsTitles[index], total) : null
+                                    return index >= 3 ? percentageStats(stat, statsTitles[index], total, index) : null
                                 })}
                             </div>
                         </>
                     : stats.statsTable.map((stat, index) => {
-                        return normalExtraStats(stat, statsTitles[index])
+                        return normalExtraStats(stat, statsTitles[index], index)
                     })}
                 </div>
             </div>
@@ -102,7 +102,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                     {stats.statsTable.map((stat, index) => {
                         const total = stats.statsTable[0]
                         const first = index === 0
-                        return doubleRow ? percentageStats(stat, statsTitles[index], total, first) : normalExtraStats(stat, statsTitles[index])
+                        return doubleRow ? percentageStats(stat, statsTitles[index], total, first, index) : normalExtraStats(stat, statsTitles[index], index)
                     })}
                 </div>
             </div>

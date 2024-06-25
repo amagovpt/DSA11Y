@@ -3,8 +3,8 @@ import "./styles.css";
 export function WelcomeHeader() {
   return (
     <div>
-      <h1 class="welcome-header">
-        <span class="welcome-header_text">
+      <h1 className="welcome-header">
+        <span className="welcome-header_text">
           Ama Design System
           <br /> by ama.gov.pt
         </span>

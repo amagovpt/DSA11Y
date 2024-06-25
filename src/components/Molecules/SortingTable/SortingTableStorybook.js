@@ -1,24 +1,10 @@
 import React, {useEffect, useState} from "react";
-import { Link } from 'react-router-dom';
 import "./style.css";
 import {Icon} from "../../Atoms/Icon"
 
-/*
-    hasSort -> If Table has sorting
-    caption -> Table caption
-    headers -> Custom Array of Headers
-    dataList -> Array of data
-    setDataList -> Set function to change the data shown based on sorting
-    columnsOptions -> Custom array to help render the data cells
-    nextPage -> Function used for the button click
-    darkTheme -> If Dark theme activated or not
-    pagination -> If Table has pagination
-    itemsPaginationTexts -> Texts for the text telling how many items in that page out of the total
-    nItemsPerPageTexts -> Texts for the selection of how many items per page (Pagination)
-    iconsAltTexts -> Alternative texts for the icons of the data cells
-    paginationButtonsTexts ->  texts for accessibility screen readers for the 4 buttons of pagination (Pagination)
-*/
-const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts }) => {
+// A render just for storybook, because in the Link render, storybook doesn't have Router so Link from react-router-dom doesn't work
+
+const SortingTableStorybook = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts }) => {
 
     //SORT
     const [sort, setSort] = useState({property: "", type: ""});
@@ -188,7 +174,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 case "Link":
                     let href = `${columnsOptions[key].href}${row["id"]}`
                     // Render a link
-                    return (<td key={index}><Link to={href} className="ama-typography-action-large bold">{row[key]}</Link></td>)
+                    return (<td key={index}><a href={href} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
@@ -313,4 +299,4 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     );
 };
 
-export { SortingTable };
+export { SortingTableStorybook };

@@ -2,6 +2,7 @@
   "name": "ama-design-system",
   "version": "0.1.0",
   "main": "dist/index.js",
+  "module": "dist/index.es.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
@@ -79,5 +80,8 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.10.2",
     "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.24.0"
   }
 }
