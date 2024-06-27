@@ -15,7 +15,11 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
   const handleOnClick = (item) => (e) => {
     if (item.href === "") {
       e.preventDefault();
-      onClick(item, e);
+      if(item.onClick) {
+        item.onClick()
+      } else {
+        onClick(item, e);
+      }
     }
   };
   return (
@@ -28,9 +32,6 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
             active={index === size}
             onClick={handleOnClick(item)}
             aria-label={index === size ? tagHere : undefined}
-            // Make sure breadcrumb uses Link instead of default <a> tag so that context isn't lost
-            linkAs={Link}
-            linkProps={{ to: item.href }}
           >
             {item.title}
           </Item>

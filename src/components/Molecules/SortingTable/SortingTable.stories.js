@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import { SortingTableStorybook } from "./SortingTableStorybook";
+import { SortingTable } from "./index";
 import Documentation from './Documentation.md'
 import { useDarkMode } from 'storybook-dark-mode';
 
@@ -404,7 +404,7 @@ const dataRows = [
 
 export default {
   title: "components/Molecules/SortingTable",
-  component: SortingTableStorybook,
+  component: SortingTable,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -419,7 +419,7 @@ export const sortingTable = (args) => {
   const [data, setData] = useState(dataRows)
 
   return (
-    <SortingTableStorybook
+    <SortingTable
       {...args}
       darkTheme={useDarkMode()}
       headers={directoriesHeaders}

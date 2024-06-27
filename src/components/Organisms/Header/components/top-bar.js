@@ -64,7 +64,7 @@ export function TopBar() {
 
                 <span id="flushHeading" className="ama-typography-body">
                   Uma ferramenta do ecossistema{" "}
-                  <span className="text-primary fw-bold dark_mode_span ama-typography-body">
+                  <span className="text-primary fw-bold dark_mode_span ama-typography-body bold">
                     acessibilidade.gov.pt
                   </span>
                 </span>

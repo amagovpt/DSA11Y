@@ -1,0 +1,251 @@
+.btn-loading-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-loading-container .btn-loading-text {
+  margin-left: 5px;
+}
+
+button,
+.btn {
+  border-radius: 0;
+  padding: 0 1em !important;
+  display: flex !important;
+  align-items: center;
+  height: 42px;
+  justify-content: center;
+  gap: 10px !important;
+
+  font-family: var(--font-lato) !important;
+}
+
+button,
+.btn:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+  box-shadow: none;
+}
+
+/* Rever o MT */
+.button-icon {
+  display: flex;
+  align-items: center;
+  margin-top: 2px;
+}
+
+button.btn-lg {
+  height: 50px;
+  font-size: 18px;
+}
+
+button.btn-md {
+  height: 42px;
+  font-size: 16px;
+}
+
+button.btn-sm {
+  height: 32px;
+  font-size: 12px;
+}
+
+
+/* PRIMARY BUTTON */
+.btn-primary {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-brand-primary);
+  font-weight: 700;
+  border: 2px solid var(--ama-color-brand-primary) !important;
+}
+
+.btn-primary:hover {
+  color: var(--ama-color-brand-primary);
+  background-color: var(--ama-color-background-white);
+}
+
+.btn-primary:disabled {
+  opacity: 1;
+  border-color: transparent !important;
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-grey-500);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active,
+.btn-primary:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dropdown-toggle {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-brand-primary);
+  border-color: var(--ama-color-brand-primary);
+}
+
+.btn-check:focus + .btn,
+.btn-primary:focus {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-brand-primary);
+  outline: 0;
+}
+
+
+/* Dark Theme */
+.btn-primary.dark {
+  background-color: var(--ama-color-text-blue);
+  color: var(--ama-color-text-gray);
+  border-color: var(--ama-color-text-blue) !important;
+}
+
+.btn-primary.dark:hover {
+  color: var(--ama-color-text-blue);
+  background-color: transparent;
+}
+
+.btn-primary.dark:active {
+  color: var(--ama-color-text-blue) !important;
+  background-color: transparent !important;
+}
+
+.btn-primary.dark:disabled {
+  opacity: 1;
+  border-color: transparent !important;
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-grey-500);
+}
+
+
+
+/* SECONDARY BUTTON */
+.btn-secondary {
+  border: 2px solid transparent;
+  font-weight: 700;
+  color: var(--ama-color-brand-primary);
+  background-color: var(--ama-color-background-white);
+}
+
+.btn-secondary:disabled {
+  color: var(--ama-color-grey-700);
+  opacity: 0.8 !important;
+  background-color: var(--ama-color-background-white);
+  border: 2px solid transparent;
+}
+
+.btn-secondary:hover {
+  border: 2px solid var(--ama-color-blue-400);
+  color: var(--ama-color-blue-400);
+  background-color: var(--ama-color-background-white);
+}
+
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dropdown-toggle {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-brand-primary);
+  border-color: var(--ama-color-brand-primary);
+}
+
+.btn-check:focus + .btn,
+.btn-secondary:focus {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-brand-primary);
+  outline: 0;
+}
+
+
+/* Dark Theme */
+.btn-secondary.dark {
+  background-color: var(--ama-color-background-dark-lighter);
+  color: var(--ama-color-text-blue);
+  border-color: var(--ama-color-background-dark-lighter) !important;
+}
+
+.btn-secondary.dark:hover {
+  color: var(--ama-color-text-gray);
+  background-color: var(--ama-color-text-blue);
+}
+
+.btn-secondary.dark:active {
+  color: var(--ama-color-text-gray) !important;
+  background-color: var(--ama-color-text-blue) !important;
+}
+
+
+/* CANCEL BUTTON */
+.btn-cancel {
+  font-weight: 700;
+  background-color: var(--ama-color-background-white);
+  border: 1px solid var(--ama-color-text-gray) !important;
+}
+
+.btn-cancel:hover {
+  color: var(--ama-color-grey-600);
+  background-color: var(--ama-color-grey-50);
+  border: 2px solid var(--ama-color-grey-600);
+}
+
+.btn-cancel:disabled {
+  opacity: 0.8;
+  color: var(--ama-color-grey-700);
+  border: 1px solid var(--ama-color-grey-700);
+}
+
+
+
+/* DANGER BUTTON */
+.btn-danger {
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-red-500);
+  font-weight: 700;
+  border: 2px solid var(--ama-color-red-500);
+}
+
+.btn-danger:hover {
+  color: var(--ama-color-background-white);
+  border-color: transparent;
+  background-color: var(--ama-color-red-600);
+}
+
+.btn-danger:disabled {
+  opacity: 1;
+  border-color: transparent;
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-grey-500);
+}
+
+
+/* GHOST BUTTON */
+.btn-ghost {
+  color: var(--ama-color-brand-primary);
+  font-weight: 700;
+  border: 1px solid var(--ama-color-brand-primary);
+}
+
+.btn-ghost:hover {
+  color: var(--ama-color-blue-400);
+  border: 2px solid var(--ama-color-blue-400);
+}
+
+.btn-ghost:disabled {
+  opacity: 0.8;
+  color: var(--ama-color-grey-700);
+  border: 1px solid var(--ama-color-grey-700);
+}
+
+
+/* SUCCESS BUTTON */
+.btn-success {
+  color: var(--ama-color-text-gray);
+  background-color: var(--ama-color-green-400);
+  font-weight: 700;
+  border: 2px solid transparent;
+}
+
+.btn-success:hover {
+  color: var(--ama-color-text-gray);
+  background-color: var(--ama-color-green-500);
+  border-color: transparent;
+}
+
+.btn-success:disabled {
+  opacity: 1;
+  border-color: transparent;
+  color: var(--ama-color-background-white);
+  background-color: var(--ama-color-grey-500);
+}

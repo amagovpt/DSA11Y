@@ -1,11 +1,11 @@
 import React from "react";
-import { BreadcrumbStorybook } from "./BreadcrumbStorybook";
+import { Breadcrumb } from "./index";
 import Documentation from './Documentation.md'
 import { useDarkMode } from 'storybook-dark-mode';
 
 export default {
   title: "components/Atoms/Breadcrumb",
-  component: BreadcrumbStorybook,
+  component: Breadcrumb,
   argTypes: {},
   tags: ['autodocs'],
   parameters: {
@@ -18,7 +18,7 @@ export default {
 };
 
 const Template = ({ data, ...args }) => {
-  return <BreadcrumbStorybook data={data} {...args} darkTheme={useDarkMode()}  />;
+  return <Breadcrumb data={data} {...args} darkTheme={useDarkMode()}  />;
 };
 
 export const _Breadcrumb = Template.bind({});

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Button as ButtonComponent, Spinner } from "react-bootstrap";
 
-import "./styles/index.css";
+import "./styles.css";
 
 const buttonVariant = {
   PRIMARY: "primary",

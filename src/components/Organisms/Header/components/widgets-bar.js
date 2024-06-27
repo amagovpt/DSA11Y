@@ -1,6 +1,6 @@
 import { Icon } from "../../../Atoms/Icon";
 import React from "react";
-export function WidgetBar({ description, logo, title, title2 }) {
+export function WidgetBar({ description, logo, title, title2, changeTheme, changeLanguage }) {
   return (
     <div className="widgets-bar py-4">
       <div className="container">
@@ -38,7 +38,7 @@ export function WidgetBar({ description, logo, title, title2 }) {
           {/* Menu */}
 
           <div className="d-flex flex-row gap-4 button-mobile">
-            <button className="btn btn-link dark-mode p-1 d-flex align-items-center">
+            <button className="btn btn-link dark-mode p-1 d-flex align-items-center" onClick={changeTheme}>
               <span id="darkModeLabel-mobile" className="ama-typography-body">Modo Escuro</span>
               <Icon
                 name="AMA-EscuroClaro-Line icon-dark"
@@ -46,7 +46,7 @@ export function WidgetBar({ description, logo, title, title2 }) {
               />
             </button>
 
-            <button className="btn btn-link language-mode p-1  d-flex align-items-center">
+            <button className="btn btn-link language-mode p-1  d-flex align-items-center" onClick={changeLanguage}>
               <span id="langModeLabel-mobile" className="ama-typography-body">See in english</span>
               <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" />
             </button>

@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import { Link } from 'react-router-dom';
 import "./style.css";
 import {Icon} from "../../Atoms/Icon"
 
@@ -186,9 +185,9 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     // Render a button disguised as a text link
                     return (<td key={index}><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
                 case "Link":
-                    let href = `${columnsOptions[key].href}${row["id"]}`
+                    let href = columnsOptions[key].href ? columnsOptions[key].href : () => null
                     // Render a link
-                    return (<td key={index}><Link to={href} className="ama-typography-action-large bold">{row[key]}</Link></td>)
+                    return (<td key={index}><a onClick={() => href()} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)

@@ -4,7 +4,7 @@ import { WidgetBar } from "./components/widgets-bar";
 
 import "./styles/styles.css";
 
-export function Header({description, title, title2, logo, darkTheme}) {
+export function Header({description, title, title2, logo, darkTheme, changeTheme, changeLanguage}) {
   const theme = darkTheme ? "dark" : ""
 
   return (
@@ -24,6 +24,8 @@ export function Header({description, title, title2, logo, darkTheme}) {
         title={title}
         title2={title2}
         description={description}
+        changeTheme={changeTheme}
+        changeLanguage={changeLanguage}
       />
     </header>
   );
