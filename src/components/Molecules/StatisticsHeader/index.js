@@ -7,7 +7,7 @@ import { Button } from "../../Atoms/Button";
 const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, subtitle, oldestPage, newestPage, gaugeTitle, buttons }) => {
 
     // Theme
-    const theme = darkTheme ? "dark" : ""
+    const theme = darkTheme === "light" ? "" : "dark"
 
     // Normal stats with Value (Title) and description (Subtitle)
     const normalExtraStats = (value, subtitle, index) => {
@@ -53,7 +53,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                     </div>
                 </div>
                 <div className="second_row">
-                    <Gauge percentage={stats.score} title={gaugeTitle}/>
+                    <Gauge percentage={stats.score} title={gaugeTitle} darkTheme={darkTheme} />
                 </div>
                 {/* doubleRow checks if its just one row os stats or two */}
                 <div className={`last_column px-3 ${doubleRow ? "flex-column" : ""}`}>

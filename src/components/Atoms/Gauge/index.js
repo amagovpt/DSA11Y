@@ -3,7 +3,7 @@ import "./styles.css";
 
 const Gauge = ({ darkTheme, percentage, title }) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
 
   useEffect(() => {
     if (percentage) {

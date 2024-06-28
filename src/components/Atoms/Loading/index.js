@@ -2,7 +2,7 @@ import React from "react";
 import "./styles.css";
 
 export function LoadingComponent({ darkTheme, loadingText }) {
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
   return (
     <div className={` ${theme} loadingContainer`}>
       <div className="text_container">

@@ -66,6 +66,15 @@
     justify-content: center;
   }
 
+  header.dark .button-mobile button,
+  header.dark .button-mobile button i {
+    color: var(--ama-color-text-blue) !important;
+  }
+
+  header.dark .button-mobile button:focus {
+    border-color: var(--ama-color-text-blue) !important;
+  }
+
   .site-description p {
     text-align: center;
   }

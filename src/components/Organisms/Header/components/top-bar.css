@@ -158,7 +158,8 @@ header.dark .top-bar #flushHeading {
   color: var(--ama-color-background-white) !important;
 }
 
-header.dark .top-bar .dark_mode_span {
+header.dark .top-bar .dark_mode_span,
+header.dark .top-bar button i {
   color: var(--ama-color-text-blue) !important;
 }
 

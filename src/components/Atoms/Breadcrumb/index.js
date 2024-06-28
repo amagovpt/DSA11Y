@@ -9,7 +9,7 @@ const { Item } = BBreadcrumb;
 const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
 
   // Theme
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
   
   const size = data.length - 1;
   const handleOnClick = (item) => (e) => {

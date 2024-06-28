@@ -19,7 +19,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <LinkComponent {...args} text="Link" darkTheme={useDarkMode()} />;
+  return <LinkComponent {...args} text="Link" darkTheme={useDarkMode() ? "" : "light"} />;
 };
 
 export const _Link = Template.bind({});

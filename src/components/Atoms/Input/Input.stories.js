@@ -18,7 +18,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <Input {...args} darkTheme={useDarkMode()} />;
+  return <Input {...args} darkTheme={useDarkMode() ? "" : "light"} />;
 };
 
 export const Default = Template.bind({});

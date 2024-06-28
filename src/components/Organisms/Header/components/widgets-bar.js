@@ -1,6 +1,6 @@
 import { Icon } from "../../../Atoms/Icon";
 import React from "react";
-export function WidgetBar({ description, logo, title, title2, changeTheme, changeLanguage }) {
+export function WidgetBar({ description, logo, title, title2, changeTheme, changeLanguage, darkTheme }) {
   return (
     <div className="widgets-bar py-4">
       <div className="container">
@@ -38,17 +38,14 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
           {/* Menu */}
 
           <div className="d-flex flex-row gap-4 button-mobile">
-            <button className="btn btn-link dark-mode p-1 d-flex align-items-center" onClick={changeTheme}>
+            <button className="btn btn-link dark-mode p-1 d-flex align-items-center" onClick={changeTheme ? () => changeTheme() : null}>
               <span id="darkModeLabel-mobile" className="ama-typography-body">Modo Escuro</span>
-              <Icon
-                name="AMA-EscuroClaro-Line icon-dark"
-                aria-hidden="true"
-              />
+              <Icon name="AMA-EscuroClaro-Line icon-dark" aria-hidden="true" darkTheme={darkTheme} />
             </button>
 
-            <button className="btn btn-link language-mode p-1  d-flex align-items-center" onClick={changeLanguage}>
+            <button className="btn btn-link language-mode p-1  d-flex align-items-center" onClick={changeLanguage ? () => changeLanguage() : null}>
               <span id="langModeLabel-mobile" className="ama-typography-body">See in english</span>
-              <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" />
+              <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" darkTheme={darkTheme} />
             </button>
           </div>
 

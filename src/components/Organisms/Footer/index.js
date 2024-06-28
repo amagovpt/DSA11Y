@@ -2,7 +2,7 @@ import "./styles.css";
 import React from "react";
 
 export function Footer({ darkTheme }) {
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
   return (
     <footer className={`py-5 ${theme}`}>
       <div className="container">

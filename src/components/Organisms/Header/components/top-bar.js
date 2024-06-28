@@ -4,7 +4,7 @@ import { Icon } from "../../../Atoms/Icon";
 import { Link } from "../../../Atoms/Link";
 import { useRef, useState } from "react";
 
-export function TopBar() {
+export function TopBar({darkTheme, changeTheme, changeLanguage}) {
   const [openAccordion, setOpenAccordion] = useState(false);
   const accordionContentRef = useRef(null);
 
@@ -29,20 +29,23 @@ export function TopBar() {
                 <button
                   className="btn btn-link dark-mode d-flex align-items-center"
                   id="darkModeBtn"
+                  onClick={changeTheme ? () => changeTheme() : null}
                 >
                   <span id="darkModeLabel" className="ama-typography-body">Modo Escuro</span>
                   <Icon
                     name="AMA-EscuroClaro-Line icon-dark"
                     aria-hidden="true"
+                    darkTheme={darkTheme}
                   />
                 </button>
 
                 <button
                   className="btn btn-link language-mode p-1  d-flex align-items-center"
                   id="langModeBtn"
+                  onClick={changeLanguage ? () => changeLanguage() : null}
                 >
                   <span id="langModeLabel" className="ama-typography-body">See in english</span>
-                  <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" />
+                  <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" darkTheme={darkTheme} />
                 </button>
               </div>
 
@@ -128,39 +131,43 @@ export function TopBar() {
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://observatorio.acessibilidade.gov.pt/"
                             text="Observatório Português da Acessibilidade Web"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://www.acessibilidade.gov.pt/gerador/"
                             text={`Gerador "Declaração de Acessibilidade"`}
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://accessmonitor.acessibilidade.gov.pt/"
                             text="AccessMonitor"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://www.acessibilidade.gov.pt/wcag/"
+                            darkTheme={darkTheme}
                           >
                             <abbr
                               title="Web Content Accessibility Guidelines, version 2.1"
@@ -185,19 +192,21 @@ export function TopBar() {
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://mosaico.gov.pt/areas-tecnicas/usabilidade"
                             text="Usabilidade no Mosaico"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://zeroheight.com/1be481dc2/p/97181d-agora-design-system"
+                            darkTheme={darkTheme}
                           >
                             Ágora <em lang="en">Design System</em> -
                             documentação
@@ -207,9 +216,10 @@ export function TopBar() {
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://prd-agora.northeurope.cloudapp.azure.com"
+                            darkTheme={darkTheme}
                           >
                             Ágora <em lang="en">Design System</em> -
                             componentes
@@ -219,20 +229,22 @@ export function TopBar() {
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://guias.mosaico.gov.pt/guias-praticos/usabilidade-como-realizar-testes-de-usabilidade"
                             text="Como realizar testes de usabilidade?"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://guias.mosaico.gov.pt/guias-praticos/usabilidade-como-desenvolver-aplicacoes-para-dispositivos-moveis"
                             text="Como desenvolver aplicações móveis?"
+                            darkTheme={darkTheme}
                           />
                         </li>
                       </ul>
@@ -250,40 +262,44 @@ export function TopBar() {
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/candidatura/"
                             text="Candidatura ao Selo"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/requisitos/"
                             text="Requisitos do Selo"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://amagovpt.github.io/kit-selo/"
                             text="Kit informativo do Selo"
+                            darkTheme={darkTheme}
                           />
                         </li>
 
                         <li className="mb-3">
                           <Link
                             iconLeft={
-                              <Icon name="AMA-Setalongaoficial-Line" />
+                              <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/ajuda/"
                             text="Dúvidas sobre o Selo?"
+                            darkTheme={darkTheme}
                           />
                         </li>
                       </ul>

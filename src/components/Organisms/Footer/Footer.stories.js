@@ -9,6 +9,6 @@ export default {
 
 export const Default = () => {
   return (
-    <Footer darkTheme={useDarkMode()} />
+    <Footer darkTheme={useDarkMode() ? "" : "light"} />
   )
 };

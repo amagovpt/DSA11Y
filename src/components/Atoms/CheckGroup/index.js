@@ -9,7 +9,7 @@ let CheckGroup = ({ darkTheme, data, name, inline, value, onChange, ...props }) 
     onChange(id, e);
   };
 
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
 
   return (
     <div className={`${theme} check mb-3`}>

@@ -25,6 +25,7 @@ export default [
       replace({
         // Replace import paths in JavaScript and CSS files
         'url("../../../../public/fonts': 'url("fonts',
+        'url("../../../../public/img': 'url("img',
       }),
       copy({
         targets: [

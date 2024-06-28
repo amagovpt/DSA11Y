@@ -37,7 +37,7 @@ export default {
 
 export const HeaderStatistics = (args) => {
   return (
-    <StatisticsHeader {...args} darkTheme={useDarkMode()} />
+    <StatisticsHeader {...args} darkTheme={useDarkMode() ? "" : "light"} />
   )
 };
 

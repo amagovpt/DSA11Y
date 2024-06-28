@@ -34,7 +34,7 @@ const Template = (args) => {
         value={value}
         onChange={onChange}
         onSearch={onSearch}
-        darkTheme={useDarkMode()}
+        darkTheme={useDarkMode() ? "" : "light"}
       />
       <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </>

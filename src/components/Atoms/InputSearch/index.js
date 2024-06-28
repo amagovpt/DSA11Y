@@ -38,7 +38,7 @@ const InputSearch = ({
     }
   };
 
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
 
   return (
     <InputGroup className={`field field-search ${theme}`} {...props}>

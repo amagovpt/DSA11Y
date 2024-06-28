@@ -4,7 +4,7 @@ import React from "react";
 import "./styles.css";
 
 export function Link({ darkTheme, to, text, children, iconLeft, iconRight, ...rest }) {
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
   return (
     <div className={`${theme} link-container`}>
       {iconLeft && <>{iconLeft}</>}

@@ -18,7 +18,7 @@ export default {
 };
 
 const Template = (args) => {
-  return <TextArea {...args} darkTheme={useDarkMode()} />;
+  return <TextArea {...args} darkTheme={useDarkMode() ? "" : "light"} />;
 };
 
 export const Default = Template.bind({});

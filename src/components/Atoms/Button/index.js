@@ -33,7 +33,7 @@ const Button = ({
   ...props
 }) => {
   const isLoading = loading && loadingText;
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
   return (
     <ButtonComponent
       {...props}

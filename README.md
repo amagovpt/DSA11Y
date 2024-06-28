@@ -1,1 +1,23 @@
-# AMA - Design-System 0.0.1
+# AMA - Design-System 1.0.4
+
+O Ama Design System é uma biblioteca de componentes para servir as seguintes aplicações:
+
+- AccessMonitor
+- MyMonitor
+- Observatório
+- AdminMonitorSuite - Backoffice do sistema
+
+Para mais informações, visite o site, onde se encontra todos os componentes e os parâmetros que são possíveis passar.
+
+## Instalação
+```
+    npm install ama-design-system
+```
+
+
+## Utilização
+```
+    import { Icon } from 'ama-design-system'
+
+    <Icon name={"AMA-SeloDark2-Line"} />
+```

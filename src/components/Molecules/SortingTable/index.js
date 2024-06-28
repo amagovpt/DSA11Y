@@ -30,7 +30,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     const nAllItems = dataList && dataList.length
 
     // Theme
-    const theme = darkTheme ? "dark" : ""
+    const theme = darkTheme === "light" ? "" : "dark"
 
     // useEffect that gives the data to the table
     // based on how many items per page is to be shown

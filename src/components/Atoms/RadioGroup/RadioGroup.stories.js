@@ -46,7 +46,7 @@ const Template = (args) => {
 
   return (
     <React.Fragment>
-      <RadioGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode()} />
+      <RadioGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode() ? "" : "light"} />
       <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </React.Fragment>
   );

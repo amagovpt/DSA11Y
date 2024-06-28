@@ -9,7 +9,7 @@ const TextArea = ({ darkTheme, label, type, placeholder, error, id, ...rest }) =
     "is-invalid": error,
   });
 
-  const theme = darkTheme ? "dark" : ""
+  const theme = darkTheme === "light" ? "" : "dark"
 
   return (
     <Form.Group className={`field ${theme}`}>
