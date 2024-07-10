@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template = (args) => <LoadingComponent {...args} darkTheme={useDarkMode() ? "" : "light"} />;
+const Template = (args) => <LoadingComponent {...args} darkTheme={useDarkMode() ? "dark" : "light"} />;
 
 export const Default = Template.bind({});
 Default.args = {

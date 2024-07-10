@@ -7,10 +7,10 @@
 
 .field input,
 .fieldUpload input {
-  height: 42px;
+  height: 54px;
   border: 2px solid var(--ama-color-brand-primary) !important;
   background-color: var(--ama-color-background-white);
-  margin: 8px 0 8px 0;
+  margin: 8px 0 20px 0;
   min-width: 50px;
   color: var(--ama-color-text-gray);
   font-weight: 400;
@@ -67,7 +67,7 @@ input[type="file"].form-control::file-selector-button {
 .field.dark input,
 .fieldUpload.dark input {
   border-color: var(--ama-color-text-blue) !important;
-  background-color: transparent;
+  background-color: transparent !important;
   color: var(--ama-color-text-blue) !important;
 }
 

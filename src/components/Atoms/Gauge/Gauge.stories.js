@@ -17,7 +17,7 @@ export default {
   },
 };
 
-const Template = (args) => <Gauge {...args} darkTheme={useDarkMode() ? "" : "light"} />;
+const Template = (args) => <Gauge {...args} darkTheme={useDarkMode() ? "dark" : "light"} />;
 
 export const Default = Template.bind({});
 Default.args = {

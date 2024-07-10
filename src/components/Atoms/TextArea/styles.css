@@ -8,7 +8,7 @@
   height: 100px;
   border: 2px solid var(--ama-color-brand-primary) !important;
   background-color: var(--ama-color-background-white);
-  margin: 8px 0 8px 0;
+  margin: 8px 0 20px 0;
   min-width: 50px;
   padding: 10px 16px;
   color: var(--ama-color-text-gray);

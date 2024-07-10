@@ -30,7 +30,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     const nAllItems = dataList && dataList.length
 
     // Theme
-    const theme = darkTheme === "light" ? "" : "dark"
+    const theme = darkTheme === "dark" ? "dark" : ""
 
     // useEffect that gives the data to the table
     // based on how many items per page is to be shown
@@ -187,7 +187,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 case "Link":
                     let href = columnsOptions[key].href ? columnsOptions[key].href : () => null
                     // Render a link
-                    return (<td key={index}><a onClick={() => href()} className="ama-typography-action-large bold">{row[key]}</a></td>)
+                    return (<td key={index}><a onClick={() => href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
@@ -229,7 +229,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     }
 
     return (
-        <div className={`table-responsive ${theme}`}>
+        <div className={`sorting_table-responsive ${theme}`}>
             <table className="table sorting_table" data-sortable="true">
                 {/* Table caption -> descripton of the table */}
                 <caption className="visually-hidden">

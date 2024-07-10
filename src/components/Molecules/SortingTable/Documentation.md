@@ -71,7 +71,7 @@ Certos campos não são para aparecer na tabela, certos campos são links e não
     columnsOptions = {
       id: { type: "Skip", center: false, bold: false, decimalPlace: false },
       rank: { type: "Number", center: true, bold: false, decimalPlace: false },
-      name: { type: "Button", center: false, bold: false, decimalPlace: false },
+      name: { type: "Link", center: false, bold: false, decimalPlace: false },
       entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
       declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
       stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false },
@@ -82,7 +82,7 @@ Certos campos não são para aparecer na tabela, certos campos são links e não
       AAA: { type: "Number", center: true, bold: false, decimalPlace: false },
     }
 
-Neste objeto complementar, podemos verificar que os atributos que não queremos renderizar na tabela têm o type como "Skip", os icons têm o seu nome respetivo "Stamp" e "Declaration", e depois temos o "Number" e o "Button", sendo o button, o texto em forma de link.
+Neste objeto complementar, podemos verificar que os atributos que não queremos renderizar na tabela têm o type como "Skip", os icons têm o seu nome respetivo "Stamp" e "Declaration", e depois temos o "Number" e o "Link" o texto em forma de link.
 - Cada célula pode depois ter o conteúdo centrado ou não baseado no que passamos em "center: ..."
 - Pode ter o texto ou números a negrito "bold: ..."
 - E no caso da pontuação, damos a possíbilidade do número ser renderizado com casas decimais ou não "decimalPlace: ..."
@@ -93,7 +93,7 @@ Neste objeto complementar, podemos verificar que os atributos que não queremos 
 True ou False, depende do modo em que a página se encontraFunção que é usada no evento de click do type Button
 
 #### darkTheme
-True ou False, depende do modo em que a página se encontra
+"light" ou "dark", depende do modo em que a página se encontra
 
 #### pagination
 True ou False, se queremos que a tabela tenha paginação ou não

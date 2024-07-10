@@ -10,7 +10,7 @@ const Input = ({ darkTheme, upload, label, type, placeholder, error, id, ...rest
     "is-invalid": error,
   });
   const classUpload = upload ? "fieldUpload" : "field"
-  const theme = darkTheme === "light" ? "" : "dark"
+  const theme = darkTheme === "dark" ? "dark" : ""
   return (
     <Form.Group className={`${classUpload} ${theme}`}>
       <Form.Label htmlFor={id}>{label}</Form.Label>

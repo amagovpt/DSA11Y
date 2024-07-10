@@ -17,8 +17,8 @@ button,
   height: 42px;
   justify-content: center;
   gap: 10px !important;
-
   font-family: var(--font-lato) !important;
+  border: 2px solid;
 }
 
 button,

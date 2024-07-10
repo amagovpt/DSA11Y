@@ -4,7 +4,7 @@ import { Icon } from "../../../Atoms/Icon";
 import { Link } from "../../../Atoms/Link";
 import { useRef, useState } from "react";
 
-export function TopBar({darkTheme, changeTheme, changeLanguage}) {
+export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
   const [openAccordion, setOpenAccordion] = useState(false);
   const accordionContentRef = useRef(null);
 
@@ -16,7 +16,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
   };
 
   const getTitle = () => {
-    return openAccordion ? "pressione para comprimir a nossa lista de aplicações e sítios web" : "pressione para expandir a nossa lista de aplicações e sítios web";
+    return openAccordion ? lngTexts.close_dropdown : lngTexts.open_dropdown;
   }
 
   return (
@@ -27,11 +27,11 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
             <div className="d-flex justify-content-between flex-row-reverse">
               <div className="d-flex flex-row gap-4">
                 <button
-                  className="btn btn-link dark-mode d-flex align-items-center"
+                  className="btn btn-link dark-mode p-1 d-flex align-items-center"
                   id="darkModeBtn"
                   onClick={changeTheme ? () => changeTheme() : null}
                 >
-                  <span id="darkModeLabel" className="ama-typography-body">Modo Escuro</span>
+                  <span id="darkModeLabel" className="ama-typography-body">{lngTexts.dark_mode}</span>
                   <Icon
                     name="AMA-EscuroClaro-Line icon-dark"
                     aria-hidden="true"
@@ -40,11 +40,12 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                 </button>
 
                 <button
-                  className="btn btn-link language-mode p-1  d-flex align-items-center"
+                  className="btn btn-link language-mode p-1 d-flex align-items-center"
                   id="langModeBtn"
                   onClick={changeLanguage ? () => changeLanguage() : null}
+                  lang={lngTexts.language}
                 >
-                  <span id="langModeLabel" className="ama-typography-body">See in english</span>
+                  <span id="langModeLabel" className="ama-typography-body">{lngTexts.language_en}</span>
                   <Icon name="AMA-Globo-Line icon-lang" aria-hidden="true" darkTheme={darkTheme} />
                 </button>
               </div>
@@ -66,7 +67,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                 />
 
                 <span id="flushHeading" className="ama-typography-body">
-                  Uma ferramenta do ecossistema{" "}
+                  {lngTexts.tool}
                   <span className="text-primary fw-bold dark_mode_span ama-typography-body bold">
                     acessibilidade.gov.pt
                   </span>
@@ -106,10 +107,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                     <div className="col-12 col-lg-6 align-self-center">
                       <div className="ama-typography-body">
                         <p className="m-0">
-                          Os sítios e as ferramentas de apoio à acessibilidade e
-                          à usabilidade, para garantir a promoção das boas
-                          práticas e melhorar a experiência de utilização dos
-                          serviços públicos digitais.
+                          {lngTexts.text}
                         </p>
                       </div>
                     </div>
@@ -123,9 +121,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                         </h3>
                       </div>
                       <p className="mb-4">
-                        Divulgação, partilha e promoção das melhores práticas
-                        de acessibilidade para conteúdos Web e aplicações
-                        móveis.
+                        {lngTexts.accessibilityText}
                       </p>
                       <ul className="ama-list">
                         <li className="mb-3">
@@ -134,7 +130,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://observatorio.acessibilidade.gov.pt/"
-                            text="Observatório Português da Acessibilidade Web"
+                            text={lngTexts.accessibilityLink1}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -145,7 +141,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://www.acessibilidade.gov.pt/gerador/"
-                            text={`Gerador "Declaração de Acessibilidade"`}
+                            text={lngTexts.accessibilityLink2}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -156,7 +152,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://accessmonitor.acessibilidade.gov.pt/"
-                            text="AccessMonitor"
+                            text={lngTexts.accessibilityLink3}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -184,9 +180,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                         <strong>mosaico</strong>.gov.pt
                       </h3>
                       <p className="mb-4">
-                        Recursos, ferramentas e boas práticas para melhorar a
-                        experiência de utilização dos serviços públicos
-                        digitais.
+                        {lngTexts.usabilityText}
                       </p>
                       <ul className="ama-list">
                         <li className="mb-3">
@@ -195,7 +189,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://mosaico.gov.pt/areas-tecnicas/usabilidade"
-                            text="Usabilidade no Mosaico"
+                            text={lngTexts.usabilityLink1}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -208,8 +202,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                             to="https://zeroheight.com/1be481dc2/p/97181d-agora-design-system"
                             darkTheme={darkTheme}
                           >
-                            Ágora <em lang="en">Design System</em> -
-                            documentação
+                            {lngTexts.usabilityLink2}
                           </Link>
                         </li>
 
@@ -221,8 +214,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                             to="https://prd-agora.northeurope.cloudapp.azure.com"
                             darkTheme={darkTheme}
                           >
-                            Ágora <em lang="en">Design System</em> -
-                            componentes
+                            {lngTexts.usabilityLink3}
                           </Link>
                         </li>
 
@@ -232,7 +224,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://guias.mosaico.gov.pt/guias-praticos/usabilidade-como-realizar-testes-de-usabilidade"
-                            text="Como realizar testes de usabilidade?"
+                            text={lngTexts.usabilityLink4}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -243,7 +235,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://guias.mosaico.gov.pt/guias-praticos/usabilidade-como-desenvolver-aplicacoes-para-dispositivos-moveis"
-                            text="Como desenvolver aplicações móveis?"
+                            text={lngTexts.usabilityLink5}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -254,9 +246,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                         <strong>selo.usabilidade</strong>.gov.pt
                       </h3>
                       <p className="mb-4">
-                        Selo de excelência que premeia as boas práticas de
-                        acessibilidade e usabilidade nos sítios Web dos
-                        serviços públicos digitais.
+                        {lngTexts.badgeText}
                       </p>
                       <ul className="ama-list">
                         <li className="mb-3">
@@ -265,7 +255,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/candidatura/"
-                            text="Candidatura ao Selo"
+                            text={lngTexts.badgeLink1}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -276,7 +266,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/requisitos/"
-                            text="Requisitos do Selo"
+                            text={lngTexts.badgeLink2}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -287,7 +277,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://amagovpt.github.io/kit-selo/"
-                            text="Kit informativo do Selo"
+                            text={lngTexts.badgeLink3}
                             darkTheme={darkTheme}
                           />
                         </li>
@@ -298,7 +288,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage}) {
                               <Icon name="AMA-Setalongaoficial-Line" darkTheme={darkTheme} />
                             }
                             to="https://pprselo.usabilidade.gov.pt/ajuda/"
-                            text="Dúvidas sobre o Selo?"
+                            text={lngTexts.badgeLink4}
                             darkTheme={darkTheme}
                           />
                         </li>

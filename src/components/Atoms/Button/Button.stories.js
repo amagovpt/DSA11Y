@@ -23,7 +23,7 @@ const Template = (args) => {
     <div style={{ display: "flex", flexDirection: "row", flexWrap: "wrap" }}>
       {Object.values(buttonVariant).map((variant) => (
         <span key={variant} style={{ margin: 5 }}>
-          <Button {...args} darkTheme={useDarkMode() ? "" : "light"} variant={variant} radius="full">
+          <Button {...args} darkTheme={useDarkMode() ? "dark" : "light"} variant={variant} radius="full">
             {variant}
           </Button>
         </span>
@@ -38,27 +38,27 @@ _Button.args = {
 };
 
 export const ButtonPrimary = () => (
-  <Button className="" variant="primary" text="Primary button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="primary" text="Primary button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonSecondary = () => (
-  <Button className="" variant="secondary" text="Secondary button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="secondary" text="Secondary button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonGhost = () => (
-  <Button className="" variant="ghost" text="Ghost button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="ghost" text="Ghost button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonCancel = () => (
-  <Button className="" variant="cancel" text="Cancel button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="cancel" text="Cancel button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonSuccess = () => (
-  <Button className="" variant="success" text="Success button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="success" text="Success button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonDanger = () => (
-  <Button className="" variant="danger" text="Danger button" darkTheme={useDarkMode() ? "" : "light"} />
+  <Button className="" variant="danger" text="Danger button" darkTheme={useDarkMode() ? "dark" : "light"} />
 );
 
 export const ButtonBorderless = () => (
@@ -67,7 +67,7 @@ export const ButtonBorderless = () => (
     variant="danger"
     radius="none"
     text="Borderless button"
-    darkTheme={useDarkMode() ? "" : "light"}
+    darkTheme={useDarkMode() ? "dark" : "light"}
   />
 );
 

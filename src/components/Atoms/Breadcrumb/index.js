@@ -9,7 +9,7 @@ const { Item } = BBreadcrumb;
 const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
 
   // Theme
-  const theme = darkTheme === "light" ? "" : "dark"
+  const theme = darkTheme === "dark" ? "dark" : ""
   
   const size = data.length - 1;
   const handleOnClick = (item) => (e) => {
@@ -23,21 +23,18 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
     }
   };
   return (
-    <div className={`breadcrumbs ${theme}`}>
-      <BBreadcrumb {...props}>
-        {data.map((item, index) => (
-          <Item
-            key={`id-${index}`}
-            href={item.href === "" ? "" : item.href}
-            active={index === size}
-            onClick={handleOnClick(item)}
-            aria-label={index === size ? tagHere : undefined}
-          >
-            {item.title}
-          </Item>
-        ))}
-      </BBreadcrumb>
-    </div>
+    <BBreadcrumb {...props} className={`breadcrumbs ${theme}`} aria-label={tagHere}>
+      {data.map((item, index) => (
+        <Item
+          key={`id-${index}`}
+          href={item.href === "" ? "" : item.href}
+          active={index === size}
+          onClick={handleOnClick(item)}
+        >
+          {item.title}
+        </Item>
+      ))}
+    </BBreadcrumb>
   );
 };
 

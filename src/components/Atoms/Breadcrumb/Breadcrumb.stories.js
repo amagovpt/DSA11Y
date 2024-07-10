@@ -18,7 +18,7 @@ export default {
 };
 
 const Template = ({ data, ...args }) => {
-  return <Breadcrumb data={data} {...args} darkTheme={useDarkMode() ? "" : "light"}  />;
+  return <Breadcrumb data={data} {...args} darkTheme={useDarkMode() ? "dark" : "light"}  />;
 };
 
 export const _Breadcrumb = Template.bind({});

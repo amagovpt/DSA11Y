@@ -20,7 +20,7 @@ export * from "./Molecules/Tabs";
 export * from "./Molecules/Table";
 export * from "./Molecules/SortingTable";
 export * from "./Molecules/StatisticsHeader";
-export * from "./Molecules/Table/components/TableAlternative";
+export * from "./Molecules/StatsTable";
 
 // ORGANISMS
 export * from "./Organisms/Header";

@@ -24,13 +24,14 @@ export default [
     plugins: [
       replace({
         // Replace import paths in JavaScript and CSS files
-        'url("../../../../public/fonts': 'url("fonts',
-        'url("../../../../public/img': 'url("img',
+        'url("../../../../public/fonts': 'url("/public/fonts',
+        'url("../../../../public/img': 'url("/public/img',
       }),
       copy({
         targets: [
           { src: 'public/fonts', dest: 'dist/public/fonts' },
-          { src: 'public/img', dest: 'dist/public/img' }
+          { src: 'public/img', dest: 'dist/public/img' },
+          { src: 'src/components/Atoms/Icon/fontStyle.css', dest: 'dist/public' }
         ]
       }),
       postcss({

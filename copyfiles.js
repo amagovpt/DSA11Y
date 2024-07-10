@@ -7,8 +7,14 @@ const sourceDir = path.join(__dirname, 'dist', 'public', 'fonts');
 // Path to the source directory within your package
 const sourceDir2 = path.join(__dirname, 'dist', 'public', 'img');
 
+// Path to the source directory within your package
+const sourceDir3 = path.join(__dirname, 'dist', 'public', 'fontStyle.css');
+
 // Path to the target directory in the destination project
 const targetDir = path.join(__dirname, '..', '..', 'public');
+
+// Path to the target directory in the destination project
+const targetDir2 = path.join(__dirname, '..', '..', 'src', 'styles');
 
 // Function to copy a file from source to target
 function copyFileSync(source, target) {
@@ -19,6 +25,9 @@ function copyFileSync(source, target) {
     if (fs.lstatSync(target).isDirectory()) {
       targetFile = path.join(target, path.basename(source));
     }
+  } else {
+    // Ensure the target directory exists
+    fs.mkdirSync(path.dirname(target), { recursive: true });
   }
 
   fs.writeFileSync(targetFile, fs.readFileSync(source));
@@ -55,8 +64,16 @@ if (fs.existsSync(sourceDir)) {
 
 // Check if the source directory exists before attempting to copy
 if (fs.existsSync(sourceDir2)) {
-    copyFolderRecursiveSync(sourceDir2, targetDir);
-    console.log(`Copied files from "${sourceDir2}" to "${targetDir}"`);
-  } else {
-    console.error(`Source directory "${sourceDir2}" does not exist.`);
-  }
+  copyFolderRecursiveSync(sourceDir2, targetDir);
+  console.log(`Copied files from "${sourceDir2}" to "${targetDir}"`);
+} else {
+  console.error(`Source directory "${sourceDir2}" does not exist.`);
+}
+
+// Check if the source directory exists before attempting to copy
+if (fs.existsSync(sourceDir3)) {
+  copyFileSync(sourceDir3, path.join(targetDir2, path.basename(sourceDir3)));
+  console.log(`Copied files from "${sourceDir3}" to "${targetDir2}"`);
+} else {
+  console.error(`Source directory "${sourceDir3}" does not exist.`);
+}

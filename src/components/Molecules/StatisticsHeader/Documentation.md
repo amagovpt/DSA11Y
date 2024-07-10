@@ -4,7 +4,7 @@ StatisticsHeader é um componente que era utilizado em várias páginas no site 
 <br>
 
 #### darkTheme
-True ou False, depende do modo em que a página se encontra
+"light" ou "dark", depende do modo em que a página se encontra
 
 #### stats
 Objeto com os stats a serem mostrados, exemplo:

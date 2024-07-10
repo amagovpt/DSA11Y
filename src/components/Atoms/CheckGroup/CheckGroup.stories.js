@@ -46,7 +46,7 @@ const Template = (args) => {
 
   return (
     <>
-      <CheckGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode() ? "" : "light"} />
+      <CheckGroup {...args} value={value} onChange={setValue} darkTheme={useDarkMode() ? "dark" : "light"} />
       <div style={{ color: useDarkMode() ? 'var(--ama-color-text-blue)' : 'var(--ama-color-text-grey)' }}>value: {value}</div>
     </>
   );

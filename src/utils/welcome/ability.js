@@ -10,7 +10,7 @@ export const AbilitiesDescription = () => (
       imageSrc={gettingStarted}
       linkHref="https://github.com/mondaycom/vibe#readme"
     >
-      Instructions and welcome to the monday.com OS design system
+      Instructions and welcome to the AMA design system
     </AbilityDescription>
     <AbilityDescription
       title="Foundations"

@@ -7,7 +7,7 @@ import { Button } from "../../Atoms/Button";
 const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, subtitle, oldestPage, newestPage, gaugeTitle, buttons }) => {
 
     // Theme
-    const theme = darkTheme === "light" ? "" : "dark"
+    const theme = darkTheme === "dark" ? "dark" : ""
 
     // Normal stats with Value (Title) and description (Subtitle)
     const normalExtraStats = (value, subtitle, index) => {

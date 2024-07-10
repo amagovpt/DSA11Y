@@ -421,7 +421,7 @@ export const sortingTable = (args) => {
   return (
     <SortingTable
       {...args}
-      darkTheme={useDarkMode() ? "" : "light"}
+      darkTheme={useDarkMode() ? "dark" : "light"}
       headers={directoriesHeaders}
       setDataList={setData}
       dataList={data}
