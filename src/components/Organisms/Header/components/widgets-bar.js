@@ -29,7 +29,7 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
                   : 
                     <p className="logo">
                       <a
-                        href="/amp"
+                        href={linkTo}
                         title={title}
                       >
                         <img src={logo} alt="accessMonitor" lang="en" />
