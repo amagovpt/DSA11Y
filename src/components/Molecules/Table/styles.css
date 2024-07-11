@@ -214,14 +214,23 @@ code {
   transform: rotate(180deg);
 }
 
+.table_primary tbody .accordion-flush,
+.table_primary tbody .accordion-flush .accordion-item,
+.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-header button,
+.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-button {
+  background-color: transparent !important;
+}
+
+.table_primary.dark .accordion-flush .accordion-item .accordion-header button h2.show tbody tr {
+  background-color: red;
+}
+
 .table_primary.dark .accordion-flush .accordion-item .accordion-header button {
-  background-color: var(--ama-color-background-dark-lighter) !important;
+  background-color: transparent !important;
   color: var(--ama-color-background-white) !important;
 }
 
-.table_primary.dark .table_primary tr:hover,
-.table_primary.dark .show,
-.table_primary.dark tr:hover .accordion-flush .accordion-item .accordion-header button {
+.table_primary.dark .show {
   background-color: var(--ama-color-background-dark-darker) !important;
 }
 
@@ -243,12 +252,4 @@ code {
 
 .table_primary.dark .lvl_color {
   color: var(--ama-color-background-white)
-}
-
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button code {
-  color: var(--ama-color-background-white) !important;
-}
-
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button mark {
-  color: var(--ama-color-background-white) !important;
 }

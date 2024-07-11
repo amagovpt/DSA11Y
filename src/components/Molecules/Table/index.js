@@ -25,16 +25,15 @@ const TableComponent = ({darkTheme, data, onClick, caption, col1, col2, col3, lv
 
         <tbody>
           {data && data.map((option) => (
-            <tr key={option.id}>
+            <tr key={option.id} id={'tr_'+option.id}>
               <td className={option?.tdClassName}>
                 <span className="visually-hidden">
                   {imageTitlesCallback(option.iconName)}
                 </span>
                 <Icon name={option.iconName} />
               </td>
-              {console.log(option)}
               <td className="mobile-options">
-                <Accordion options={[option]} flush={true} />
+                <Accordion options={[option]} flush={true} id={option.id} />
 
                 <div className="hide_desktop-screen">
                   <span className="ms-3 lvl_color">
