@@ -138,6 +138,10 @@ ul {
   background: unset;
 }
 
+.sbdocs.sbdocs-content.css-qa4clq {
+  max-width: 1300px;
+}
+
 .lights-out .sbdocs.sbdocs-preview {
   background: unset;
   background-color: var(--ama-color-grey-700);
@@ -180,7 +184,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -191,7 +195,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0.14px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -202,7 +206,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0.26px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -213,7 +217,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0.28px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -224,7 +228,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0.38px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -235,7 +239,7 @@ ul {
   line-height: normal !important;
   letter-spacing: 0.40px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -248,7 +252,7 @@ h1 {
   line-height: normal !important;
   letter-spacing: 0.40px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -259,7 +263,7 @@ h2 {
   line-height: normal !important;
   letter-spacing: 0.38px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -270,7 +274,7 @@ h3 {
   line-height: normal !important;
   letter-spacing: 0.36px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -281,7 +285,7 @@ h4 {
   line-height: normal !important;
   letter-spacing: 0.36px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -292,7 +296,7 @@ h5 {
   line-height: 32px !important;
   letter-spacing: 0.38px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -303,7 +307,7 @@ h6 {
   line-height: normal !important;
   letter-spacing: -0.32px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -316,7 +320,7 @@ h6 {
   line-height: 32px !important;
   letter-spacing: 0.38px !important;
   text-decoration: underline !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -327,7 +331,7 @@ h6 {
   line-height: normal !important;
   letter-spacing: 0.38px !important;
   text-decoration: underline !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -338,7 +342,7 @@ h6 {
   line-height: normal !important;
   letter-spacing: 0.38px !important;
   text-decoration: underline !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -350,7 +354,7 @@ h6 {
   line-height: 32px !important;
   letter-spacing: 0.38px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -361,7 +365,7 @@ h6 {
   line-height: normal !important;
   letter-spacing: -0.32px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 
@@ -372,7 +376,7 @@ h6 {
   line-height: normal !important;
   letter-spacing: 0px !important;
   text-decoration: none !important;
-  margin-bottom: 0px !important;
+  margin-bottom: 0px;
   text-transform: none !important;
 }
 

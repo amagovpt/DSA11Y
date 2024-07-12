@@ -5,23 +5,43 @@
 }
 
 .vertical-tabs {
-  display: flex;
-  flex-direction: row;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 300px 1fr;
 }
 
 .vertical-tabs .nav-tabs {
+  width: 100%;
+  height: fit-content;
   background-color: var(--ama-color-background-white) !important;
   display: flex;
   flex-direction: column;
-  width: fit-content;
   justify-content: space-between;
   margin-right: 20px;
   border-bottom: none;
+  line-height: normal;
 }
 
 .vertical-tabs .nav-tabs .nav-link {
+  border-radius: 0px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-size: 1.75em;
+  font-weight: 700;
   width: 100%;
   justify-content: left;
+  display: flex;
+}
+
+.vertical-tabs .nav-tabs .nav-link.active {
+  background-color: transparent;
+  color: var(--ama-color-text-gray) !important;
+  border-right: 5px solid var(--ama-color-brand-primary);
+  border-bottom: 0px;
+}
+
+.vertical-tabs .tabs_info_container {
+  margin-left: 30px;
 }
 
 .vertical-tabs .nav-tabs .nav-item:not(:last-child)::after {
@@ -29,7 +49,7 @@
   display: inline-block;
   width: 100%;
   height: 1px;
-  background-color: var(--ama-color-grey-100); /* Adjust color as needed */
+  background-color: var(--ama-color-grey-100);
   padding-right: 15px;
 }
 

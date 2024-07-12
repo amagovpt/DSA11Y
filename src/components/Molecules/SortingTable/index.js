@@ -16,8 +16,9 @@ import {Icon} from "../../Atoms/Icon"
     nItemsPerPageTexts -> Texts for the selection of how many items per page (Pagination)
     iconsAltTexts -> Alternative texts for the icons of the data cells
     paginationButtonsTexts ->  texts for accessibility screen readers for the 4 buttons of pagination (Pagination)
+    project -> name of project so that it works in multiple projects
 */
-const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts }) => {
+const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project }) => {
 
     //SORT
     const [sort, setSort] = useState({property: "", type: ""});
@@ -120,7 +121,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
             } else {
                 // If column has bidWidth it means that column ocupies more than normal on the size of the table
                 return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} className={`hide-on-small-screen ${justifyCenter} no_pointer`}>
+                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`hide-on-small-screen ${justifyCenter} no_pointer`}>
                         {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
                         {!headerData?.empty ? <span className="ama-typography-body bold">{headerData.name}</span> : <span className="visually-hidden">Empty</span>}
                     </th>
@@ -195,11 +196,11 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     // Render one of the 3 Stamp Icons based on the number received (from: 1 to 3)
                     switch(row[key]) {
                         case 1:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Selo_Bronze.svg`} alt={iconsAltTexts[0]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Selo_Bronze.svg`} alt={iconsAltTexts[0]} /></td>)
                         case 2:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Selo_Prata.svg`} alt={iconsAltTexts[1]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Selo_Prata.svg`} alt={iconsAltTexts[1]} /></td>)
                         case 3:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Selo_Ouro.svg`} alt={iconsAltTexts[2]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Selo_Ouro.svg`} alt={iconsAltTexts[2]} /></td>)
                         default:
                             return (<td key={index} className={`${center} ${bold}`}>{row[key]}</td>)
                     }
@@ -207,11 +208,11 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     // Render one of the 3 Declaration Icons based on the number received (from: 1 to 3)
                     switch(row[key]) {
                         case 1:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Declaracao_Nao_Conforme.svg`} alt={iconsAltTexts[3]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Declaracao_Nao_Conforme.svg`} alt={iconsAltTexts[3]} /></td>)
                         case 2:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Declaracao_Parcial_Conforme.svg`} alt={iconsAltTexts[4]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Declaracao_Parcial_Conforme.svg`} alt={iconsAltTexts[4]} /></td>)
                         case 3:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`/img/SVG_Declaracao_Conforme.svg`} alt={iconsAltTexts[5]} /></td>)
+                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}/img/SVG_Declaracao_Conforme.svg`} alt={iconsAltTexts[5]} /></td>)
                         default:
                             return (<td key={index} className={`${center} ${bold}`}>{row[key]}</td>)
                     }

@@ -31,13 +31,13 @@ export const TypographyTable = ({fonts, family}) => {
     }
   }
   return (
-    <table className="mb-5 typography_table">
+    <table className="mb-5 typography_table w-100">
         <thead>
             <tr>
                 <th>{family === "pesos" ? "Nome da Classe" : "Variant"}</th>
                 <th>{family === "pesos" ? "Atributo Alterado" : "Font Size"}</th>
                 <th>{family === "pesos" ? "Value" : "Font Weight"}</th>
-                <th style={{ width: 170 }}>Result</th>
+                <th style={{ width: '75%' }}>Result</th>
             </tr>
         </thead>
         <tbody>

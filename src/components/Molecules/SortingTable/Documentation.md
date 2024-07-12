@@ -140,5 +140,8 @@ Array com 4 textos com a ação que cada botão faz para os leitores de ecrã co
   		"Última página"
 	]
 
+#### project
+Name of project so that it can grab images from the "public" folder
+
 
 ## Exemplo

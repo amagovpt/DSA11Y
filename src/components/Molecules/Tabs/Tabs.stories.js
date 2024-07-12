@@ -1,10 +1,19 @@
 import React from "react";
 import { Tabs } from "./index";
+import Documentation from './Documentation.md'
 
 export default {
   title: "components/Molecules/Tabs",
   component: Tabs,
   argTypes: {},
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      description: {
+        component: Documentation,
+      },
+    },
+  },
 };
 
 const tabs = [
@@ -26,13 +35,30 @@ const tabs = [
   },
 ];
 
-const Template = (args) => {
-  return <Tabs {...args} />;
+const tabs2 = [
+  {
+    eventKey: "tab1",
+    title: "Insert URL",
+    component: <div className="tabs_info_container">tab 1</div>,
+  },
+  {
+    eventKey: "tab2",
+    title: "Insert HTML code",
+    component: <div className="tabs_info_container">tab 2</div>,
+  },
+  {
+    eventKey: "tab3",
+    title: "Upload HTML file",
+    component: <div className="tabs_info_container">tab 3</div>,
+    // disabled: true,
+  },
+];
+
+export const TabHozrizontal = (args) => {
+  return <Tabs {...args} tabs={tabs} defaultActiveKey={"tab1"} vertical={false} />;
 };
 
-export const _Tabs = Template.bind({});
-_Tabs.args = {
-  tabs,
-  defaultActiveKey: "tab1",
-  vertical: false,
+
+export const TabVertical = (args) => {
+  return <Tabs {...args} tabs={tabs2} defaultActiveKey={"tab1"} vertical={true} />;
 };
