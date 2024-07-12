@@ -113,7 +113,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 // Icon Header
                 // Icons need to have a discription with the class visually-hidden for accessibility screen readers
                 return (
-                    <th key={index} scope="col" colSpan={nOfColumns} className={`hide-on-small-screen ${justifyCenter} no_pointer first-show`}>
+                    <th key={index} scope="col" colSpan={nOfColumns} className={`${justifyCenter} no_pointer first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
@@ -121,7 +121,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
             } else {
                 // If column has bidWidth it means that column ocupies more than normal on the size of the table
                 return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`hide-on-small-screen ${justifyCenter} no_pointer`}>
+                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${justifyCenter} no_pointer`}>
                         {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
                         {!headerData?.empty ? <span className="ama-typography-body bold">{headerData.name}</span> : <span className="visually-hidden">Empty</span>}
                     </th>
@@ -136,7 +136,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 // Icon Header
                 // Icons need to have a discription with the class visually-hidden for accessibility screen readers
                 return (
-                    <th key={index} scope="col" colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "hide-on-small-screen first-show show_icon" : "hide-on-small-screen first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th key={index} scope="col" colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -147,7 +147,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
             } else {
                 // Text Header
                 return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `hide-on-small-screen show_icon` : `hide-on-small-screen`} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -188,7 +188,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 case "Link":
                     let href = columnsOptions[key].href ? columnsOptions[key].href : () => null
                     // Render a link
-                    return (<td key={index}><a onClick={() => href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
+                    return (<td key={index}><a href="" onClick={() => href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)

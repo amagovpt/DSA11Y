@@ -11,12 +11,14 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
                 <>
                   {homePage ? 
                     <h1 className="d-flex flex-column logo">
-                      <span className="title ms-0">{title}</span>
-                      <span className="title2 medium">{title2}</span>
+                      <span className="title_h1">{title}</span>
+                      <span className="medium title_h1">{title2}</span>
                     </h1> 
                   : <p className="d-flex flex-column logo">
-                      <a href={linkTo} className="title ms-0">{title}</a>
-                      <a href={linkTo} className="title2 medium">{title2}</a>
+                      <a href={linkTo} className="title_h1 bold">
+                        {title}
+                        <div className="medium">{title2}</div>
+                      </a>
                     </p>
                   }
                 </>

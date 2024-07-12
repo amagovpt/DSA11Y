@@ -67,8 +67,8 @@ export function Header({description, language, title, title2, logo, darkTheme, c
     <header id="wrapper-navbar" aria-label="Cabeçalho da página do AccessMonitor" className={`${theme}`}>
       <div className="skip-to-content">
         <div className="container">
-          <a className="skip-to-content-link p-0 d-flex align-items-center" href="#content">
-            <span className="ama-typography-action-small py-2 px-3">{lngTexts.skip_to_main}</span>
+          <a className="skip-to-content-link d-flex align-items-center ama-typography-action-small py-2 px-3 my-3" href="#content">
+            {lngTexts.skip_to_main}
           </a>
         </div>
       </div>

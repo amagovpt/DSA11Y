@@ -170,6 +170,10 @@
         background-color: var(--ama-color-background-white);
     }
 
+    .sorting_table-responsive {
+        overflow: auto;
+    }
+
     .sorting_table-responsive.dark {
         background-color: var(--ama-color-background-dark-darker);
     }

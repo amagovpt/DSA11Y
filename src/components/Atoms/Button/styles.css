@@ -55,12 +55,13 @@ button.btn-sm {
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-brand-primary);
   font-weight: 700;
-  border: 2px solid var(--ama-color-brand-primary) !important;
+  border: 2px solid var(--ama-color-brand-primary);
 }
 
 .btn-primary:hover {
   color: var(--ama-color-brand-primary);
   background-color: var(--ama-color-background-white);
+  border-color: var(--ama-color-brand-primary);
 }
 
 .btn-primary:disabled {

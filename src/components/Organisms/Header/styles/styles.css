@@ -2,8 +2,7 @@
   background: var(--ama-color-background-white);
 }
 
-.logo .title,
-.logo .title2 {
+.logo .title_h1 {
   color: var(--ama-color-brand-primary);
   font-size: 26px;
 }
@@ -17,22 +16,20 @@
   white-space: nowrap;
   border: 0;
   color: var(--ama-color-brand-primary) !important;
+  opacity: 0;
 }
 
 .skip-to-content-link:focus {
   position: static;
-  width: auto;
-  height: 60px;
   overflow: visible !important;
   white-space: normal;
-  outline: 0;
-}
-
-.skip-to-content-link:focus span {
   outline: 1px solid var(--ama-color-blue-600);
   color: var(--ama-color-brand-primary) !important;
   outline-color: var(--ama-color-blue-600);
   border-radius: 4px;
+  width: max-content;
+  height: fit-content;
+  opacity: 100;
 }
 
 .text-primary {
@@ -105,7 +102,6 @@ header.dark .widgets-bar {
   color: var(--ama-color-background-white) !important;
 }
 
-header.dark .logo .title,
-header.dark .logo .title2 {
+header.dark .logo .title_h1 {
   color: var(--ama-color-text-blue);
 }
