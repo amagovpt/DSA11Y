@@ -52,7 +52,7 @@ const TableComponent = ({darkTheme, data, onClick, caption, col1, col2, col3, lv
                   )}
                 </div>
               </td>
-              <td className="middle_col hide-on-small-screen" aria-label={ariaLabels[option?.lvl] + option?.lvl} >{option?.lvl}</td>
+              <td className="middle_col hide-on-small-screen" aria-label={ariaLabels[option?.lvl]} >{option?.lvl}</td>
 
               <td
                 className={`hide-on-small-screen ${option.ele ? "" : "visually-hidden"}`}
