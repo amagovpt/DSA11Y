@@ -121,7 +121,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
             } else {
                 // If column has bidWidth it means that column ocupies more than normal on the size of the table
                 return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${justifyCenter} no_pointer`}>
+                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${justifyCenter} no_pointer`}>
                         {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
                         {!headerData?.empty ? <span className="ama-typography-body bold">{headerData.name}</span> : <span className="visually-hidden">Empty</span>}
                     </th>

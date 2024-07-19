@@ -56,6 +56,19 @@ input[type="file"].form-control::file-selector-button {
   height: 50px;
 }
 
+button.show_pass {
+  gap: 0px !important;
+}
+
+button.show_pass:not(:focus) {
+  border: 0px;
+}
+
+button.show_pass:hover {
+  background-color: var(--ama-color-brand-primary);
+  color: var(--ama-color-background-white);
+}
+
 
 /* Dark Theme */
 .field.dark label,
@@ -74,4 +87,16 @@ input[type="file"].form-control::file-selector-button {
 .field.dark input::placeholder,
 .fieldUpload.dark input::placeholder {
   color: var(--ama-color-text-blue)
+}
+
+.field.dark button.show_pass i {
+  color: var(--ama-color-text-blue);
+}
+
+.field.dark button.show_pass:hover i {
+  color: var(--ama-color-text-gray);
+}
+
+.field.dark button:focus {
+  border: 3px solid var(--ama-color-yellow-400) !important;
 }

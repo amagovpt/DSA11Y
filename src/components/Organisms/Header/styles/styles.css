@@ -7,6 +7,10 @@
   font-size: 26px;
 }
 
+.logo p {
+  margin-bottom: 0px;
+}
+
 .skip-to-content-link {
   position: absolute;
   width: 1px;

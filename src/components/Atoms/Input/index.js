@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState} from "react";
 import Form from "react-bootstrap/Form";
+import Button from '../Button'
+import {Icon} from '../Icon'
 
 import "./styles.css";
 
 import classNames from "classnames";
 
 const Input = ({ darkTheme, upload, label, type, placeholder, error, id, ...rest }) => {
+
+  const [showPass, setShowPass] = useState(false)
+
   const inputClass = classNames("form-control", {
     "is-invalid": error,
   });
@@ -13,9 +18,21 @@ const Input = ({ darkTheme, upload, label, type, placeholder, error, id, ...rest
   const theme = darkTheme === "dark" ? "dark" : ""
   return (
     <Form.Group className={`${classUpload} ${theme}`}>
-      <Form.Label htmlFor={id}>{label}</Form.Label>
+      {type === 'password' ?
+        <div className="d-flex justify-content-between">
+          <Form.Label htmlFor={id}>{label}</Form.Label>
+          <Button
+            darkTheme={theme}
+            className={"align-self-center show_pass"}
+            variant={"secondary"}
+            text={""}
+            iconRight={<Icon darkTheme={theme} name={showPass ? "AMA-Invisible-Solid" : "AMA-Visible-Line"} />} 
+            onClick={() => setShowPass(!showPass)}
+          />
+        </div>
+      : <Form.Label htmlFor={id}>{label}</Form.Label>}
       <Form.Control
-        type={type}
+        type={showPass ? "text" : type}
         placeholder={placeholder}
         className={inputClass}
         id={id}

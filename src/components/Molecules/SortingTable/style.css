@@ -191,26 +191,26 @@
 
 /* DARK TABLE */
 .sorting_table-responsive.dark,
-.sorting_table-responsive.dark tbody tr td,
-.sorting_table-responsive.dark tbody tr td .sortingTableButton,
-.sorting_table-responsive.dark tbody tr td a {
+.sorting_table-responsive.dark .sorting_table tbody tr td,
+.sorting_table-responsive.dark .sorting_table tbody tr td .sortingTableButton,
+.sorting_table-responsive.dark .sorting_table tbody tr td a {
     color: var(--ama-color-background-white) !important;
 }
 
 .sorting_table-responsive.dark,
-.sorting_table-responsive.dark tbody tr {
+.sorting_table-responsive.dark .sorting_table tbody tr {
     background-color: var(--ama-color-background-dark-lighter) !important;
 }
-.sorting_table-responsive.dark tbody tr:hover {
+.sorting_table-responsive.dark .sorting_table tbody tr:hover {
     background-color: var(--ama-color-background-dark-darker) !important;
 }
 
-.sorting_table-responsive.dark tbody tr,
-.sorting_table-responsive.dark tbody tr:last-child {
+.sorting_table-responsive.dark .sorting_table tbody tr,
+.sorting_table-responsive.dark .sorting_table tbody tr:last-child {
     border-bottom: 1px solid var(--ama-color-grey-400) !important;
 }
 
-.sorting_table-responsive.dark tbody tr td a {
+.sorting_table-responsive.dark .sorting_table tbody tr td a {
     color: var(--ama-color-background-white) !important;
 }
 

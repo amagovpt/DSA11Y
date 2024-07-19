@@ -430,6 +430,7 @@ export const sortingTable = (args) => {
       caption={"Estatísticas do diretório"+ " " + "Os 25 Portais + Procurados da AP"}
       iconsAltTexts={nameOfIcons}
       paginationButtonsTexts={paginationButtonsTexts}
+      project={""}
     />
   )
 };
