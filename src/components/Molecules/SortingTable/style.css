@@ -61,10 +61,6 @@
     background-color: var(--ama-color-background-white) !important;
 }
 
-.sorting_table tbody tr:hover {
-    background-color: var(--ama-color-background-light-darker) !important;
-}
-
 .sorting_table tbody tr td {
     vertical-align: middle;
     background-color: transparent !important;
@@ -163,6 +159,11 @@
     text-decoration: underline !important;
 }
 
+.sorting_table tbody tr td .span_code code {
+    color: #DC3545 !important;
+    text-decoration: none;
+}
+
 
 /* MOBILE */
 @media (min-width: 320px) and (max-width: 480px) {
@@ -201,9 +202,6 @@
 .sorting_table-responsive.dark .sorting_table tbody tr {
     background-color: var(--ama-color-background-dark-lighter) !important;
 }
-.sorting_table-responsive.dark .sorting_table tbody tr:hover {
-    background-color: var(--ama-color-background-dark-darker) !important;
-}
 
 .sorting_table-responsive.dark .sorting_table tbody tr,
 .sorting_table-responsive.dark .sorting_table tbody tr:last-child {
@@ -212,6 +210,11 @@
 
 .sorting_table-responsive.dark .sorting_table tbody tr td a {
     color: var(--ama-color-background-white) !important;
+}
+
+.sorting_table-responsive.dark .sorting_table tbody tr td .span_code code {
+    color: var(--ama-color-red-300) !important;
+    text-decoration: none;
 }
 
 .pagination.dark .pagination_section .selection {

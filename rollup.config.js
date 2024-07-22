@@ -1,6 +1,6 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import babel from 'rollup-plugin-babel';
+import babel from '@rollup/plugin-babel';
 import external from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss'
 import {terser} from 'rollup-plugin-terser'
@@ -39,6 +39,7 @@ export default [
         minimize: true,
       }),
       babel({
+        babelHelpers: 'bundled',
         exclude: ['node_modules/**', 'rollup.config.js', '.storybook', 'public', 'src'],
         presets: ['@babel/preset-react']
       }),

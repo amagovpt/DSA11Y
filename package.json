@@ -1,6 +1,6 @@
 {
   "name": "ama-design-system",
-  "version": "1.1.22",
+  "version": "1.1.25",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "author": "AMA",
@@ -37,8 +37,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
+    "@babel/preset-env": "^7.24.8",
     "@babel/preset-react": "^7.24.7",
     "@chromatic-com/storybook": "^1.2.26",
+    "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
     "@rollup/plugin-replace": "^5.0.7",
@@ -86,5 +88,8 @@
   },
   "dependencies": {
     "react-router-dom": "^6.24.0"
+  },
+  "engines": {
+    "node": ">=16.14"
   }
 }

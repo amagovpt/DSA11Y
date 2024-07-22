@@ -24,7 +24,7 @@ const directoriesHeaders = [
 let columnsOptions = {
   id: { type: "Skip", center: false, bold: false, decimalPlace: false },
   rank: { type: "Number", center: true, bold: false, decimalPlace: false },
-  name: { type: "Link", center: false, bold: false, decimalPlace: false },
+  name: { type: "DangerousHTML", center: false, bold: false, decimalPlace: false },
   entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
   declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
   stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false },
@@ -65,7 +65,7 @@ const dataRows = [
   {
     "id": 22,
     "rank": 1,
-    "name": "Portal Mais Transparência",
+    "name": "Portal Mais Transparência <code>teste</code>",
     "entity": "Agência para a Modernização Administrativa",
     "declaration": 3,
     "stamp": 3,
@@ -78,7 +78,7 @@ const dataRows = [
   {
     "id": 23,
     "rank": 2,
-    "name": "Instituto da Segurança Social, I.P. - Portal Seg Social",
+    "name": "Instituto da Segurança Social, I.P. - Portal Seg Social com o <title>",
     "entity": "Instituto da Segurança Social, I.P.",
     "declaration": null,
     "stamp": null,

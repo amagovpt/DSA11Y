@@ -222,6 +222,20 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 case "DoubleText":
                     // Render 2 texts where the second one is bold and the first one not. If this property also comes with bold then all text will be bold
                     return (<td key={index} className={`${center} ${bold}`}><span className="ama-typography-body">{row[key][0]}</span><span className="ama-typography-body bold">{row[key][1]}</span></td>)
+                case "DangerousHTML":
+                    const hasCode = row[key].includes("<code>")
+                    const hasMark = row[key].includes("<mark>")
+                    const hasMeta = row[key].includes("<meta")
+                    if(hasCode || hasMark || hasMeta) {
+                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>
+                            <span
+                                className="span_code"
+                                dangerouslySetInnerHTML={{ __html: row[key] }}
+                            />
+                        </td>)
+                    } else {
+                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                    }
                 default:
                     // Render an empty cell
                     return <td key={index}>{null}</td>
