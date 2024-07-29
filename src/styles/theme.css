@@ -390,3 +390,69 @@ h6 {
 .bold {
   font-weight: bold !important;
 }
+
+
+/* Margin */
+
+.m-6 {
+  margin: 5rem !important;
+}
+
+.my-6 {
+  margin-top: 5rem !important;
+  margin-bottom: 5rem !important;
+}
+
+.mx-6 {
+  margin-left: 5rem !important;
+  margin-right: 5rem !important;
+}
+
+.mt-6 {
+  margin-top: 5rem !important;
+}
+
+.mb-6 {
+  margin-bottom: 5rem !important;
+}
+
+.ms-6 {
+  margin-left: 5rem !important;
+}
+
+.me-6 {
+  margin-right: 5rem !important;
+}
+
+
+/* Padding */
+
+.p-6 {
+  padding: 5rem !important;
+}
+
+.py-6 {
+  padding-top: 5rem !important;
+  padding-bottom: 5rem !important;
+}
+
+.px-6 {
+  padding-left: 5rem !important;
+  padding-right: 5rem !important;
+}
+
+.pt-6 {
+  padding-top: 5rem !important;
+}
+
+.pb-6 {
+  padding-bottom: 5rem !important;
+}
+
+.ps-6 {
+  padding-left: 5rem !important;
+}
+
+.pe-6 {
+  padding-right: 5rem !important;
+}
