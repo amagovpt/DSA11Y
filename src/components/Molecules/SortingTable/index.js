@@ -17,8 +17,9 @@ import {Icon} from "../../Atoms/Icon"
     iconsAltTexts -> Alternative texts for the icons of the data cells
     paginationButtonsTexts ->  texts for accessibility screen readers for the 4 buttons of pagination (Pagination)
     project -> name of project so that it works in multiple projects
+    ariaLabels -> translations for aria-labels to help read "A", "AA", "AAA"
 */
-const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project }) => {
+const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project, ariaLabels }) => {
 
     //SORT
     const [sort, setSort] = useState({property: "", type: ""});
@@ -191,7 +192,11 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     return (<td key={index}><a href="" onClick={() => href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
-                    return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                    if(columnsOptions[key].ariaLabel) {
+                        return (<td key={index} aria-label={ariaLabels[row[key]]} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                    } else {
+                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                    }
                 case "Stamp":
                     // Render one of the 3 Stamp Icons based on the number received (from: 1 to 3)
                     switch(row[key]) {
