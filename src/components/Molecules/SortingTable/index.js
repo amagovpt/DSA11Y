@@ -18,11 +18,12 @@ import {Icon} from "../../Atoms/Icon"
     paginationButtonsTexts ->  texts for accessibility screen readers for the 4 buttons of pagination (Pagination)
     project -> name of project so that it works in multiple projects
     ariaLabels -> translations for aria-labels to help read "A", "AA", "AAA"
+    setCheckboxesSelected -> method to change checkboxes states
 */
-const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project, ariaLabels }) => {
+const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project, ariaLabels, setCheckboxesSelected }) => {
 
     //SORT
-    const [sort, setSort] = useState({property: "", type: ""});
+    const [sort, setSort] = useState({property: null, type: ""});
 
     //Pagination
     const [page, setPage] = useState(1);
@@ -30,6 +31,9 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     const [nItemsCurrent, setNItemsCurrent] = useState(50);
     const [list, setList] = useState(null);
     const nAllItems = dataList && dataList.length
+
+    //Check
+    const [checkedItems, setCheckedItems] = useState({});
 
     // Theme
     const theme = darkTheme === "dark" ? "dark" : ""
@@ -99,43 +103,69 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
         })
     }
 
+
+    const addCheckboxes = (checkedData) => {
+        if(checkedData !== 'all') {
+            const newCheckedItems = { ...checkedItems };
+            if (newCheckedItems[checkedData.id]) {
+                delete newCheckedItems[checkedData.id];
+            } else {
+                newCheckedItems[checkedData.id] = checkedData;
+            }
+            setCheckedItems(newCheckedItems);
+            setCheckboxesSelected(newCheckedItems);
+        } else {
+            const newCheckedItems = {};
+
+            if (Object.keys(checkedItems).length !== dataList.length) {
+                dataList.forEach(item => {
+                    newCheckedItems[item.id] = item;
+                });
+            }
+            setCheckedItems(newCheckedItems);
+            setCheckboxesSelected(newCheckedItems);
+        }
+    }
+
+
+
     // Function that renders the Headers of the Table
     // Receives an Object from the custom array that tells everything we need to render
     const renderHeader = (headerData, index) => {
-
         // If it specifies a nCol means that the header will be more than 1 column
         const nOfColumns = headerData.nCol ? headerData.nCol : 1
+        const noPointer = !hasSort ? 'no_pointer' : ""
+        const sameProp = sort.property === headerData.property
+        const textCenter = headerData.justifyCenter ? "text-center" : ""
 
-        // If the table doesn't have sorting OR it has but this specific column will ocuppy more than 1
-        // Then it means it will be a normal text render with no sorting icon or functionallity
-        if(!hasSort || hasSort && nOfColumns !== 1) {
-            const justifyCenter = headerData.justifyCenter ? "text-center" : ""
-            if(headerData.icon) {
-                // Icon Header
-                // Icons need to have a discription with the class visually-hidden for accessibility screen readers
+        switch(headerData.type){
+            case "Empty":
+                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`no_pointer`}>
+                    {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
+                    <span className="visually-hidden">Empty</span>
+                </th>)
+            case "Text":
+                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                    <span className="ama-typography-body bold">{headerData.name}</span>
+                </th>)
+            case "SortingText":
+                let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th key={index} scope="col" colSpan={nOfColumns} className={`${justifyCenter} no_pointer first-show`}>
+                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                        <div className={`d-flex ${justifyCenter} align-items-center`}>
+                            <span className="ama-typography-body bold">{headerData.name}</span>
+                            {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
+                        </div>
+                    </th>
+                )
+            case "Icon":
+                return (
+                    <th key={index} scope="col" colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
-            } else {
-                // If column has bidWidth it means that column ocupies more than normal on the size of the table
-                return (
-                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${justifyCenter} no_pointer`}>
-                        {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
-                        {!headerData?.empty ? <span className="ama-typography-body bold">{headerData.name}</span> : <span className="visually-hidden">Empty</span>}
-                    </th>
-                )
-            }
-        } else {
-            // sameProp is used to see which Icon to render
-            const sameProp = sort.property === headerData.property
-            const justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
-            // If the column will be a Icon or a Text being displayed
-            if(headerData.icon) {
-                // Icon Header
-                // Icons need to have a discription with the class visually-hidden for accessibility screen readers
+            case "SortingIcon":
                 return (
                     <th key={index} scope="col" colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
@@ -145,17 +175,10 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                         </div>
                     </th>
                 )
-            } else {
-                // Text Header
-                return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
-                        <div className={`d-flex ${justifyCenter} align-items-center`}>
-                            <span className="ama-typography-body bold">{headerData.name}</span>
-                            {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
-                        </div>
-                    </th>
-                )
-            }
+            case "Checkbox":
+                return (<th key={index} scope="col" colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                    <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
+                </th>)
         }
     }
 
@@ -241,6 +264,10 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     } else {
                         return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
                     }
+                case "Checkbox":
+                    return (<td key={index} className={`${center} ama-typography-body checkbox`}>
+                        <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems[row.id]} onChange={() => addCheckboxes(row)}></input>
+                    </td>)
                 default:
                     // Render an empty cell
                     return <td key={index}>{null}</td>

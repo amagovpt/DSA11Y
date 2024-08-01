@@ -14,24 +14,24 @@ Descrição atribuida à tabela
 Array com a informação para construir os cabeçalhos da tabela. Exemplo com 2 linhas:
 
     [
-      [
-        {icon: false, name: "Classificação", property: "rank"},
-        {icon: false, bigWidth: "50%", name: "Sítio Web", property: "name"},
-        {icon: true, name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration"},
-        {icon: true, name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp"},
-        {icon: false, name: "Pontuação", property: "score", justifyCenter: true},
-        {icon: false, name: "Páginas", property: "nPages", justifyCenter: true},
-        {icon: false, name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
-      ],
-      [
-        {icon: false, nCol: 6, name: "Vazio", empty: true},
-        {icon: false, name: "A", property: "A", justifyCenter: true},
-        {icon: false, name: "AA", property: "AA", justifyCenter: true},
-        {icon: false, name: "AAA", property: "AAA", justifyCenter: true}
-      ]
+        [
+          {type: "Checkbox", name: "Classificação", property: "rank"},
+          {type: "SortingText", bigWidth: "50%", name: "Sítio Web", property: "name"},
+          {type: "SortingIcon", name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration", justifyCenter: true},
+          {type: "SortingIcon", name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp", justifyCenter: true},
+          {type: "SortingText", name: "Pontuação", property: "score", justifyCenter: true},
+          {type: "SortingText", name: "Páginas", property: "nPages", justifyCenter: true},
+          {type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
+        ],
+        [
+          {type: "Empty", nCol: 6, name: "Vazio", empty: true},
+          {type: "SortingText", name: "A", property: "A", justifyCenter: true},
+          {type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
+          {type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
+        ]
     ]
 
-- "icon: ..." indentifica se será texto normal ou um ícon
+- "type: ..." o tipo a ser renderizado. Possíveis opções: "Empty", "Text", "SortingText", "Icon", "SortingIcon", "Checkbox"
 - "name: ..." identifica o nome do ícon ou o texto a ser renderizado
 - "property: ..." identifica o nome da propriedade a ser ordenada ao se clicar nessa coluna
 - "description: ..." só para colunas com ícon, texto alternativo para o ícon
@@ -82,7 +82,7 @@ Certos campos não são para aparecer na tabela, certos campos são links e não
       AAA: { type: "Number", center: true, bold: false, decimalPlace: false },
     }
 
-Neste objeto complementar, podemos verificar que os atributos que não queremos renderizar na tabela têm o type como "Skip", os icons têm o seu nome respetivo "Stamp" e "Declaration", e depois temos o "Number" e o "Link" o texto em forma de link.
+Neste objeto complementar, podemos verificar que os atributos que não queremos renderizar na tabela têm o type como "Skip", os icons têm o seu nome respetivo "Stamp" e "Declaration", e depois temos o "Number" e o "Link" o texto em forma de link. "DangerousHTML" e "Checkbox".
 - Cada célula pode depois ter o conteúdo centrado ou não baseado no que passamos em "center: ..."
 - Pode ter o texto ou números a negrito "bold: ..."
 - E no caso da pontuação, damos a possíbilidade do número ser renderizado com casas decimais ou não "decimalPlace: ..."

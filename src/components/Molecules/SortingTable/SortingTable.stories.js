@@ -5,25 +5,25 @@ import { useDarkMode } from 'storybook-dark-mode';
 
 const directoriesHeaders = [
   [
-    {icon: false, name: "Classificação", property: "rank"},
-    {icon: false, bigWidth: "50%", name: "Sítio Web", property: "name"},
-    {icon: true, name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration", justifyCenter: true},
-    {icon: true, name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp", justifyCenter: true},
-    {icon: false, name: "Pontuação", property: "score", justifyCenter: true},
-    {icon: false, name: "Páginas", property: "nPages", justifyCenter: true},
-    {icon: false, name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
+    {type: "Checkbox", name: "Classificação", property: "rank"},
+    {type: "SortingText", bigWidth: "50%", name: "Sítio Web", property: "name"},
+    {type: "SortingIcon", name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration", justifyCenter: true},
+    {type: "SortingIcon", name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp", justifyCenter: true},
+    {type: "SortingText", name: "Pontuação", property: "score", justifyCenter: true},
+    {type: "SortingText", name: "Páginas", property: "nPages", justifyCenter: true},
+    {type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
   ],
   [
-    {icon: false, nCol: 6, name: "Vazio", empty: true},
-    {icon: false, name: "A", property: "A", justifyCenter: true},
-    {icon: false, name: "AA", property: "AA", justifyCenter: true},
-    {icon: false, name: "AAA", property: "AAA", justifyCenter: true}
+    {type: "Empty", nCol: 6, name: "Vazio", empty: true},
+    {type: "SortingText", name: "A", property: "A", justifyCenter: true},
+    {type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
+    {type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
   ]
 ]
 
 let columnsOptions = {
   id: { type: "Skip", center: false, bold: false, decimalPlace: false },
-  rank: { type: "Number", center: true, bold: false, decimalPlace: false },
+  rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false },
   name: { type: "DangerousHTML", center: false, bold: false, decimalPlace: false },
   entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
   declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
@@ -417,6 +417,7 @@ export default {
 
 export const sortingTable = (args) => {
   const [data, setData] = useState(dataRows)
+  const [checkboxesSelected, setCheckboxesSelected] = useState({})
 
   return (
     <SortingTable
@@ -431,6 +432,7 @@ export const sortingTable = (args) => {
       iconsAltTexts={nameOfIcons}
       paginationButtonsTexts={paginationButtonsTexts}
       project={""}
+      setCheckboxesSelected={setCheckboxesSelected}
     />
   )
 };

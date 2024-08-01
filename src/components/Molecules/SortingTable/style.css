@@ -164,6 +164,12 @@
     text-decoration: none;
 }
 
+.checkbox input[type=checkbox] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--ama-color-brand-primary);
+    flex-shrink: 0;
+}
 
 /* MOBILE */
 @media (min-width: 320px) and (max-width: 480px) {

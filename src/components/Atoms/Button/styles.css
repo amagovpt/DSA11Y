@@ -23,7 +23,6 @@ button,
 
 button,
 .btn:focus {
-  border: 3px solid var(--ama-color-yellow-400);
   box-shadow: none;
 }
 
@@ -86,12 +85,16 @@ button.btn-sm {
   outline: 0;
 }
 
+.btn-primary:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+}
+
 
 /* Dark Theme */
 .btn-primary.dark {
   background-color: var(--ama-color-text-blue);
   color: var(--ama-color-text-gray);
-  border-color: var(--ama-color-text-blue) !important;
+  border-color: var(--ama-color-text-blue);
 }
 
 .btn-primary.dark:hover {
@@ -99,16 +102,23 @@ button.btn-sm {
   background-color: transparent;
 }
 
-.btn-primary.dark:active {
-  color: var(--ama-color-text-blue) !important;
-  background-color: transparent !important;
+.btn-primary.dark:not(:disabled):not(.disabled).active,
+.btn-primary.dark:not(:disabled):not(.disabled):active,
+.show > .btn-primary.dark.dropdown-toggle {
+  color: var(--ama-color-text-blue);
+  background-color: transparent;
+  border-color: var(--ama-color-text-blue);
 }
 
 .btn-primary.dark:disabled {
   opacity: 1;
-  border-color: transparent !important;
+  border-color: transparent;
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-grey-500);
+}
+
+.btn-primary.dark:focus {
+  border: 3px solid var(--ama-color-yellow-400);
 }
 
 
@@ -146,15 +156,15 @@ button.btn-sm {
 .btn-secondary:focus {
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-brand-primary);
+  border: 3px solid var(--ama-color-yellow-400);
   outline: 0;
 }
-
 
 /* Dark Theme */
 .btn-secondary.dark {
   background-color: var(--ama-color-background-dark-lighter);
   color: var(--ama-color-text-blue);
-  border-color: var(--ama-color-background-dark-lighter) !important;
+  border-color: var(--ama-color-background-dark-lighter);
 }
 
 .btn-secondary.dark:hover {
@@ -162,17 +172,25 @@ button.btn-sm {
   background-color: var(--ama-color-text-blue);
 }
 
-.btn-secondary.dark:active {
-  color: var(--ama-color-text-gray) !important;
-  background-color: var(--ama-color-text-blue) !important;
+.btn-secondary.dark:not(:disabled):not(.disabled).active,
+.btn-secondary.dark:not(:disabled):not(.disabled):active,
+.show > .btn-secondary.dark.dropdown-toggle {
+  color: var(--ama-color-text-gray);
+  background-color: var(--ama-color-text-blue);
+  border-color: var(--ama-color-text-blue);
 }
+
+.btn-secondary.dark:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+}
+
 
 
 /* CANCEL BUTTON */
 .btn-cancel {
   font-weight: 700;
   background-color: var(--ama-color-background-white);
-  border: 1px solid var(--ama-color-text-gray) !important;
+  border: 1px solid var(--ama-color-text-gray);
 }
 
 .btn-cancel:hover {
@@ -185,6 +203,57 @@ button.btn-sm {
   opacity: 0.8;
   color: var(--ama-color-grey-700);
   border: 1px solid var(--ama-color-grey-700);
+}
+
+.btn-cancel:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+}
+
+/* Dark Theme */
+.btn-cancel.dark {
+  background-color: transparent;
+  border-color: var(--ama-color-background-white);
+}
+
+.btn-cancel.dark:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+  color: var(--ama-color-background-white);
+}
+
+
+
+
+
+/* GHOST BUTTON */
+.btn-ghost {
+  color: var(--ama-color-brand-primary);
+  font-weight: 700;
+  border: 1px solid var(--ama-color-brand-primary);
+}
+
+.btn-ghost:hover {
+  color: var(--ama-color-blue-400);
+  border: 2px solid var(--ama-color-blue-400);
+}
+
+.btn-ghost:disabled {
+  opacity: 0.8;
+  color: var(--ama-color-grey-700);
+  border: 1px solid var(--ama-color-grey-700);
+}
+
+.btn-ghost:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+}
+
+/* Dark Theme */
+.btn-ghost.dark {
+  color: var(--ama-color-brand-primary);
+}
+
+.btn-ghost.dark:hover,
+.btn-ghost.dark:focus { 
+  color: var(--ama-color-blue-400);
 }
 
 
@@ -210,24 +279,11 @@ button.btn-sm {
   background-color: var(--ama-color-grey-500);
 }
 
-
-/* GHOST BUTTON */
-.btn-ghost {
-  color: var(--ama-color-brand-primary);
-  font-weight: 700;
-  border: 1px solid var(--ama-color-brand-primary);
+.btn-danger:focus {
+  border: 3px solid var(--ama-color-yellow-400);
 }
 
-.btn-ghost:hover {
-  color: var(--ama-color-blue-400);
-  border: 2px solid var(--ama-color-blue-400);
-}
 
-.btn-ghost:disabled {
-  opacity: 0.8;
-  color: var(--ama-color-grey-700);
-  border: 1px solid var(--ama-color-grey-700);
-}
 
 
 /* SUCCESS BUTTON */
@@ -249,4 +305,17 @@ button.btn-sm {
   border-color: transparent;
   color: var(--ama-color-background-white);
   background-color: var(--ama-color-grey-500);
+}
+
+.btn-success:focus {
+  border: 3px solid var(--ama-color-yellow-400);
+}
+
+/* Dark Theme */
+.btn-success.dark {
+  color: var(--ama-color-text-gray);
+}
+
+.btn-success.dark:focus-visible {
+  color: var(--ama-color-background-white);
 }
