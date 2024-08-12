@@ -137,21 +137,19 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
         const noPointer = !hasSort ? 'no_pointer' : ""
         const sameProp = sort.property === headerData.property
         const textCenter = headerData.justifyCenter ? "text-center" : ""
+        const bigWidth = headerData.bigWidth ? headerData.bigWidth : "auto"
 
         switch(headerData.type){
             case "Empty":
-                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`no_pointer`}>
-                    {/* If there is nothing to be rendered on the table, render a visually-hidden text because of accessibility */}
-                    <span className="visually-hidden">Empty</span>
-                </th>)
+                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`}aria-hidden="true"></th>)
             case "Text":
-                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: headerData.bigWidth ? headerData.bigWidth : "auto"}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th key={index} scope="col" style={{width: headerData.bigWidth ? headerData.bigWidth : "10%"}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -160,14 +158,14 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 )
             case "Icon":
                 return (
-                    <th key={index} scope="col" colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
+                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
             case "SortingIcon":
                 return (
-                    <th key={index} scope="col" colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -176,7 +174,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     </th>
                 )
             case "Checkbox":
-                return (<th key={index} scope="col" colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
                     <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
@@ -210,9 +208,9 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     // Render a button disguised as a text link
                     return (<td key={index}><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
                 case "Link":
-                    let href = columnsOptions[key].href ? columnsOptions[key].href : () => null
+                    let href = columnsOptions[key].href ? columnsOptions[key].href : () => {return ""}
                     // Render a link
-                    return (<td key={index}><a href="" onClick={() => href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
+                    return (<td key={index}><a href={href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     if(columnsOptions[key].ariaLabel) {

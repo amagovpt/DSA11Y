@@ -14,7 +14,12 @@ const directoriesHeaders = [
     {type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
   ],
   [
-    {type: "Empty", nCol: 6, name: "Vazio", empty: true},
+    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 1, empty: true},
     {type: "SortingText", name: "A", property: "A", justifyCenter: true},
     {type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
     {type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
@@ -24,7 +29,10 @@ const directoriesHeaders = [
 let columnsOptions = {
   id: { type: "Skip", center: false, bold: false, decimalPlace: false },
   rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false },
-  name: { type: "DangerousHTML", center: false, bold: false, decimalPlace: false },
+  name: { type: "Link", center: false, bold: false, decimalPlace: false, href: (row) => {
+    console.log('row', row)
+    return "https://docs.wagtail.org/en/stable/getting_started/tutorial.html"
+  } },
   entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
   declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
   stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false },

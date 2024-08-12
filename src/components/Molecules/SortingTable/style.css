@@ -171,14 +171,15 @@
     flex-shrink: 0;
 }
 
+.sorting_table-responsive {
+    overflow: auto;
+}
+
+
 /* MOBILE */
 @media (min-width: 320px) and (max-width: 480px) {
     .sorting_table {
         background-color: var(--ama-color-background-white);
-    }
-
-    .sorting_table-responsive {
-        overflow: auto;
     }
 
     .sorting_table-responsive.dark {

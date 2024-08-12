@@ -35,7 +35,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     }
 
     return (
-        <div className={`${theme} d-flex flex-column section_container p-4 m-0`}>
+        <div className={`${theme} d-flex flex-column section_container py-4 m-0`}>
             {/* Web version */}
             <div className="grid_container">
                 <div className="d-flex flex-column mb-3">
