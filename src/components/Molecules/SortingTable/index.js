@@ -138,18 +138,19 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
         const sameProp = sort.property === headerData.property
         const textCenter = headerData.justifyCenter ? "text-center" : ""
         const bigWidth = headerData.bigWidth ? headerData.bigWidth : "auto"
+        const id = (headerData.name).replaceAll(' ', '');
 
         switch(headerData.type){
             case "Empty":
-                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`}aria-hidden="true"></th>)
+                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`}aria-hidden="true"></th>)
             case "Text":
-                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -158,14 +159,14 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 )
             case "Icon":
                 return (
-                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
+                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
             case "SortingIcon":
                 return (
-                    <th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -174,7 +175,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     </th>
                 )
             case "Checkbox":
-                return (<th key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
                     <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
@@ -203,67 +204,67 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     return null
                 case "Number":
                     // Render a number, if it has "decimalPlace" as TRUE then render the number with 1 decimal place
-                    return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{columnsOptions[key].decimalPlace ? row[key].toFixed(1) : row[key]}</td>)
+                    return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>{columnsOptions[key].decimalPlace ? row[key].toFixed(1) : row[key]}</td>)
                 case "Button":
                     // Render a button disguised as a text link
-                    return (<td key={index}><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
+                    return (<td headers={columnsOptions[key].headers} key={index}><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
                 case "Link":
                     let href = columnsOptions[key].href ? columnsOptions[key].href : () => {return ""}
                     // Render a link
-                    return (<td key={index}><a href={href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
+                    return (<td headers={columnsOptions[key].headers} key={index}><a href={href(row)} className="ama-typography-action-large bold">{row[key]}</a></td>)
                 case "Text":
                     // Render normal text
                     if(columnsOptions[key].ariaLabel) {
-                        return (<td key={index} aria-label={ariaLabels[row[key]]} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                        return (<td headers={columnsOptions[key].headers} key={index} aria-label={ariaLabels[row[key]]} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
                     } else {
-                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                        return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
                     }
                 case "Stamp":
                     // Render one of the 3 Stamp Icons based on the number received (from: 1 to 3)
                     switch(row[key]) {
                         case 1:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Bronze.svg`} alt={iconsAltTexts[0]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Bronze.svg`} alt={iconsAltTexts[0]} /></td>)
                         case 2:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Prata.svg`} alt={iconsAltTexts[1]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Prata.svg`} alt={iconsAltTexts[1]} /></td>)
                         case 3:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Ouro.svg`} alt={iconsAltTexts[2]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Selo_Ouro.svg`} alt={iconsAltTexts[2]} /></td>)
                         default:
-                            return (<td key={index} className={`${center} ${bold}`}>{row[key]}</td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}>{row[key]}</td>)
                     }
                 case "Declaration":
                     // Render one of the 3 Declaration Icons based on the number received (from: 1 to 3)
                     switch(row[key]) {
                         case 1:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Nao_Conforme.svg`} alt={iconsAltTexts[3]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Nao_Conforme.svg`} alt={iconsAltTexts[3]} /></td>)
                         case 2:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Parcial_Conforme.svg`} alt={iconsAltTexts[4]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Parcial_Conforme.svg`} alt={iconsAltTexts[4]} /></td>)
                         case 3:
-                            return (<td key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Conforme.svg`} alt={iconsAltTexts[5]} /></td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><img src={`${project}img/SVG_Declaracao_Conforme.svg`} alt={iconsAltTexts[5]} /></td>)
                         default:
-                            return (<td key={index} className={`${center} ${bold}`}>{row[key]}</td>)
+                            return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}>{row[key]}</td>)
                     }
                 case "MultiText":
                     // Render 2 or more spans that are all normal text.
-                    return (<td key={index} className={`${center} ${bold} d-flex flex-column multi-text`}>{renderSpans(row[key])}</td>)
+                    return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} d-flex flex-column multi-text`}>{renderSpans(row[key])}</td>)
                 case "DoubleText":
                     // Render 2 texts where the second one is bold and the first one not. If this property also comes with bold then all text will be bold
-                    return (<td key={index} className={`${center} ${bold}`}><span className="ama-typography-body">{row[key][0]}</span><span className="ama-typography-body bold">{row[key][1]}</span></td>)
+                    return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold}`}><span className="ama-typography-body">{row[key][0]}</span><span className="ama-typography-body bold">{row[key][1]}</span></td>)
                 case "DangerousHTML":
                     const hasCode = row[key].includes("<code>")
                     const hasMark = row[key].includes("<mark>")
                     const hasMeta = row[key].includes("<meta")
                     if(hasCode || hasMark || hasMeta) {
-                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>
+                        return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>
                             <span
                                 className="span_code"
                                 dangerouslySetInnerHTML={{ __html: row[key] }}
                             />
                         </td>)
                     } else {
-                        return (<td key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
+                        return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>{row[key]}</td>)
                     }
                 case "Checkbox":
-                    return (<td key={index} className={`${center} ama-typography-body checkbox`}>
+                    return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ama-typography-body checkbox`}>
                         <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems[row.id]} onChange={() => addCheckboxes(row)}></input>
                     </td>)
                 default:

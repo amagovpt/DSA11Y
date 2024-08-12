@@ -14,12 +14,7 @@ const directoriesHeaders = [
     {type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
   ],
   [
-    {type: "Empty", nCol: 1, empty: true},
-    {type: "Empty", nCol: 1, empty: true},
-    {type: "Empty", nCol: 1, empty: true},
-    {type: "Empty", nCol: 1, empty: true},
-    {type: "Empty", nCol: 1, empty: true},
-    {type: "Empty", nCol: 1, empty: true},
+    {type: "Empty", nCol: 6, name: "Vazio", empty: true},
     {type: "SortingText", name: "A", property: "A", justifyCenter: true},
     {type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
     {type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
@@ -27,20 +22,19 @@ const directoriesHeaders = [
 ]
 
 let columnsOptions = {
-  id: { type: "Skip", center: false, bold: false, decimalPlace: false },
-  rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false },
-  name: { type: "Link", center: false, bold: false, decimalPlace: false, href: (row) => {
-    console.log('row', row)
+  id: { type: "Skip", center: false, bold: false, decimalPlace: false, headers: "" },
+  rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false, headers: "Classificação" },
+  name: { type: "Link", center: false, bold: false, decimalPlace: false, headers: "Sítio Web", href: (row) => {
     return "https://docs.wagtail.org/en/stable/getting_started/tutorial.html"
   } },
-  entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
-  declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
-  stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false },
-  score: { type: "Number", center: true, bold: false, decimalPlace: true },
-  nPages: { type: "Number", center: true, bold: false, decimalPlace: false },
-  A: { type: "Number", center: true, bold: false, decimalPlace: false },
-  AA: { type: "Number", center: true, bold: false, decimalPlace: false },
-  AAA: { type: "Number", center: true, bold: false, decimalPlace: false },
+  entity: { type: "Skip", center: false, bold: false, decimalPlace: false, headers: "" },
+  declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false, headers: "AMA-DeclaracaoDark-Line" },
+  stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false, headers: "AMA-SeloDark-Line" },
+  score: { type: "Number", center: true, bold: false, decimalPlace: true, headers: "Pontuação" },
+  nPages: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginas" },
+  A: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* A" },
+  AA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* AA" },
+  AAA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* AAA" },
 }
 
 let nameOfIcons = [
