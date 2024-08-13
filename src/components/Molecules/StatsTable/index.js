@@ -42,6 +42,10 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
 
   let allvalues = sumAllValues(data?.data.infoak);
 
+  let percentOk = ((allvalues.ok*100)/data?.data?.metadata?.count_results)
+  let percentWar = ((allvalues.war*100)/data?.data?.metadata?.count_results)
+  let percentErr = ((allvalues.err*100)/data?.data?.metadata?.count_results)
+
   return (
     <>
       <div className="mb-4">
@@ -78,7 +82,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
                 </div>
                 <div
                   className="overlay overlay_aceptable"
-                  style={{ width: `${allvalues.ok}%` }}
+                  style={{ width: `${percentOk}%` }}
                 />
               </div>
               {/* MOBILE */}
@@ -129,7 +133,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
                 </div>
                 <div
                   className="overlay overlay_manual"
-                  style={{ width: `${allvalues.war}%` }}
+                  style={{ width: `${percentWar}%` }}
                 />
               </div>
               {/* MOBILE */}
@@ -181,7 +185,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
 
                 <div
                   className="overlay overlay_no_aceptable"
-                  style={{ width: `${allvalues.err}%` }}
+                  style={{ width: `${percentErr}%` }}
                 />
               </div>
               {/* MOBILE */}
