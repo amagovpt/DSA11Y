@@ -142,15 +142,15 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
 
         switch(headerData.type){
             case "Empty":
-                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`}aria-hidden="true"></th>)
+                return (<td id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
             case "Text":
-                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                return (<th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -159,14 +159,14 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 )
             case "Icon":
                 return (
-                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
+                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
             case "SortingIcon":
                 return (
-                    <th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -175,7 +175,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     </th>
                 )
             case "Checkbox":
-                return (<th id={id} key={index} scope={nOfColumns > 1 ? "colgroup" : "col"} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                return (<th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
                     <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
@@ -267,9 +267,6 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ama-typography-body checkbox`}>
                         <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems[row.id]} onChange={() => addCheckboxes(row)}></input>
                     </td>)
-                default:
-                    // Render an empty cell
-                    return <td key={index}>{null}</td>
             }
         })
     }

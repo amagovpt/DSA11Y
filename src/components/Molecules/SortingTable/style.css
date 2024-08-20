@@ -6,7 +6,8 @@
     height: 50px;
 }
 
-.sorting_table thead tr th {
+.sorting_table thead tr th,
+.sorting_table thead tr td {
     color: var(--ama-color-background-white);
     font-family: var(--fonte-lato);
     font-size: 16px;
