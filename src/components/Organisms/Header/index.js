@@ -58,13 +58,13 @@ const en = {
   badgeLink4: "How to get the badge",
 }
 
-export function Header({description, language, title, title2, logo, darkTheme, changeTheme, changeLanguage, homePage, linkTo}) {
+export function Header({description, language, title, title2, logo, darkTheme, changeTheme, changeLanguage, homePage, linkTo, ariaLabel}) {
   const theme = darkTheme === "dark" ? "dark" : ""
 
   const lngTexts = language === "en" ? en : pt
 
   return (
-    <header id="wrapper-navbar" aria-label="Cabeçalho da página do AccessMonitor" className={`${theme}`}>
+    <header id="wrapper-navbar" aria-label={ariaLabel} className={`${theme}`}>
       <div className="skip-to-content">
         <div className="container">
           <a className="skip-to-content-link d-flex align-items-center ama-typography-action-small py-2 px-3 my-3" href="#content">
