@@ -25,6 +25,9 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     //SORT
     const [sort, setSort] = useState({property: null, type: ""});
 
+    //Multi Headers?
+    const multiHeaders = Array.isArray(headers[0])
+
     //Pagination
     const [page, setPage] = useState(1);
     const [lastPage, setLastPage] = useState(1);
@@ -142,15 +145,15 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
 
         switch(headerData.type){
             case "Empty":
-                return (<td id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
+                return (<td id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
             case "Text":
-                return (<th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -159,14 +162,14 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 )
             case "Icon":
                 return (
-                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
             case "SortingIcon":
                 return (
-                    <th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -175,7 +178,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     </th>
                 )
             case "Checkbox":
-                return (<th id={id} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
                     <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
@@ -283,7 +286,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                         If Yes then means theres more than 1 row of headers
                         If No then it's just 1 row of headers
                     */}
-                    {headers && Array.isArray(headers[0]) ? 
+                    {headers && multiHeaders ? 
                         // Multiple rows of headers
                         headers.map((row, index) => {
                             return (<tr key={index}>{row.map((th, index) => { return renderHeader(th, index)})}</tr>)
