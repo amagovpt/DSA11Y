@@ -419,7 +419,7 @@ export default {
 
 export const sortingTable = (args) => {
   const [data, setData] = useState(dataRows)
-  const [checkboxesSelected, setCheckboxesSelected] = useState({})
+  const [checkboxesSelected, setCheckboxesSelected] = useState([])
 
   return (
     <SortingTable

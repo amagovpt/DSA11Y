@@ -36,7 +36,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
     const nAllItems = dataList && dataList.length
 
     //Check
-    const [checkedItems, setCheckedItems] = useState({});
+    const [checkedItems, setCheckedItems] = useState([]);
 
     // Theme
     const theme = darkTheme === "dark" ? "dark" : ""
@@ -109,21 +109,20 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
 
     const addCheckboxes = (checkedData) => {
         if(checkedData !== 'all') {
-            const newCheckedItems = { ...checkedItems };
-            if (newCheckedItems[checkedData.id]) {
-                delete newCheckedItems[checkedData.id];
+            let newCheckedItems = [...checkedItems];
+            const index = newCheckedItems.findIndex(item => item.id === checkedData.id);
+            if (index !== -1) {
+                newCheckedItems.splice(index, 1);
             } else {
-                newCheckedItems[checkedData.id] = checkedData;
+                newCheckedItems.push(checkedData);
             }
             setCheckedItems(newCheckedItems);
             setCheckboxesSelected(newCheckedItems);
         } else {
-            const newCheckedItems = {};
+            let newCheckedItems = [];
 
-            if (Object.keys(checkedItems).length !== dataList.length) {
-                dataList.forEach(item => {
-                    newCheckedItems[item.id] = item;
-                });
+            if (checkedItems.length !== dataList.length) {
+                newCheckedItems = [...dataList];
             }
             setCheckedItems(newCheckedItems);
             setCheckboxesSelected(newCheckedItems);
@@ -145,7 +144,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
 
         switch(headerData.type){
             case "Empty":
-                return (<td id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
+                return (<td headers="" key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
             case "Text":
                 return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
@@ -268,7 +267,7 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     }
                 case "Checkbox":
                     return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ama-typography-body checkbox`}>
-                        <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems[row.id]} onChange={() => addCheckboxes(row)}></input>
+                        <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems.findIndex(item => item.id === row.id) !== -1} onChange={() => addCheckboxes(row)}></input>
                     </td>)
             }
         })
