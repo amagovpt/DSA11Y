@@ -1,4 +1,4 @@
-# AMA - Design-System 1.1.48
+# AMA - Design-System 1.1.49
 
 O Ama Design System é uma biblioteca de componentes para servir as seguintes aplicações:
 
