@@ -7,7 +7,7 @@ import "./styles.css";
 
 import classNames from "classnames";
 
-const Input = ({ darkTheme, upload, label, type, placeholder, error, id, passTextAria, ...rest }) => {
+const Input = ({ darkTheme, upload, label, type, placeholder, error, id, showPassTextAria, hidePassTextAria, ...rest }) => {
 
   const [showPass, setShowPass] = useState(false)
 
@@ -26,8 +26,8 @@ const Input = ({ darkTheme, upload, label, type, placeholder, error, id, passTex
             className={"align-self-center show_pass"}
             variant={"secondary"}
             text={""}
-            aria-label={passTextAria}
-            iconRight={<Icon darkTheme={theme} name={showPass ? "AMA-Invisible-Solid" : "AMA-Visible-Line"} />} 
+            aria-label={!showPass ? showPassTextAria : hidePassTextAria}
+            iconRight={<Icon darkTheme={theme} name={!showPass ? "AMA-Invisible-Solid" : "AMA-Visible-Line"} />} 
             onClick={() => setShowPass(!showPass)}
           />
         </div>

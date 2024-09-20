@@ -20,7 +20,25 @@ import {Icon} from "../../Atoms/Icon"
     ariaLabels -> translations for aria-labels to help read "A", "AA", "AAA"
     setCheckboxesSelected -> method to change checkboxes states
 */
-const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, columnsOptions, nextPage, darkTheme, pagination, itemsPaginationTexts, nItemsPerPageTexts, iconsAltTexts, paginationButtonsTexts, project, ariaLabels, setCheckboxesSelected }) => {
+const SortingTable = (
+    { 
+        hasSort, 
+        caption, 
+        headers, 
+        dataList, 
+        setDataList, 
+        columnsOptions, 
+        nextPage, 
+        darkTheme, 
+        pagination, 
+        itemsPaginationTexts, 
+        nItemsPerPageTexts, 
+        iconsAltTexts, 
+        paginationButtonsTexts, 
+        project, 
+        ariaLabels, 
+        setCheckboxesSelected,
+    }) => {
 
     //SORT
     const [sort, setSort] = useState({property: null, type: ""});
@@ -178,7 +196,8 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                 )
             case "Checkbox":
                 return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
-                    <input type="checkbox" id="1" name="1" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
+                    <label className="visually-hidden" htmlFor="checkbox_all">{headerData.name}</label>
+                    <input type="checkbox" id="checkbox_all" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
     }
@@ -267,7 +286,8 @@ const SortingTable = ({ hasSort, caption, headers, dataList, setDataList, column
                     }
                 case "Checkbox":
                     return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ama-typography-body checkbox`}>
-                        <input type="checkbox" id="1" name="1" value={`${row}`} checked={checkedItems.findIndex(item => item.id === row.id) !== -1} onChange={() => addCheckboxes(row)}></input>
+                        <label className="visually-hidden" htmlFor={row.id}>{columnsOptions[key].label + row["Uri"]}</label>
+                        <input type="checkbox" id={row.id} name={row.id} value={`${row}`} checked={checkedItems.findIndex(item => item.id === row.id) !== -1} onChange={() => addCheckboxes(row)}></input>
                     </td>)
             }
         })
