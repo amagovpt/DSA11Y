@@ -162,7 +162,7 @@ const SortingTable = (
 
         switch(headerData.type){
             case "Empty":
-                return (<td headers="" key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></td>)
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></th>)
             case "Text":
                 return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
@@ -196,8 +196,7 @@ const SortingTable = (
                 )
             case "Checkbox":
                 return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
-                    <label className="visually-hidden" htmlFor="checkbox_all">{headerData.name}</label>
-                    <input type="checkbox" id="checkbox_all" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
+                    <input aria-label={headerData.name} type="checkbox" id="checkbox_all" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }
     }
@@ -286,8 +285,7 @@ const SortingTable = (
                     }
                 case "Checkbox":
                     return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ama-typography-body checkbox`}>
-                        <label className="visually-hidden" htmlFor={row.id}>{columnsOptions[key].label + row["Uri"]}</label>
-                        <input type="checkbox" id={row.id} name={row.id} value={`${row}`} checked={checkedItems.findIndex(item => item.id === row.id) !== -1} onChange={() => addCheckboxes(row)}></input>
+                        <input aria-label={columnsOptions[key].label + row["Uri"]} type="checkbox" id={row.id} name={row.id} value={`${row}`} checked={checkedItems.findIndex(item => item.id === row.id) !== -1} onChange={() => addCheckboxes(row)}></input>
                     </td>)
             }
         })
