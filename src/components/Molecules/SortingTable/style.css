@@ -20,8 +20,8 @@
     border-bottom: 1px solid var(--ama-color-text-gray);
 }
 
-.sorting_table thead tr:last-child:not(:only-child) {
-    background-color: var(--ama-color-grey-700) !important;
+.sorting_table thead tr:not(:only-child) th {
+    border: 1px solid var(--ama-color-background-light-darker);
 }
 
 .sorting_table thead tr:last-child th {

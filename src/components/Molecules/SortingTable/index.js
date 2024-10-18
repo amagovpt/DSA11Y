@@ -154,23 +154,26 @@ const SortingTable = (
     const renderHeader = (headerData, index) => {
         // If it specifies a nCol means that the header will be more than 1 column
         const nOfColumns = headerData.nCol ? headerData.nCol : 1
+        const nOfRows = headerData.nRow ? headerData.nRow : 1
         const noPointer = !hasSort ? 'no_pointer' : ""
         const sameProp = sort.property === headerData.property
         const textCenter = headerData.justifyCenter ? "text-center" : ""
         const bigWidth = headerData.bigWidth ? headerData.bigWidth : "auto"
-        const id = (headerData.name).replaceAll(' ', '');
+        const id = headerData.id ? headerData.id : null;
 
         switch(headerData.type){
             case "Empty":
-                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`no_pointer`} aria-hidden="true"></th>)
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`no_pointer`}>
+                    <span className="visually-hidden">{headerData.name}</span>
+                </th>)
             case "Text":
-                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
                     <span className="ama-typography-body bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
                             <span className="ama-typography-body bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -179,14 +182,14 @@ const SortingTable = (
                 )
             case "Icon":
                 return (
-                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} ${noPointer} first-show`}>
                         <Icon name={headerData.name} />
                         <span className="visually-hidden">{headerData.description}</span>
                     </th>
                 )
             case "SortingIcon":
                 return (
-                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? "first-show show_icon" : "first-show"} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className="d-flex align-items-center justify-content-center">
                             <Icon name={headerData.name} />
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
@@ -195,7 +198,7 @@ const SortingTable = (
                     </th>
                 )
             case "Checkbox":
-                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
+                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} checkbox px-4`}>
                     <input aria-label={headerData.name} type="checkbox" id="checkbox_all" value="all" checked={Object.keys(checkedItems).length === dataList.length} onChange={() => addCheckboxes('all')}></input>
                 </th>)
         }

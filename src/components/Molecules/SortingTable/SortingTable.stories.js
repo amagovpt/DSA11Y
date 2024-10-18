@@ -5,36 +5,35 @@ import { useDarkMode } from 'storybook-dark-mode';
 
 const directoriesHeaders = [
   [
-    {type: "Checkbox", name: "Classificação", property: "rank"},
-    {type: "SortingText", bigWidth: "50%", name: "Sítio Web", property: "name"},
-    {type: "SortingIcon", name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration", justifyCenter: true},
-    {type: "SortingIcon", name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp", justifyCenter: true},
-    {type: "SortingText", name: "Pontuação", property: "score", justifyCenter: true},
-    {type: "SortingText", name: "Páginas", property: "nPages", justifyCenter: true},
-    {type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
+    {type: "Checkbox", nRow: 2, name: "Classificação", property: "rank"},
+    {type: "SortingText", nRow: 2, bigWidth: "50%", name: "Sítio Web", property: "name"},
+    {type: "SortingIcon", nRow: 2, name: "AMA-DeclaracaoDark-Line", description: "Com declaração de usabilidade e acessibilidade", property: "declaration", justifyCenter: true},
+    {type: "SortingIcon", nRow: 2, name: "AMA-SeloDark-Line", description: "Com selo de usabilidade e acessibilidade", property: "stamp", justifyCenter: true},
+    {type: "SortingText", nRow: 2, name: "Pontuação", property: "score", justifyCenter: true},
+    {type: "SortingText", nRow: 2, name: "Páginas", property: "nPages", justifyCenter: true},
+    {id: "conformidade", type: "Text", name: "Páginas em conformidade*", property: "", justifyCenter: true, nCol: 3},
   ],
   [
-    {type: "Empty", nCol: 6, name: "Vazio", empty: true},
-    {type: "SortingText", name: "A", property: "A", justifyCenter: true},
-    {type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
-    {type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
+    {id: "A", type: "SortingText", name: "A", property: "A", justifyCenter: true},
+    {id: "AA", type: "SortingText", name: "AA", property: "AA", justifyCenter: true},
+    {id: "AAA", type: "SortingText", name: "AAA", property: "AAA", justifyCenter: true}
   ]
 ]
 
 let columnsOptions = {
-  id: { type: "Skip", center: false, bold: false, decimalPlace: false, headers: "" },
-  rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false, headers: "Classificação" },
-  name: { type: "Link", center: false, bold: false, decimalPlace: false, headers: "Sítio Web", href: (row) => {
+  id: { type: "Skip", center: false, bold: false, decimalPlace: false },
+  rank: { type: "Checkbox", center: true, bold: false, decimalPlace: false },
+  name: { type: "Link", center: false, bold: false, decimalPlace: false, href: (row) => {
     return "https://docs.wagtail.org/en/stable/getting_started/tutorial.html"
   } },
-  entity: { type: "Skip", center: false, bold: false, decimalPlace: false, headers: "" },
-  declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false, headers: "AMA-DeclaracaoDark-Line" },
-  stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false, headers: "AMA-SeloDark-Line" },
-  score: { type: "Number", center: true, bold: false, decimalPlace: true, headers: "Pontuação" },
-  nPages: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginas" },
-  A: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* A" },
-  AA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* AA" },
-  AAA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "Páginasemconformidade* AAA" },
+  entity: { type: "Skip", center: false, bold: false, decimalPlace: false },
+  declaration: { type: "Declaration", center: true, bold: false, decimalPlace: false },
+  stamp: { type: "Stamp", center: true, bold: false, decimalPlace: false },
+  score: { type: "Number", center: true, bold: false, decimalPlace: true },
+  nPages: { type: "Number", center: true, bold: false, decimalPlace: false },
+  A: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "conformidade A" },
+  AA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "conformidade AA" },
+  AAA: { type: "Number", center: true, bold: false, decimalPlace: false, headers: "conformidade AAA" },
 }
 
 let nameOfIcons = [
