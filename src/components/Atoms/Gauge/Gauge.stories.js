@@ -22,5 +22,7 @@ const Template = (args) => <Gauge {...args} darkTheme={useDarkMode() ? "dark" : 
 export const Default = Template.bind({});
 Default.args = {
   percentage: 9.5,
-  title: "Pontuação"
+  title: ["Checklist", "10 aspetos", "críticos funcionais"],
+  screenReaderTitle: `Pontuação do AccessMonitor. Avaliação da página: 9.5 de 10`,
+  type: ""
 };

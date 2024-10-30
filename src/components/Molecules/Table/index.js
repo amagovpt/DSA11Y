@@ -33,7 +33,7 @@ const TableComponent = ({darkTheme, data, onClick, caption, col1, col2, col3, lv
                 <Icon name={option.iconName} />
               </td>
               <td className="mobile-options">
-                <Accordion options={[option]} flush={true} id={option.id} />
+                <Accordion options={[option]} flush={true} id={option.id} table={true} />
 
                 <div className="hide_desktop-screen">
                   <span className="ms-3 lvl_color">

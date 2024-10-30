@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import "./style.css";
 import {Icon} from "../../Atoms/Icon"
+import {Button} from "../../Atoms/Button"
 
 /*
     hasSort -> If Table has sorting
@@ -168,14 +169,14 @@ const SortingTable = (
                 </th>)
             case "Text":
                 return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
-                    <span className="ama-typography-body bold">{headerData.name}</span>
+                    <span className="ama-typography-body text-center bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
                     <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
-                            <span className="ama-typography-body bold">{headerData.name}</span>
+                            <span className="ama-typography-body text-center bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
                         </div>
                     </th>
@@ -229,8 +230,39 @@ const SortingTable = (
                     // Render a number, if it has "decimalPlace" as TRUE then render the number with 1 decimal place
                     return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>{columnsOptions[key].decimalPlace ? row[key].toFixed(1) : row[key]}</td>)
                 case "Button":
-                    // Render a button disguised as a text link
-                    return (<td headers={columnsOptions[key].headers} key={index}><button className="sortingTableButton" onClick={() => nextPage(row, key)}>{row[key]}</button></td>)
+                    let button = columnsOptions[key].onClick ? columnsOptions[key].onClick : () => {return ""}
+                    return (<td headers={columnsOptions[key].headers} key={index} className={`${center}`} style={{ justifyItems: "center"}}>
+                        <Button
+                            darkTheme={theme}
+                            className={`${columnsOptions[key].class}`}
+                            variant={columnsOptions[key].variant}
+                            text={columnsOptions[key].text}
+                            onClick={button ? () => button(row, key) : null}
+                        />
+                    </td>)
+                case "ButtonOrLink":
+                    let hasDeclaration = columnsOptions[key].checkDeclaration ? (row["declaration"] !== null ? true : false) : true
+                    let buttonAction = columnsOptions[key].onClick ? columnsOptions[key].onClick : () => {return ""}
+                    let hrefButtonOrLink = columnsOptions[key].href ? columnsOptions[key].href : () => {return ""}
+                    // Render a button
+                    if(columnsOptions[key].checkDeclaration && (!hasDeclaration || row["declaration"] !== 3)) {
+                        return (<td headers={columnsOptions[key].headers} key={index} className={`${center} ${bold} ama-typography-body`}>{columnsOptions[key].noDeclaration}</td>)
+                    } else {
+                        switch(row[key]) {
+                            case null:
+                                return (<td headers={columnsOptions[key].headers} key={index} className={`${center}`}  style={{ justifyItems: "center"}}>
+                                    <Button
+                                        darkTheme={theme}
+                                        className={`${columnsOptions[key].class}`}
+                                        variant={columnsOptions[key].variant}
+                                        text={columnsOptions[key].text}
+                                        onClick={buttonAction ? () => buttonAction(row, key) : null}
+                                    />
+                                </td>)
+                            default:
+                                return (<td headers={columnsOptions[key].headers} key={index} className={`${center}`}><a href={hrefButtonOrLink(row)} className="ama-typography-action-large bold text-center">{columnsOptions[key].options[row[key]]}</a></td>)
+                        }
+                    }
                 case "Link":
                     let href = columnsOptions[key].href ? columnsOptions[key].href : () => {return ""}
                     // Render a link

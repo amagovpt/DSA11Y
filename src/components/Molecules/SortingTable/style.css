@@ -49,10 +49,6 @@
     opacity: 70%;
 }
 
-.sorting_table button {
-    height: auto !important;
-}
-
 .sorting_table thead tr td {
     vertical-align: middle;
 }
@@ -151,8 +147,6 @@
     color: var(--ama-color-brand-primary) !important;
     text-decoration: none !important;
     width: 100%;
-    display: flex;
-    text-align: left !important;
     cursor: pointer;
 }
 

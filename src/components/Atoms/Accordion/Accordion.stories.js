@@ -53,6 +53,7 @@ const Template = (args) => <Accordion {...args} />;
 export const DefaultAccordion = Template.bind({});
 DefaultAccordion.args = {
   options: options,
+  table: false
 };
 
 export const BorderlessAccordion = Template.bind({});

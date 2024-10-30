@@ -4,7 +4,7 @@ import { Accordion as BAccordion } from "react-bootstrap";
 
 const { Item, Header, Body } = BAccordion;
 
-const Accordion = ({ id, options, backgroundColor, textColor, ...props }) => {
+const Accordion = ({ id, options, backgroundColor, textColor, table, ...props }) => {
   const [open, setOpen] = useState(false);
 
   const accordionStyle = {
@@ -16,17 +16,19 @@ const Accordion = ({ id, options, backgroundColor, textColor, ...props }) => {
   };
 
   const toggleShow = () => {
-    const parentElement = document.getElementById('tr_' + id);
-    const childElement = document.querySelector(".accordion-button");
-
-    if (!open) {
-      setOpen(true);
-      parentElement.classList.add("show");
-      childElement.classList.add("show");
-    } else {
-      setOpen(false);
-      parentElement.classList.remove("show");
-      childElement.classList.remove("show");
+    if(table) {
+      const parentElement = document.getElementById('tr_' + id);
+      const childElement = document.querySelector(".accordion-button");
+  
+      if (!open) {
+        setOpen(true);
+        parentElement.classList.add("show");
+        childElement.classList.add("show");
+      } else {
+        setOpen(false);
+        parentElement.classList.remove("show");
+        childElement.classList.remove("show");
+      }
     }
   };
 

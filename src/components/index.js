@@ -1,6 +1,7 @@
 import "../styles/theme.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
+export * from "./Atoms/Accordion"
 export * from "./Atoms/Button";
 export * from "./Atoms/Breadcrumb";
 export * from "./Atoms/Icon";

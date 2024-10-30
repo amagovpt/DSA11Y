@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-const Gauge = ({ darkTheme, percentage, title }) => {
+const Gauge = ({ darkTheme, percentage, title, screenReaderTitle, type }) => {
   const [animatedPercentage, setAnimatedPercentage] = useState(0);
   const theme = darkTheme === "dark" ? "dark" : ""
 
@@ -9,33 +9,52 @@ const Gauge = ({ darkTheme, percentage, title }) => {
     if (percentage) {
       setAnimatedPercentage(percentage);
     } else {
-      const interval = setInterval(() => {
-        setAnimatedPercentage((prevPercentage) => {
-          if (prevPercentage < 100) {
-            return prevPercentage + 1;
-          } else {
-            clearInterval(interval);
-            return 100;
-          }
-        });
-      }, 20);
+      if(percentage !== 0) {
+        const interval = setInterval(() => {
+          setAnimatedPercentage((prevPercentage) => {
+            if (prevPercentage < 100) {
+              return prevPercentage + 1;
+            } else {
+              clearInterval(interval);
+              return 0;
+            }
+          });
+        }, 20);
+      } else {
+        setAnimatedPercentage(0);
+      }
     }
   }, [percentage]);
 
-  const adjustedPercentage = animatedPercentage * 10;
-
   const calculateDashOffset = () => {
     const totalLength = 248;
-    return totalLength - (adjustedPercentage / 10 / 10) * totalLength;
+    let result = 248;
+    const adjustedPercentage = animatedPercentage * 10;
+    result = totalLength - (totalLength*(adjustedPercentage/100))
+    return result;
   };
 
   const determineColorClass = () => {
-    if (animatedPercentage >= 8) {
-      return "green";
-    } else if (animatedPercentage >= 5) {
-      return "yellow";
+    if(type === "100") {
+      if (animatedPercentage >= 7.5) {
+        return "green";
+      } else if (animatedPercentage >= 5) {
+        return "yellow";
+      } else if (animatedPercentage > 0) {
+        return "red";
+      } else {
+        return "grey";
+      }
     } else {
-      return "red";
+      if (animatedPercentage >= 8) {
+        return "green";
+      } else if (animatedPercentage >= 5) {
+        return "yellow";
+      } else if (animatedPercentage > 0) {
+        return "red";
+      } else {
+        return "grey";
+      }
     }
   };
 
@@ -48,10 +67,10 @@ const Gauge = ({ darkTheme, percentage, title }) => {
         y="0px"
         viewBox="37 -5 120 100"
         width="200"
-        height="170"
+        height="220"
         role="img"
       >
-        <title>{`Pontuação do AccessMonitor. Avaliação da página: ${animatedPercentage} de 10`}</title>
+        <title>{screenReaderTitle}</title>
         <path
           className="grey"
           d="M55,90 A55,55 0 1,1 140,90"
@@ -71,20 +90,24 @@ const Gauge = ({ darkTheme, percentage, title }) => {
           y="60"
           textAnchor="middle"
           fill="#333"
-          className="ama-typography-display-6 bold"
+          className="ama-typography-display-6 bold element_title"
         >
-          {animatedPercentage}
+          {type === "100" ? animatedPercentage*10 + "%" : animatedPercentage}
         </text>
-        <text
-          x="97"
-          y="80"
-          textAnchor="middle"
-          fill="#858585"
-          fontSize="10"
-          fontFamily="Lato"
-        >
-          {title}
-        </text>
+        {title && title.map((text, index) => {
+          return (
+            <text
+              x="97"
+              y={`${index*15+80}`}
+              textAnchor="middle"
+              fill="#858585"
+              fontSize="10"
+              fontFamily="Lato"
+            >
+              {text}
+            </text>
+          )
+        })}
       </svg>
     </div>
   );

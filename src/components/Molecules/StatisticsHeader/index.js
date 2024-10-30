@@ -4,7 +4,7 @@ import "./style.css";
 import { Gauge } from "../../Atoms/Gauge";
 import { Button } from "../../Atoms/Button";
 
-const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, subtitle, oldestPage, newestPage, gaugeTitle, buttons }) => {
+const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, subtitle, oldestPage, newestPage, gaugeTitle, gaugeDescription, gaugeType, buttons }) => {
 
     // Theme
     const theme = darkTheme === "dark" ? "dark" : ""
@@ -53,7 +53,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                     </div>
                 </div>
                 <div className="second_row">
-                    <Gauge percentage={stats.score} title={gaugeTitle} darkTheme={darkTheme} />
+                    <Gauge percentage={stats.score} title={gaugeTitle} darkTheme={darkTheme} screenReaderTitle={gaugeDescription} type={gaugeType} />
                 </div>
                 {/* doubleRow checks if its just one row os stats or two */}
                 <div className={`last_column px-3 ${doubleRow ? "flex-column" : ""}`}>
@@ -86,7 +86,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                     <span className="ama-typography-body">{subtitle}</span>
                 </div>
                 <div className="row second_row mb-4">
-                    <Gauge percentage={stats.score} title={gaugeTitle}/>
+                    <Gauge percentage={stats.score} title={gaugeTitle} screenReaderTitle={gaugeDescription} type={gaugeType} />
                 </div>
                 <div className="row d-flex flex-column mb-4">
                     <div className="d-flex flex-column mb-2">
