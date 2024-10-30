@@ -42,13 +42,13 @@ export const HeaderStatistics = (args) => {
 };
 
 HeaderStatistics.args = {
-  title: ["Estatísticas"],
+  title: "Estatísticas",
   gaugeDescription: "",
   gaugeType: "",
   subtitle: "Metadados",
   oldestPage: "Avaliação mais antiga de uma página:",
   newestPage: "Avaliação mais recente de uma página:",
-  gaugeTitle: "Pontuação média",
+  gaugeTitle: ["Pontuação média"],
   statsTitles: statsTitles,
   stats: directoriesStats
 }
