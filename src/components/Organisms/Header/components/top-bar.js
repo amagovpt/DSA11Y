@@ -88,7 +88,6 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
               data-bs-parent="#accordionTopBar"
               id="flushEcossistema"
               className={`accordion-collapse collapse ${openAccordion ? "show" : ""}`}
-              aria-labelledby="flushHeading"
             >
               <div className="accordion-body ps-0 pe-0">
                 <div className="container">
