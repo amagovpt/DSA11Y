@@ -1,4 +1,4 @@
-# AMA - Design-System 1.1.76
+# AMA - Design-System 1.1.77
 
 O Ama Design System é uma biblioteca de componentes para servir as seguintes aplicações:
 
@@ -12,6 +12,11 @@ Para mais informações, visite o site, onde se encontra todos os componentes e 
 ## Instalação
 ```
     npm install ama-design-system
+```
+
+É necessário importar os estilos gerais
+```
+    import 'ama-design-system/dist/index.css';
 ```
 
 Para que os Icons funcionem devidamente, foi criada uma pasta "styles" se não existia ainda, e foi copiado um ficheiro css

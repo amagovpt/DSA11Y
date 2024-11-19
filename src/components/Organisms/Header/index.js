@@ -29,6 +29,7 @@ const pt = {
   badgeLink2: "Requisitos do Selo",
   badgeLink3: "Kit de apoio",
   badgeLink4: "Como obter o selo",
+  roleDescription: "painel de acordeão"
 }
 
 const en = {
@@ -56,6 +57,7 @@ const en = {
   badgeLink2: "Badge requirements",
   badgeLink3: "Support kit",
   badgeLink4: "How to get the badge",
+  roleDescription: "accordion panel"
 }
 
 export function Header({description, language, title, title2, logo, darkTheme, changeTheme, changeLanguage, homePage, linkTo, ariaLabel}) {

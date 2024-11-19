@@ -37,6 +37,7 @@ export default [
       postcss({
         plugins: [],
         minimize: true,
+        extract: true,
       }),
       babel({
         babelHelpers: 'bundled',

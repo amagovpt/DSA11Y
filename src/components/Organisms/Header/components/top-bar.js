@@ -50,44 +50,49 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
                 </button>
               </div>
 
-              <button
-                type="button"
-                className="btn btn-link btn-ecossistema collapsed d-flex align-items-center p-1"
-                data-bs-toggle="collapse"
-                data-bs-target="#flushEcossistema"
-                aria-controls="flushEcossistema"
-                onClick={toggleAccordion}
-                aria-expanded={openAccordion ? "true" : "false"}
-                id="accordionBtn"
-                title={getTitle()}
-              >
-                <span
-                  className="icon-AMA-MenuCimaGrande-Line icon-ed-menu-dots"
-                  aria-hidden="true"
-                />
+              <h2 id="flushHeading">
+                <button
+                  type="button"
+                  className="btn btn-link btn-ecossistema collapsed d-flex align-items-center p-1"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flushEcossistema"
+                  aria-controls="flushEcossistema"
+                  onClick={toggleAccordion}
+                  aria-expanded={openAccordion ? "true" : "false"}
+                  id="accordionBtn"
+                  title={getTitle()}
+                >
+                  <span
+                    className="icon-AMA-MenuCimaGrande-Line icon-ed-menu-dots"
+                    aria-hidden="true"
+                  />
 
-                <span id="flushHeading" className="ama-typography-body">
-                  {lngTexts.tool}
-                  <span className="text-primary fw-bold dark_mode_span ama-typography-body bold">
-                    acessibilidade.gov.pt
+                  <span className="ama-typography-body">
+                    {lngTexts.tool}
+                    <span className="text-primary fw-bold dark_mode_span ama-typography-body bold">
+                      acessibilidade.gov.pt
+                    </span>
                   </span>
-                </span>
 
-                <span
-                  className={` icon ${
-                    openAccordion
-                      ? "icon-AMA-SetaCima3-Line"
-                      : "icon-AMA-SetaBaixo3-Line "
-                  }`}
-                  aria-hidden="true"
-                ></span>
-              </button>
+                  <span
+                    className={` icon ${
+                      openAccordion
+                        ? "icon-AMA-SetaCima3-Line"
+                        : "icon-AMA-SetaBaixo3-Line "
+                    }`}
+                    aria-hidden="true"
+                  ></span>
+                </button>
+              </h2>
             </div>
 
             <div
               data-bs-parent="#accordionTopBar"
               id="flushEcossistema"
               className={`accordion-collapse collapse ${openAccordion ? "show" : ""}`}
+              aria-labelledby="flushHeading"
+              role="region"
+              aria-roledescription={lngTexts.roleDescription}
             >
               <div className="accordion-body ps-0 pe-0">
                 <div className="container">
