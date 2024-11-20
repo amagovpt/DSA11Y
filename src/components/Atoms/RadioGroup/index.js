@@ -12,7 +12,7 @@ let RadioGroup = ({ darkTheme, data, name, inline, value, onChange, ...props }) 
   const theme = darkTheme === "dark" ? "dark" : ""
 
   return (
-    <div className={`${theme} radio mb-3`}>
+    <div className={`${theme} radio mb-3 ama`}>
       {data.map((item) => (
         <Form.Check
           key={item.id}

@@ -327,7 +327,7 @@ const SortingTable = (
     }
 
     return (
-        <div className={`sorting_table-responsive ${theme}`}>
+        <div className={`ama sorting_table_responsive ${theme}`}>
             <table className="table sorting_table" data-sortable="true">
                 {/* Table caption -> descripton of the table */}
                 <caption className="visually-hidden">

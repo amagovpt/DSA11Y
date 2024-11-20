@@ -6,7 +6,7 @@ import "./styles.css";
 
 const Tabs = ({ tabs, vertical, ...props }) => {
   return (
-    <div className={`tabs-container ${vertical ? "vertical-tabs" : ""}`}>
+    <div className={`tabs-container ama ${vertical ? "vertical-tabs" : ""}`}>
       <BTabs {...props}>
         {tabs.map((item) => (
           <Tab

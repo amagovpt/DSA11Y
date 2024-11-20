@@ -24,6 +24,6 @@ path {
 }
 
 /* Dark Theme */
-.dark text {
+.ama.gauge.dark text {
   fill: var(--ama-color-background-white) !important;
 }

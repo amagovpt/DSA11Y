@@ -4,7 +4,7 @@ import React from "react";
 export function Footer({ darkTheme }) {
   const theme = darkTheme === "dark" ? "dark" : ""
   return (
-    <footer className={`py-5 ${theme}`}>
+    <footer className={`py-5 ama ${theme}`}>
       <div className="container">
         <nav aria-label="Menu de rodapé do selo.usabilidade.gov.pt">
           <div className="menu-menu-de-rodape-container">

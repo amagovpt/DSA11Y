@@ -48,8 +48,8 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
 
   return (
     <>
-      <div className="mb-4">
-        <p className="practices_found">
+      <div className="mb-4 ama stats_table_title">
+        <p className="practices_found_container">
           <span className="practices_found me-1">
             {data?.data?.metadata?.count_results}
           </span>
@@ -57,7 +57,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
         </p>
       </div>
 
-      <table className={`table table-bordereds table-alternative ${theme}`}>
+      <table className={`ama stats_table table table-bordereds ${theme}`}>
         <caption className="visually-hidden">{caption}</caption>
         <thead>
           <tr className="mobile_table">
@@ -74,7 +74,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
         <tbody>
           <tr>
             <th scope="row" className="border_right">
-              <div className="aceptable_continer">
+              <div className="acceptable_container">
                 <div className="icon_and_text">
                   <Icon name="AMA-Check-Line" />
 
@@ -126,7 +126,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
 
           <tr>
             <th scope="row" className="border_right">
-              <div className="aceptable_continer">
+              <div className="acceptable_container">
                 <div className="icon_and_text">
                   <Icon name="AMA-Middle-Line" />
                   <span className="title">{warning}</span>
@@ -176,7 +176,7 @@ const StatsTable = ({darkTheme, data, ok, warning, error, title, caption, type})
 
           <tr>
             <th scope="row" className="border_right">
-              <div className="aceptable_continer">
+              <div className="acceptable_container">
                 <div className="icon_and_text">
                   <Icon name="AMA-Wrong-Line" />
 

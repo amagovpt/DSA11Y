@@ -1,12 +1,12 @@
-.field label,
-.fieldUpload label {
+.ama.field label,
+.ama.fieldUpload label {
   font-size: 1rem;
   color: var(--ama-color-text-gray);
   font-weight: 700;
 }
 
-.field input,
-.fieldUpload input {
+.ama.field input,
+.ama.fieldUpload input {
   height: 54px;
   border: 2px solid var(--ama-color-brand-primary) !important;
   background-color: var(--ama-color-background-white);
@@ -19,25 +19,25 @@
   border-radius: 0px;
 }
 
-.fieldUpload input {
+.ama.fieldUpload input {
   border-radius: 0px;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
 }
 
 
-.field input:focus,
-.fieldUpload input:focus {
+.ama.field input:focus,
+.ama.fieldUpload input:focus {
   box-shadow: 0 0 0 3px var(--ama-color-yellow-300) !important;
 }
 
-.field .form-control.is-invalid,
-.fieldUpload .form-control.is-invalid {
+.ama.field .form-control.is-invalid,
+.ama.fieldUpload .form-control.is-invalid {
   border-color: var(--ama-color-red-500) !important;
 }
 
-.field .invalid-feedback,
-.fieldUpload .invalid-feedback {
+.ama.field .invalid-feedback,
+.ama.fieldUpload .invalid-feedback {
   color: var(--ama-color-red-500);
   font-size: 1em;
   font-weight: 700;
@@ -45,7 +45,7 @@
   margin-bottom: 1.5rem;
 }
 
-input[type="file"].form-control::file-selector-button {
+.ama input[type="file"].form-control::file-selector-button {
   background-color: var(--ama-color-brand-primary);
   border-radius: 25px;
   color: var(--ama-color-background-white);
@@ -56,47 +56,47 @@ input[type="file"].form-control::file-selector-button {
   height: 50px;
 }
 
-button.show_pass {
+.ama button.show_pass {
   gap: 0px !important;
 }
 
-button.show_pass:not(:focus) {
+.ama button.show_pass:not(:focus) {
   border: 0px;
 }
 
-button.show_pass:hover {
+.ama button.show_pass:hover {
   background-color: var(--ama-color-brand-primary);
   color: var(--ama-color-background-white);
 }
 
 
 /* Dark Theme */
-.field.dark label,
-.fieldUpload.dark label,
-.fieldUpload.dark input::placeholder {
+.ama.field.dark label,
+.ama.fieldUpload.dark label,
+.ama.fieldUpload.dark input::placeholder {
   color: var(--ama-color-text-blue);
 }
 
-.field.dark input,
-.fieldUpload.dark input {
+.ama.field.dark input,
+.ama.fieldUpload.dark input {
   border-color: var(--ama-color-text-blue) !important;
   background-color: transparent !important;
   color: var(--ama-color-text-blue) !important;
 }
 
-.field.dark input::placeholder,
-.fieldUpload.dark input::placeholder {
+.ama.field.dark input::placeholder,
+.ama.fieldUpload.dark input::placeholder {
   color: var(--ama-color-text-blue)
 }
 
-.field.dark button.show_pass i {
+.ama.field.dark button.show_pass i {
   color: var(--ama-color-text-blue);
 }
 
-.field.dark button.show_pass:hover i {
+.ama.field.dark button.show_pass:hover i {
   color: var(--ama-color-text-gray);
 }
 
-.field.dark button:focus {
+.ama.field.dark button:focus {
   border: 3px solid var(--ama-color-yellow-400) !important;
 }

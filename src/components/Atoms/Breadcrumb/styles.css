@@ -1,23 +1,23 @@
-.breadcrumb li::before {
+.ama.breadcrumbs .breadcrumb li::before {
   content: unset !important;
 }
 
-.breadcrumb li a {
+.ama.breadcrumbs .breadcrumb li a {
   color: var(--ama-color-brand-primary);
   word-break: break-all;
 }
 
-.breadcrumb li {
+.ama.breadcrumbs .breadcrumb li {
   font-family: var(--font-lato) !important;
   font-size: 1rem;
   word-break: break-all;
 }
 
-.breadcrumb li.active {
+.ama.breadcrumbs .breadcrumb li.active {
   color: var(--ama-color-text-gray) !important;
 }
 
-.breadcrumb li:not(:first-child) {
+.ama.breadcrumbs .breadcrumb li:not(:first-child) {
   background-image: url("../../../../public/img/chevron-right-dark.svg");
   background-size: .75rem;
   background-repeat: no-repeat;
@@ -29,12 +29,12 @@
 
 
 /* Dark theme */
-.breadcrumbs.dark .breadcrumb li:not(:first-child) {
+.ama.breadcrumbs.dark .breadcrumb li:not(:first-child) {
   background-image: url("../../../../public/img/chevron-right-light.svg");
 }
 
-.breadcrumbs.dark .breadcrumb li,
-.breadcrumbs.dark .breadcrumb li a {
-    color: var(--ama-color-text-blue) !important;
-    text-decoration-color: var(--ama-color-text-blue) !important;
+.ama.breadcrumbs.dark .breadcrumb li,
+.ama.breadcrumbs.dark .breadcrumb li a {
+  color: var(--ama-color-text-blue) !important;
+  text-decoration-color: var(--ama-color-text-blue) !important;
 }

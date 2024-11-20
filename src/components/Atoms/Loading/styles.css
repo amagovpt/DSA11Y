@@ -1,4 +1,4 @@
-.loadingContainer {
+.ama.loadingContainer {
   justify-content: center;
   align-items: center;
   display: flex;
@@ -6,11 +6,11 @@
   padding: 0 64px;
 }
 
-.text_container {
+.ama.loadingContainer .text_container {
   width: 40%;
 }
 
-.loader {
+.ama.loadingContainer .loader {
   width: 220px;
   height: 25px;
   display: flex;
@@ -18,7 +18,7 @@
   align-items: center;
 }
 
-.dot {
+.ama.loadingContainer .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
@@ -43,10 +43,10 @@
 
 
 /* Dark Theme */
-.loadingContainer.dark .dot {
+.ama.loadingContainer.dark .dot {
   background: var(--ama-color-text-blue);
 }
 
-.loadingContainer.dark span {
+.ama.loadingContainer.dark span {
   color: var(--ama-color-text-blue);
 }

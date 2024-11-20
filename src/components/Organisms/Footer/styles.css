@@ -1,83 +1,83 @@
-footer {
+footer.ama {
   background-color: var(--ama-color-background-light-lighter);
 }
 
-footer p {
+footer.ama p {
   color: var(--ama-color-text-gray) !important;
 }
 
-footer .footer-menu {
+footer.ama .footer-menu {
   list-style: none;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
-footer .footer-menu li a {
+footer.ama .footer-menu li a {
   text-decoration: none !important;
   color: var(--ama-color-brand-primary);
 }
 
-footer .footer-menu li a:hover {
+footer.ama .footer-menu li a:hover {
   text-decoration: underline !important;
 }
 
-.footer-logos {
+footer.ama .footer-logos {
   text-align: center;
 }
 
-.footer-logos li {
+footer.ama .footer-logos li {
   display: inline-block;
   width: 50%;
   vertical-align: middle;
 }
 
 @media (min-width: 576px) {
-  .footer-logos li {
+  footer.ama .footer-logos li {
     display: inline-block;
     width: 25%;
   }
 }
 
 @media (min-width: 768px) {
-  footer .footer-menu {
+  footer.ama .footer-menu {
     flex-direction: row;
     justify-content: center;
   }
 
-  footer .footer-menu li {
+  footer.ama .footer-menu li {
     display: inline-block;
   }
 
-  .footer-logos {
+  footer.ama .footer-logos {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.5rem;
   }
 
-  .footer-logos li {
+  footer.ama .footer-logos li {
     display: initial;
     width: initial;
   }
 }
 
-footer .logo-selo {
+footer.ama .logo-selo {
   text-align: center;
 }
 
-footer .logo-selo img {
+footer.ama .logo-selo img {
   max-width: 150px;
 }
 
 /* Dark Mode */
 
-footer.dark {
+footer.ama.dark {
   background-color: var(--ama-color-blue-600);
   color: var(--ama-color-text-blue);
 }
 
-footer.dark li a,
-footer.dark p {
+footer.ama.dark li a,
+footer.ama.dark p {
   color: var(--ama-color-text-blue) !important;
 }

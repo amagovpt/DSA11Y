@@ -12,7 +12,7 @@ const TextArea = ({ darkTheme, label, type, placeholder, error, id, ...rest }) =
   const theme = darkTheme === "dark" ? "dark" : ""
 
   return (
-    <Form.Group className={`field ${theme}`}>
+    <Form.Group className={`field ama ${theme}`}>
       <Form.Label htmlFor={id}>{label}</Form.Label>
       <Form.Control
         as="textarea"

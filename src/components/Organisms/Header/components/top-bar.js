@@ -63,7 +63,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
                   title={getTitle()}
                 >
                   <span
-                    className="icon-AMA-MenuCimaGrande-Line icon-ed-menu-dots"
+                    className="icon-AMA-MenuCimaGrande-Line icon-ed-menu-dots dark_mode_span"
                     aria-hidden="true"
                   />
 

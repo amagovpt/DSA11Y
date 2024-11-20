@@ -1,16 +1,16 @@
-.nav-tabs {
+.ama.tabs-container .nav-tabs {
   background-color: var(--ama-color-background-light-darker) !important;
   border-radius: 0px !important;
   line-height: 3em;
 }
 
-.vertical-tabs {
+.ama.tabs-container.vertical-tabs {
   box-sizing: border-box;
   display: grid;
   grid-template-columns: 300px 1fr;
 }
 
-.vertical-tabs .nav-tabs {
+.ama.tabs-container.vertical-tabs .nav-tabs {
   width: 100%;
   height: fit-content;
   background-color: var(--ama-color-background-white) !important;
@@ -22,7 +22,7 @@
   line-height: normal;
 }
 
-.vertical-tabs .nav-tabs .nav-link {
+.ama.tabs-container.vertical-tabs .nav-tabs .nav-link {
   border-radius: 0px;
   margin-top: 10px;
   cursor: pointer;
@@ -33,18 +33,18 @@
   display: flex;
 }
 
-.vertical-tabs .nav-tabs .nav-link.active {
+.ama.tabs-container.vertical-tabs .nav-tabs .nav-link.active {
   background-color: transparent;
   color: var(--ama-color-text-gray) !important;
   border-right: 5px solid var(--ama-color-brand-primary);
   border-bottom: 0px;
 }
 
-.vertical-tabs .tabs_info_container {
+.ama.tabs-container.vertical-tabs .tabs_info_container {
   margin-left: 30px;
 }
 
-.vertical-tabs .nav-tabs .nav-item:not(:last-child)::after {
+.ama.tabs-container.vertical-tabs .nav-tabs .nav-item:not(:last-child)::after {
   content: '';
   display: inline-block;
   width: 100%;
@@ -53,13 +53,13 @@
   padding-right: 15px;
 }
 
-.nav-tabs .nav-link {
+.ama.tabs-container .nav-tabs .nav-link {
   border: 0;
   color: var(--ama-color-brand-primary) !important;
   border-radius: 0 !important;
 }
 
-.nav-tabs .nav-link.active {
+.ama.tabs-container .nav-tabs .nav-link.active {
   font-weight: 700;
   color: var(--ama-color-brand-primary);
   font-family: var(--font-lato);
@@ -67,25 +67,25 @@
   border-bottom: 5px solid var(--ama-color-brand-primary);
 }
 
-.nav-pills .nav-link {
+.ama.tabs-container .nav-pills .nav-link {
   display: block;
   width: 100%;
 }
 
 @media (min-width: 320px) and (max-width: 480px) {
-  .nav-tabs {
+  .ama.tabs-container .nav-tabs {
     display: flex;
     flex-direction: column;
   }
 
-  .nav-tabs .nav-link {
+  .ama.tabs-container .nav-tabs .nav-link {
     display: flex;
     flex-direction: column;
     width: 100% !important;
     align-items: flex-start !important;
   }
 
-  .nav-tabs .nav-link.active {
+  .ama.tabs-container .nav-tabs .nav-link.active {
     color: var(--ama-color-background-white) !important;
     background-color: var(--ama-color-brand-primary);
     border: 0;

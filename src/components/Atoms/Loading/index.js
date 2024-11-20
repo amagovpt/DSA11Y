@@ -4,7 +4,7 @@ import "./styles.css";
 export function LoadingComponent({ darkTheme, loadingText }) {
   const theme = darkTheme === "dark" ? "dark" : ""
   return (
-    <div className={` ${theme} loadingContainer`}>
+    <div className={` ${theme} loadingContainer ama`}>
       <div className="text_container">
         <span className="ama-typography-body">{loadingText}</span>
       </div>

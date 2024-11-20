@@ -45,7 +45,7 @@ const Button = ({
             : radius === "none"
               ? "rounded-0"
               : "rounded-0"
-      } ${props.variant}`}
+      } ${props.variant} ama`}
     >
       {!isLoading && iconLeft && <>{iconLeft}</>}
 

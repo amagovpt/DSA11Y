@@ -2,7 +2,6 @@ import React from "react";
 import "./style.css";
 
 import { Gauge } from "../../Atoms/Gauge";
-import { Button } from "../../Atoms/Button";
 
 const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, subtitle, oldestPage, newestPage, gaugeTitle, gaugeDescription, gaugeType, buttons }) => {
 
@@ -35,7 +34,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     }
 
     return (
-        <div className={`${theme} d-flex flex-column section_container py-4 m-0`}>
+        <div className={`${theme} ama d-flex flex-column section_container py-4 m-0`}>
             {/* Web version */}
             <div className="grid_container">
                 <div className="d-flex flex-column mb-3">
@@ -106,12 +105,6 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
                     })}
                 </div>
             </div>
-
-            {/* {buttons && <div className="d-flex flex-row justify-content-end gap-4 buttons_mobile">
-                <Button variant="primary" text={"Distribuições de pontuações"} />
-                <Button variant="success" text={"Boas práticas"} />
-                <Button variant="danger" text={"Más práticas"} />
-            </div>} */}
         </div>
     );
 };

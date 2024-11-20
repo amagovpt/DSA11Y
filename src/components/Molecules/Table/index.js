@@ -9,7 +9,7 @@ const TableComponent = ({darkTheme, data, onClick, caption, col1, col2, col3, lv
 
   return (
     <>
-      <table className={`table table_primary ${theme}`}>
+      <table className={`table table_primary ama ${theme}`}>
         <caption className="visually-hidden">
           {caption}
         </caption>

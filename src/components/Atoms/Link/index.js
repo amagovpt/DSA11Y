@@ -6,7 +6,7 @@ import "./styles.css";
 export function Link({ darkTheme, to, text, children, iconLeft, iconRight, ...rest }) {
   const theme = darkTheme === "dark" ? "dark" : ""
   return (
-    <div className={`${theme} link-container`}>
+    <div className={`${theme} link-container ama`}>
       {iconLeft && <>{iconLeft}</>}
       <a className="ama-typography-action" href={to} {...rest}>
         {children || <span dangerouslySetInnerHTML={{ __html: text }} />}

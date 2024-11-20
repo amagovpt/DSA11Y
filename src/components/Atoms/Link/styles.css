@@ -1,4 +1,4 @@
-.link-container {
+.ama.link-container {
   display: flex;
   align-items: center;
   gap: 10px !important;
@@ -6,12 +6,12 @@
   color: var(--ama-color-brand-primary) !important;
 }
 
-.link-container a {
+.ama.link-container a {
   color: var(--ama-color-brand-primary) !important;
   text-decoration-color: var(--ama-color-brand-primary) !important;
 }
 
-.link-container a:focus {
+.ama.link-container a:focus {
   border: 3px solid var(--ama-color-yellow-400);
   box-shadow: none;
   outline: 0;
@@ -19,8 +19,8 @@
 
 
 /* Dark Theme */
-.link-container.dark a,
-.link-container.dark {
+.ama.link-container.dark a,
+.ama.link-container.dark {
   color: var(--ama-color-background-white) !important;
   text-decoration-color: var(--ama-color-background-white) !important;
 }

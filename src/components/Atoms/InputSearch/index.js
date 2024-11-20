@@ -41,7 +41,7 @@ const InputSearch = ({
   const theme = darkTheme === "dark" ? "dark" : ""
 
   return (
-    <InputGroup className={`field field-search ${theme}`} {...props}>
+    <InputGroup className={`ama field-search ${theme}`} {...props}>
       <Form.Control
         placeholder={placeholder}
         type="search"

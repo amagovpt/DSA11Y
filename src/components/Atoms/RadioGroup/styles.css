@@ -1,14 +1,14 @@
-.form-check-input:checked {
+.ama.radio .form-check .form-check-input:checked {
   background-color: var(--ama-color-brand-primary);
   border-color: var(--ama-color-brand-primary);
 }
 
 /* Dark theme */
-.radio.dark .form-check .form-check-input:checked {
+.ama.radio.dark .form-check .form-check-input:checked {
   background-color: var(--ama-color-text-blue) !important;
   border-color: var(--ama-color-text-blue) !important;
 }
 
-.radio.dark .form-check label {
+.ama.radio.dark .form-check label {
   color: var(--ama-color-text-blue);
 }

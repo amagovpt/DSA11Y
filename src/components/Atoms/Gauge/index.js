@@ -59,7 +59,7 @@ const Gauge = ({ darkTheme, percentage, title, screenReaderTitle, type }) => {
   };
 
   return (
-    <div className={`${theme}`}>
+    <div className={`ama gauge ${theme}`}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

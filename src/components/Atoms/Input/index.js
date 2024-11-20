@@ -17,7 +17,7 @@ const Input = ({ darkTheme, upload, label, type, placeholder, error, id, showPas
   const classUpload = upload ? "fieldUpload" : "field"
   const theme = darkTheme === "dark" ? "dark" : ""
   return (
-    <Form.Group className={`${classUpload} ${theme}`}>
+    <Form.Group className={`ama ${classUpload} ${theme}`}>
       {type === 'password' ?
         <div className="d-flex justify-content-between">
           <Form.Label htmlFor={id}>{label}</Form.Label>

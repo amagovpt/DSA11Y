@@ -66,7 +66,7 @@ export function Header({description, language, title, title2, logo, darkTheme, c
   const lngTexts = language === "en" ? en : pt
 
   return (
-    <header id="wrapper-navbar" aria-label={ariaLabel} className={`${theme}`}>
+    <header id="wrapper-navbar" aria-label={ariaLabel} className={`${theme} ama`}>
       <div className="skip-to-content">
         <div className="container">
           <a className="skip-to-content-link d-flex align-items-center ama-typography-action-small py-2 px-3 my-3" href="#content">

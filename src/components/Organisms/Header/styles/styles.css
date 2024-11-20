@@ -1,17 +1,17 @@
-.skip-to-content {
+header.ama .skip-to-content {
   background: var(--ama-color-background-white);
 }
 
-.logo .title_h1 {
+header.ama .logo .title_h1 {
   color: var(--ama-color-brand-primary);
   font-size: 26px;
 }
 
-.logo p {
+header.ama .logo p {
   margin-bottom: 0px;
 }
 
-.skip-to-content-link {
+header.ama .skip-to-content-link {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -23,7 +23,7 @@
   opacity: 0;
 }
 
-.skip-to-content-link:focus {
+header.ama .skip-to-content-link:focus {
   position: static;
   overflow: visible !important;
   white-space: normal;
@@ -36,59 +36,59 @@
   opacity: 100;
 }
 
-.text-primary {
+header.ama .text-primary {
   color: var(--ama-color-brand-primary) !important;
 }
 
-.widgets-bar {
+header.ama .widgets-bar {
   background-color: var(--ama-color-background-light-lighter);
 }
 
-.widgets-bar a {
+header.ama .widgets-bar a {
   text-decoration: none;
 }
 
-.site-description p {
+header.ama .site-description p {
   text-align: right;
 }
 
-.button-mobile {
+header.ama .button-mobile {
   display: none !important;
 }
 @media only screen and (max-width: 991px) {
-  ss .logo img {
+  header.ama .logo img {
     max-width: 90%;
     height: auto;
   }
 
-  .button-mobile {
+  header.ama .button-mobile {
     display: flex !important;
     margin: 0.5rem 0;
     justify-content: center;
   }
 
-  header.dark .button-mobile button,
-  header.dark .button-mobile button i {
+  header.ama.dark .button-mobile button,
+  header.ama.dark .button-mobile button i {
     color: var(--ama-color-text-blue) !important;
   }
 
-  header.dark .button-mobile button:focus {
+  header.ama.dark .button-mobile button:focus {
     border-color: var(--ama-color-text-blue) !important;
   }
 
-  .site-description p {
+  header.ama .site-description p {
     text-align: center;
   }
 }
 
 @media only screen and (max-width: 1199px) {
-  .logo img {
+  header.ama .logo img {
     max-width: 90%;
     height: auto;
   }
 }
 
-.menu-hamburger {
+header.ama .menu-hamburger {
   border: 0;
   width: 45px;
   height: 45px;
@@ -96,16 +96,16 @@
   background-color: var(--ama-color-brand-primary);
 }
 
-.menu-hamburger span {
+header.ama .menu-hamburger span {
   font-size: 20px;
 }
 
 /* Dark Theme */
-header.dark .widgets-bar {
+header.ama.dark .widgets-bar {
   background-color: var(--ama-color-brand-primary);
   color: var(--ama-color-background-white) !important;
 }
 
-header.dark .logo .title_h1 {
+header.ama.dark .logo .title_h1 {
   color: var(--ama-color-text-blue);
 }

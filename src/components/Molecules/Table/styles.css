@@ -1,4 +1,4 @@
-.table_primary tr th {
+.ama.table_primary tr th {
   color: var(--ama-color-background-white);
   padding: 14px;
   background-color: var(--ama-color-text-gray) !important;
@@ -7,45 +7,45 @@
   vertical-align: middle;
 }
 
-.table_primary button {
+.ama.table_primary button {
   height: auto !important;
 }
 
-.table_primary thead {
+.ama.table_primary thead {
   border-color: transparent;
 }
 
-.table_primary thead tr td {
+.ama.table_primary thead tr td {
   vertical-align: middle;
 }
 
-.table_primary tbody tr {
+.ama.table_primary tbody tr {
   border-bottom: 1px solid var(--ama-color-text-gray);
 }
 
-.table_primary tbody tr:last-child {
+.ama.table_primary tbody tr:last-child {
   border: 0 !important;
 }
 
-.table_primary tbody tr td {
+.ama.table_primary tbody tr td {
   vertical-align: middle;
   text-align: center;
 }
 
-.table_primary tbody tr td:first-child {
+.ama.table_primary tbody tr td:first-child {
   width: 70px;
   height: 72px;
 }
 
-.table_primary tbody tr td:last-child {
+.ama.table_primary tbody tr td:last-child {
   width: 8em;
 }
 
-.middle_col {
+.ama.table_primary .middle_col {
   width: 5em;
 }
 
-.accordion-button::after {
+.ama.table_primary .accordion-button::after {
   content: "";
   display: inline-block;
   width: 20px;
@@ -57,22 +57,22 @@
   margin-left: auto; /* Para alinhar a seta à direita */
 }
 
-.accordion-button.collapsed::after {
+.ama.table_primary .accordion-button.collapsed::after {
   transform: rotate(0deg);
 }
 
-.accordion-button:not(.collapsed)::after {
+.ama.table_primary .accordion-button:not(.collapsed)::after {
   transform: rotate(180deg);
 }
 
 /* Accordion in table */
 
-.table_primary .accordion-button:not(.collapsed) {
+.ama.table_primary .accordion-button:not(.collapsed) {
   background-color: transparent !important;
   box-shadow: none;
 }
 
-.table_primary .accordion-button:focus {
+.ama.table_primary .accordion-button:focus {
   box-shadow: none;
   border-radius: 2px !important;
   border: 1px solid var(--ama-color-text-gray);
@@ -82,34 +82,34 @@
   padding: 0 !important;
 } */
 
-.content_info {
+.ama.table_primary .content_info {
   text-align: left;
 }
 
-.content_info a {
+.ama.table_primary .content_info a {
   color: var(--ama-color-text-gray) !important;
   font-weight: 700;
   text-decoration: underline !important;
 }
 
-mark,
-code {
+.ama.table_primary mark,
+.ama.table_primary code {
   font-weight: 900 !important;
   text-decoration: underline;
   background-color: transparent;
   color: var(--ama-color-text-gray) !important;
 }
 
-.criteiro {
+.ama.table_primary .criteiro {
   display: block;
   margin-left: 3rem;
 }
 
-.criteiro a {
+.ama.table_primary .criteiro a {
   font-weight: 400;
 }
 
-.detail_link {
+.ama.table_primary .detail_link {
   font-size: 1.8rem;
   text-decoration: none !important;
   color: var(--primary) !important;
@@ -117,42 +117,43 @@ code {
   background-color: transparent;
 }
 
-.error-cell {
+.ama.table_primary .error-cell {
   background: #f99 !important;
 }
 
-.warning-cell {
+.ama.table_primary .warning-cell {
   background: #ff9 !important;
 }
 
-.success-cell {
+.ama.table_primary .success-cell {
   background: #bce1bc !important;
 }
 
-.success-cell,
-.warning-cell,
-.error-cell i {
+.ama.table_primary .success-cell,
+.ama.table_primary .warning-cell,
+.ama.table_primary .error-cell i {
   font-size: 36px;
 }
 
-.hide_desktop-screen {
+.ama.table_primary .hide_desktop-screen {
   display: none;
 }
 
 @media screen and (max-width: 768px) {
-  .hide-on-small-screen {
+  .ama.table_primary .hide-on-small-screen {
     display: none;
   }
 
-  .table_primary tbody tr td:first-child {
+  .ama.table_primary tbody tr td:first-child {
     width: 50px;
     height: auto !important;
   }
-  .mobile-options {
+  
+  .ama.table_primary .mobile-options {
     height: auto !important;
   }
 
-  .hide_desktop-screen {
+  .ama.table_primary .hide_desktop-screen {
     display: flex !important;
     flex-direction: row;
     margin: 15px 0;
@@ -161,41 +162,41 @@ code {
 }
 
 /* Dark Theme */
-.table_primary.dark tr th {
+.ama.table_primary.dark tr th {
   background-color: var(--ama-color-background-dark-darker) !important;
   color: var(--ama-color-background-white);
 }
 
-.table_primary.dark tbody tr {
+.ama.table_primary.dark tbody tr {
   border-bottom: 1px solid #525865 !important;
 }
 
-.table_primary.dark tbody tr:hover {
+.ama.table_primary.dark tbody tr:hover {
   background-color: var(--ama-color-background-dark-darker) !important;
 }
 
-.table_primary.dark td {
+.ama.table_primary.dark td {
   background-color: transparent !important;
 }
 
-.table_primary.dark .error-cell {
+.ama.table_primary.dark .error-cell {
   background: #f99 !important;
 }
 
-.table_primary.dark .warning-cell {
+.ama.table_primary.dark .warning-cell {
   background: #ff9 !important;
 }
 
-.table_primary.dark .success-cell {
+.ama.table_primary.dark .success-cell {
   background: #bce1bc !important;
 }
 
-.table_primary.dark .detail_link i,
-.table_primary.dark .middle_col {
+.ama.table_primary.dark .detail_link i,
+.ama.table_primary.dark .middle_col {
   color: var(--ama-color-text-blue) !important;
 }
 
-.table_primary.dark .accordion-button::after {
+.ama.table_primary.dark .accordion-button::after {
   content: "";
   display: inline-block;
   width: 20px;
@@ -206,50 +207,50 @@ code {
   margin-left: auto; /* Para alinhar a seta à direita */
 }
 
-.table_primary.dark .accordion-button.collapsed::after {
+.ama.table_primary.dark .accordion-button.collapsed::after {
   transform: rotate(0deg);
 }
 
-.table_primary.dark .accordion-button:not(.collapsed)::after {
+.ama.table_primary.dark .accordion-button:not(.collapsed)::after {
   transform: rotate(180deg);
 }
 
-.table_primary tbody .accordion-flush,
-.table_primary tbody .accordion-flush .accordion-item,
-.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-header button,
-.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-button {
+.ama.table_primary tbody .accordion-flush,
+.ama.table_primary tbody .accordion-flush .accordion-item,
+.ama.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-header button,
+.ama.table_primary tbody tr:hover .accordion-flush .accordion-item .accordion-button {
   background-color: transparent !important;
 }
 
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button h2.show tbody tr {
+.ama.table_primary.dark .accordion-flush .accordion-item .accordion-header button h2.show tbody tr {
   background-color: red;
 }
 
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button {
+.ama.table_primary.dark .accordion-flush .accordion-item .accordion-header button {
   background-color: transparent !important;
   color: var(--ama-color-background-white) !important;
 }
 
-.table_primary.dark .show {
+.ama.table_primary.dark .show {
   background-color: var(--ama-color-background-dark-darker) !important;
 }
 
-.table_primary.dark .accordion-body a,
-.table_primary.dark .mobile-options .info_level,
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button code,
-.table_primary.dark .accordion-flush .accordion-item .accordion-header button mark {
+.ama.table_primary.dark .accordion-body a,
+.ama.table_primary.dark .mobile-options .info_level,
+.ama.table_primary.dark .accordion-flush .accordion-item .accordion-header button code,
+.ama.table_primary.dark .accordion-flush .accordion-item .accordion-header button mark {
   color: var(--ama-color-background-white) !important;
 }
 
-.table_primary.dark .accordion-body {
+.ama.table_primary.dark .accordion-body {
   background-color: var(--ama-color-background-dark-darker) !important;
   color: var(--ama-color-background-white) !important;
 }
 
-.table_primary.dark .mobile-row span {
+.ama.table_primary.dark .mobile-row span {
   color: var(--ama-color-background-dark-darker) !important;
 }
 
-.table_primary.dark .lvl_color {
+.ama.table_primary.dark .lvl_color {
   color: var(--ama-color-background-white)
 }

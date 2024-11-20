@@ -23,7 +23,7 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
     }
   };
   return (
-    <BBreadcrumb {...props} className={`breadcrumbs ${theme}`} aria-label={tagHere}>
+    <BBreadcrumb {...props} className={`ama breadcrumbs ${theme}`} aria-label={tagHere}>
       {data.map((item, index) => (
         <Item
           key={`id-${index}`}

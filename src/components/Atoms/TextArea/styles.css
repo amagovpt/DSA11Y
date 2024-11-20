@@ -1,10 +1,10 @@
-.field label {
+.ama.field label {
   font-size: 1rem;
   color: var(--ama-color-text-gray);
   font-weight: bold;
 }
 
-.field textarea {
+.ama.field textarea {
   height: 100px;
   border: 2px solid var(--ama-color-brand-primary) !important;
   background-color: var(--ama-color-background-white);
@@ -19,32 +19,32 @@
   border-radius: 0;
 }
 
-.field textarea:focus {
+.ama.field textarea:focus {
   /* REVER o Boxshadow */
   box-shadow: 0 0 0 3px var(--ama-color-yellow-300) !important;
 }
 
-.field .form-control.is-invalid {
+.ama.field .form-control.is-invalid {
   border-color: var(--ama-color-red-500) !important;
 }
 
-.field .invalid-feedback {
+.ama.field .invalid-feedback {
   color: var(--ama-color-red-500);
 }
 
 
 /* Dark Theme */
-.field.dark label,
-.field.dark textarea::placeholder {
+.ama.field.dark label,
+.ama.field.dark textarea::placeholder {
   color: var(--ama-color-text-blue);
 }
 
-.field.dark textarea {
+.ama.field.dark textarea {
   border-color: var(--ama-color-text-blue) !important;
   background-color: transparent;
   color: var(--ama-color-text-blue) !important;
 }
 
-.field.dark textarea::placeholder {
+.ama.field.dark textarea::placeholder {
   color: var(--ama-color-text-blue)
 }
