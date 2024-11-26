@@ -50,7 +50,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
                 </button>
               </div>
 
-              <h2 id="flushHeading">
+              <div id="flushHeading">
                 <button
                   type="button"
                   className="btn btn-link btn-ecossistema collapsed d-flex align-items-center p-1"
@@ -83,7 +83,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
                     aria-hidden="true"
                   ></span>
                 </button>
-              </h2>
+              </div>
             </div>
 
             <div
