@@ -29,7 +29,8 @@ export const HeaderText = () => <Header
                                   title={"Observatório Português"}
                                   title2={"da Acessibilidade Web"}
                                   darkTheme={useDarkMode() ? "dark" : "light"}
-                                  homePage={false}
+                                  homePage={true}
                                   linkTo={""}
                                   language={"pt"}
+                                  obsSpecial={true}
                                 />;
