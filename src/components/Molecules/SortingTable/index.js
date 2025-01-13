@@ -376,7 +376,7 @@ const SortingTable = (
 
                 {/* Section informing the number of items per page and option to change */}
                 <div className="pagination_section" role="group">
-                    <span className="ama-typography-body" aria-label={`${nItemsPerPageTexts[1]}`}>{nItemsPerPageTexts[0]}</span>
+                    <span className="ama-typography-body" aria-label={nItemsPerPageTexts[1]}>{nItemsPerPageTexts[0]}</span>
                     <select aria-label="Number of rows per page" className="selection" name="itemsPerPage" id="itemsPerPage" onChange={(e) => setNItemsCurrent(e.target.value)}>
                         <option value="50">50</option>
                         <option value="100">100</option>

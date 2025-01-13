@@ -19,17 +19,17 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
                           </div>
                         </p>
                       :
-                      <h1 className="d-flex flex-column logo">
-                        <div role="text">
+                      <h1 className="logo">
+                        <div role="text" className="d-flex flex-column">
                           <span className="title_h1">{title}</span>
                           <span className="medium title_h1">{title2}</span>
                         </div>
                       </h1>}
                     </>
-                  : <p className="d-flex flex-column logo">
-                      <a href={linkTo} className="title_h1 bold">
+                  : <p className="logo">
+                      <a href={linkTo} className="title_h1 bold d-flex flex-column">
                         {title}
-                        <div className="medium">{title2}</div>
+                        <span className="medium">{title2}</span>
                       </a>
                     </p>
                   }
