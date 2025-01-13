@@ -1,6 +1,6 @@
 import { Icon } from "../../../Atoms/Icon";
 import React from "react";
-export function WidgetBar({ description, logo, title, title2, changeTheme, changeLanguage, darkTheme, homePage, linkTo, lngTexts }) {
+export function WidgetBar({ description, logo, title, title2, changeTheme, changeLanguage, darkTheme, homePage, linkTo, lngTexts, obsSpecial }) {
   return (
     <div className="widgets-bar py-4">
       <div className="container">
@@ -9,11 +9,23 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
             <div className="d-flex justify-content-between">
               {title && title2 ? 
                 <>
-                  {homePage ? 
-                    <h1 className="d-flex flex-column logo">
-                      <span className="title_h1">{title}</span>
-                      <span className="medium title_h1">{title2}</span>
-                    </h1> 
+                  {homePage ?
+                    <>
+                      {obsSpecial ?
+                        <p className="d-flex flex-column logo">
+                          <div role="text">
+                            <span className="title_h1">{title}</span>
+                            <span className="medium title_h1">{title2}</span>
+                          </div>
+                        </p>
+                      :
+                      <h1 className="d-flex flex-column logo">
+                        <div role="text">
+                          <span className="title_h1">{title}</span>
+                          <span className="medium title_h1">{title2}</span>
+                        </div>
+                      </h1>}
+                    </>
                   : <p className="d-flex flex-column logo">
                       <a href={linkTo} className="title_h1 bold">
                         {title}

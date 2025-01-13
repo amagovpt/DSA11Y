@@ -4,6 +4,10 @@
     grid-template-rows: auto 1fr;
 }
 
+.ama.section_container .margin_mobile {
+    font-size: 28px !important;
+}
+
 .ama.section_container .second_column {
     place-content: center flex-start;
     align-items: center;

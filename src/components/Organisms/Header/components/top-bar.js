@@ -116,7 +116,7 @@ export function TopBar({darkTheme, changeTheme, changeLanguage, lngTexts}) {
                       </div>
                     </div>
                   </div>
-                  <hr className="mt-4 mb-5" />
+                  <hr className="mt-4 mb-5" aria-hidden="true" />
                   <div className="row">
                     <div className="col-12 col-lg-4">
                       <div className="left-column-ecossistema-ama">

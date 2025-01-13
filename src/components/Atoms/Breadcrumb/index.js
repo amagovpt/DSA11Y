@@ -1,12 +1,11 @@
 import React from "react";
-import { Link } from 'react-router-dom';
 import { Breadcrumb as BBreadcrumb } from "react-bootstrap";
 
 import "./styles.css";
 
 const { Item } = BBreadcrumb;
 
-const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
+const Breadcrumb = ({ data, onClick, darkTheme, tagHere, LinkComponent = "a", ...props }) => {
 
   // Theme
   const theme = darkTheme === "dark" ? "dark" : ""
@@ -24,7 +23,16 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
   };
   return (
     <BBreadcrumb {...props} className={`ama breadcrumbs ${theme}`} aria-label={tagHere}>
-      {data.map((item, index) => (
+      {data.map((item, index) =>
+        item.children ?
+          <li
+            key={`id-${index}`}
+            className={`breadcrumb-item ${index === size ? "active" : ""}`}
+            aria-current={index === size ? "page" : undefined}
+          >
+            {item.children}
+          </li>
+        :
         <Item
           key={`id-${index}`}
           href={item.href === "" ? "" : item.href}
@@ -33,7 +41,7 @@ const Breadcrumb = ({ data, onClick, darkTheme, tagHere, ...props }) => {
         >
           {item.title}
         </Item>
-      ))}
+      )}
     </BBreadcrumb>
   );
 };

@@ -3,3 +3,25 @@ import { Meta } from "@storybook/blocks";
 <Meta title="Versions/Versions" />
 
 # Versions page
+
+## 1.1.81 - 13/01/2025
+
+#### Atoms
+
+- Breadcrumb: Added a way to pass via props the children of the `<li>` component. This way you can pass what you want, the default will be the element `<a>`.
+
+#### Molecules
+
+- SortingTable: Added a way for the Headers with Text, have the ability to have `aria-label`.
+- SortingTable: Added a way to pass via props the children for the Link switch case. The default will be `<a>`.
+- SortingTable: Added `role="group"` to the `<div>` that groups the texts and selection of number of items per page.
+- SortingTable: Added `aria-label` to the `<div>` that groups the texts and selection of number of items per page.
+
+- StatisticsHeader: Grouped the title of the section and the subtitle using `role="text"`.
+- StatisticsHeader: Downgraded the stats numbers from `<h3>` to `<p>`, and grouped with the description.
+
+#### Organisms
+
+- Header: Added `aria-hidden` to line seperator `<hr>`.
+- Header: Added prop to control whether the title will be an `H1` or `<p>`.
+- Header: Added `role="text"` to group title and subtitle, in the cases that the title is not a logo.
