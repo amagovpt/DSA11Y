@@ -11,8 +11,8 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     // Normal stats with Value (Title) and description (Subtitle)
     const normalExtraStats = (value, subtitle, index) => {
         return (
-            <div key={index} className="d-flex flex-column margin_mobile">
-                <h3 className="bold">{value}</h3>
+            <div key={index} className="d-flex flex-column margin_mobile" role="text">
+                <p className="bold">{value}</p>
                 <span className="ama-typography-body">{subtitle}</span>
             </div>
         )
@@ -22,11 +22,11 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     const percentageStats = (value, object, total, first, index) => {
         const percentage = (value*100/total).toFixed(1)
         return (
-            <div key={index} className="d-flex flex-column margin_mobile">
-                <h3 className="bold p-1">
+            <div key={index} className="d-flex flex-column margin_mobile" role="text">
+                <p className="bold p-1">
                     {value}
                     {!first ? <span className="ama-typography-body-large ps-2">{percentage}%</span> : null}
-                </h3>
+                </p>
                 {object.subtitle2 !== "" ? <span className="ama-typography-body bold">{object.subtitle2}</span> : null}
                 <span className="ama-typography-body">{object.subtitle}</span>
             </div>
@@ -37,10 +37,10 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
         <div className={`${theme} ama d-flex flex-column section_container py-4 m-0`}>
             {/* Web version */}
             <div className="grid_container">
-                <div className="d-flex flex-column mb-3">
-                    <h2 className="bold">{title}</h2>
+                <h2 className="bold d-flex flex-column">
+                    <span>{title}</span>
                     <span className="ama-typography-body">{subtitle}</span>
-                </div>
+                </h2>
                 <div className="mb-3 second_column ps-4">
                     <div className="d-flex flex-column">
                         <span className="ama-typography-body bold mb-1">{oldestPage}</span>
