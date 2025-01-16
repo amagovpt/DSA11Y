@@ -12,18 +12,14 @@ export function WidgetBar({ description, logo, title, title2, changeTheme, chang
                   {homePage ?
                     <>
                       {obsSpecial ?
-                        <p className="logo">
-                          <div role="text" className="d-flex flex-column">
-                            <span className="title_h1 bold">{title}</span>
-                            <span className="medium title_h1">{title2}</span>
-                          </div>
+                        <p className="logo d-flex flex-column">
+                          <span className="title_h1 bold">{title}</span>
+                          <span className="medium title_h1">{title2}</span>
                         </p>
                       :
-                      <h1 className="logo">
-                        <div role="text" className="d-flex flex-column">
-                          <span className="title_h1">{title}</span>
-                          <span className="medium title_h1">{title2}</span>
-                        </div>
+                      <h1 className="logo d-flex flex-column">
+                        <span className="title_h1">{title}</span>
+                        <span className="medium title_h1">{title2}</span>
                       </h1>}
                     </>
                   : <p className="logo">

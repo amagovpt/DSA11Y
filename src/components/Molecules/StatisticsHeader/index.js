@@ -11,7 +11,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     // Normal stats with Value (Title) and description (Subtitle)
     const normalExtraStats = (value, subtitle, index) => {
         return (
-            <div key={index} className="d-flex flex-column margin_mobile" role="text">
+            <div key={index} className="d-flex flex-column margin_mobile">
                 <p className="bold">{value}</p>
                 <span className="ama-typography-body">{subtitle}</span>
             </div>
@@ -22,7 +22,7 @@ const StatisticsHeader = ({ darkTheme, stats, statsTitles, doubleRow, title, sub
     const percentageStats = (value, object, total, first, index) => {
         const percentage = (value*100/total).toFixed(1)
         return (
-            <div key={index} className="d-flex flex-column margin_mobile" role="text">
+            <div key={index} className="d-flex flex-column margin_mobile">
                 <p className="bold p-1">
                     {value}
                     {!first ? <span className="ama-typography-body-large ps-2">{percentage}%</span> : null}
