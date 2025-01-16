@@ -168,15 +168,15 @@ const SortingTable = (
                     <span className="visually-hidden">{headerData.name}</span>
                 </th>)
             case "Text":
-                return (<th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
-                    <span className="ama-typography-body text-center bold" aria-label={headerData.ariaLabel ? ariaLabels[headerData.name] : null}>{headerData.name}</span>
+                return (<th id={multiHeaders ? id : null} aria-label={headerData.ariaLabel ? ariaLabels[headerData.name] : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} className={`${textCenter} no_pointer`}>
+                    <span className="ama-typography-body text-center bold">{headerData.name}</span>
                 </th>)
             case "SortingText":
                 let justifyCenter = headerData.justifyCenter ? "justify-content-center" : ""
                 return (
-                    <th id={multiHeaders ? id : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
+                    <th id={multiHeaders ? id : null} aria-label={headerData.ariaLabel ? ariaLabels[headerData.name] : null} key={index} style={{width: bigWidth}} rowSpan={nOfRows} colSpan={nOfColumns} aria-sort={sameProp ? (sort.type === "asc" ? "descending" : "ascending"):null} className={sameProp ? `show_icon` : ``} onClick={() => setDataList(sortByProperty(headerData.property))}>
                         <div className={`d-flex ${justifyCenter} align-items-center`}>
-                            <span className="ama-typography-body text-center bold" aria-label={headerData.ariaLabel ? ariaLabels[headerData.name] : null}>{headerData.name}</span>
+                            <span className="ama-typography-body text-center bold">{headerData.name}</span>
                             {sameProp && sort.type === "asc" ? <Icon name="AMA-SetaBaixo-Line" /> : <Icon name="AMA-SetaCima-Line" />}
                         </div>
                     </th>
